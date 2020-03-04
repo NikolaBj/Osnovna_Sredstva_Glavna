@@ -1,0 +1,177 @@
+﻿@model IEnumerable<Osnovna_Sredstva_Glavna.Migrations.Osnovna_Sredstva.Osnovno_Sredstvo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Amortizacijske_grupe.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Konta.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Konta1.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Partneri.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sektori.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ulazni_racun.UraBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv_opreme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serijski_broj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inventarski_broj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nabavna_vrijednost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amortizirana_vrijednost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Knjigovodstvena_vrijednost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uvecanje_vrijednosti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Umanjenje_vrijednosti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum_nabave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum_amortizacije)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum_otpisa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum_pripreme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Otpisano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Količina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTimeCreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Napomena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jedinica_mjere)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stopa_am_sredstva)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amortizacijske_grupe.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Konta.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Konta1.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Partneri.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sektori.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulazni_racun.UraBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv_opreme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serijski_broj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inventarski_broj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nabavna_vrijednost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amortizirana_vrijednost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Knjigovodstvena_vrijednost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uvecanje_vrijednosti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Umanjenje_vrijednosti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum_nabave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum_amortizacije)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum_otpisa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum_pripreme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Otpisano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Količina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTimeCreated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Napomena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jedinica_mjere)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stopa_am_sredstva)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OsnovnoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OsnovnoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OsnovnoId })
+        </td>
+    </tr>
+}
+
+</table>

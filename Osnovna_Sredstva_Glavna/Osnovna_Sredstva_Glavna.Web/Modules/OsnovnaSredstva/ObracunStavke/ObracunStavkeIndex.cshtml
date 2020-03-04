@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.OsnovnaSredstva.ObracunStavke.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+<a href="https://www.w3schools.com">Visit W3Schools.com!</a>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new Osnovna_Sredstva_Glavna.OsnovnaSredstva.ObracunStavkeGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

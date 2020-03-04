@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Osnovna_Sredstva_GlavnaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_KarticaSredstvaPojedinacno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OsnovnoId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Osnovna_Sredstva_GlavnaModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Osnovna_Sredstva_GlavnaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Osnovna_Sredstva_GlavnaEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_KarticaSredstvaPojedinacno" ReturnType="Collection(Osnovna_Sredstva_GlavnaModel.sp_KarticaSredstvaPojedinacno_Result)">
+            <Parameter Name="OsnovnoId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_KarticaSredstvaPojedinacno_Result">
+          <Property Type="String" Name="Naziv_opreme" Nullable="false" MaxLength="80" />
+          <Property Type="String" Name="Serijski_broj" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Inventarski_broj" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="Nabavna_vrijednost" Nullable="false" Precision="11" Scale="2" />
+          <Property Type="Decimal" Name="Knjigovodstvena_vrijednost" Nullable="true" Precision="12" Scale="2" />
+          <Property Type="String" Name="Konto_sredstva" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="naziv_partnera" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Adresa" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Drzava" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Grad" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="PTT" Nullable="false" />
+          <Property Type="String" Name="Mjesto" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Datum_Aktivacije" Nullable="false" />
+          <Property Type="DateTime" Name="Datum_nabave" Nullable="false" />
+          <Property Type="DateTime" Name="Datum_otpisa" Nullable="false" />
+          <Property Type="DateTime" Name="Datum_pripreme" Nullable="false" />
+          <Property Type="String" Name="Naziv_sektora" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Iznos_Amortizacije" Nullable="false" Precision="11" Scale="2" />
+          <Property Type="DateTime" Name="Datum_obracuna" Nullable="false" />
+          <Property Type="String" Name="Konto_ispravka_vrijednosti" Nullable="true" MaxLength="14" />
+          <Property Type="Int32" Name="Broj_obracuna" Nullable="false" />
+          <Property Type="String" Name="Amortizacijska_grupa" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Godisnja_amortizacija" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="Napomena" Nullable="false" MaxLength="200" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Osnovna_Sredstva_GlavnaModelStoreContainer" CdmEntityContainer="Osnovna_Sredstva_GlavnaEntities" >
+          <FunctionImportMapping FunctionImportName="sp_KarticaSredstvaPojedinacno" FunctionName="Osnovna_Sredstva_GlavnaModel.Store.sp_KarticaSredstvaPojedinacno">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Osnovna_Sredstva_GlavnaModel.sp_KarticaSredstvaPojedinacno_Result">
+                <ScalarProperty Name="Naziv_opreme" ColumnName="Naziv_opreme" />
+                <ScalarProperty Name="Serijski_broj" ColumnName="Serijski_broj" />
+                <ScalarProperty Name="Inventarski_broj" ColumnName="Inventarski_broj" />
+                <ScalarProperty Name="Nabavna_vrijednost" ColumnName="Nabavna_vrijednost" />
+                <ScalarProperty Name="Knjigovodstvena_vrijednost" ColumnName="Knjigovodstvena_vrijednost" />
+                <ScalarProperty Name="Konto_sredstva" ColumnName="Konto_sredstva" />
+                <ScalarProperty Name="naziv_partnera" ColumnName="naziv_partnera" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Drzava" ColumnName="Drzava" />
+                <ScalarProperty Name="Grad" ColumnName="Grad" />
+                <ScalarProperty Name="PTT" ColumnName="PTT" />
+                <ScalarProperty Name="Mjesto" ColumnName="Mjesto" />
+                <ScalarProperty Name="Datum_Aktivacije" ColumnName="Datum_Aktivacije" />
+                <ScalarProperty Name="Datum_nabave" ColumnName="Datum_nabave" />
+                <ScalarProperty Name="Datum_otpisa" ColumnName="Datum otpisa" />
+                <ScalarProperty Name="Datum_pripreme" ColumnName="Datum_pripreme" />
+                <ScalarProperty Name="Naziv_sektora" ColumnName="Naziv_sektora" />
+                <ScalarProperty Name="Iznos_Amortizacije" ColumnName="Iznos_Amortizacije" />
+                <ScalarProperty Name="Datum_obracuna" ColumnName="Datum_obracuna" />
+                <ScalarProperty Name="Konto_ispravka_vrijednosti" ColumnName="Konto_ispravka_vrijednosti" />
+                <ScalarProperty Name="Broj_obracuna" ColumnName="Broj_obracuna" />
+                <ScalarProperty Name="Amortizacijska_grupa" ColumnName="Amortizacijska_grupa" />
+                <ScalarProperty Name="Godisnja_amortizacija" ColumnName="Godisnja_amortizacija" />
+                <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

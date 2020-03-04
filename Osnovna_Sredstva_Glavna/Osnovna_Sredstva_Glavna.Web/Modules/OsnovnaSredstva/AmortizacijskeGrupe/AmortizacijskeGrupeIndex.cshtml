@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.OsnovnaSredstva.AmortizacijskeGrupe.EntityPlural");
+}
+
+
+<div id="GridDiv"></div>
+
+<a href="http://desktop-jbaab7c/Reports/Pages/Report.aspx?ItemPath=%2fKarticaSredstva">Kartica Sredstva</a>
+    
+ 
+<script type="text/javascript">
+    jQuery(function () {
+        new Osnovna_Sredstva_Glavna.OsnovnaSredstva.AmortizacijskeGrupeGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>
