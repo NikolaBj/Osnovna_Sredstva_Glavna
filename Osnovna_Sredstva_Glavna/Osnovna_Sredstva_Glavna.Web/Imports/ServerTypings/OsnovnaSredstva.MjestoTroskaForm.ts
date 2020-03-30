@@ -1,9 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
-    export class MjestoTroskaForm extends Serenity.PrefixedContext {
-        static formKey = 'OsnovnaSredstva.MjestoTroska';
-    }
-
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface MjestoTroskaForm {
         Sifra: Serenity.StringEditor;
         Naziv: Serenity.StringEditor;
@@ -11,16 +6,29 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         DateTimeCreated: Serenity.DateEditor;
     }
 
-    [,
-        ['Sifra', () => Serenity.StringEditor],
-        ['Naziv', () => Serenity.StringEditor],
-        ['Active', () => Serenity.BooleanEditor],
-        ['DateTimeCreated', () => Serenity.DateEditor]
-    ].forEach(x => Object.defineProperty(MjestoTroskaForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class MjestoTroskaForm extends Serenity.PrefixedContext {
+        static formKey = 'OsnovnaSredstva.MjestoTroska';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!MjestoTroskaForm.init)  {
+                MjestoTroskaForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.BooleanEditor;
+                var w2 = s.DateEditor;
+
+                Q.initFormType(MjestoTroskaForm, [
+                    'Sifra', w0,
+                    'Naziv', w0,
+                    'Active', w1,
+                    'DateTimeCreated', w2
+                ]);
+            }
+        }
+    }
 }
+

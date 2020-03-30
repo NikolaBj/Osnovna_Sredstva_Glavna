@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export namespace KontaService {
         export const baseUrl = 'OsnovnaSredstva/Konta';
 
@@ -9,12 +8,12 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<KontaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<KontaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "OsnovnaSredstva/Konta/Create",
+            Update = "OsnovnaSredstva/Konta/Update",
+            Delete = "OsnovnaSredstva/Konta/Delete",
+            Retrieve = "OsnovnaSredstva/Konta/Retrieve",
+            List = "OsnovnaSredstva/Konta/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>KontaService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>KontaService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

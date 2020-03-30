@@ -2,6 +2,9 @@
 namespace Osnovna_Sredstva.Default.Lookups
 {
 
+ 
+   
+   
 
     using Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities;
     using Serenity.ComponentModel;
@@ -37,6 +40,9 @@ namespace Osnovna_Sredstva.Default.Lookups
             TextField = OsnovnoSredstvoRow.Fields.NazivOpreme.PropertyName;
         }
 
+
+
+
         protected override void PrepareQuery(SqlQuery query)
         {
 
@@ -47,6 +53,52 @@ namespace Osnovna_Sredstva.Default.Lookups
 
         }
     }
+
+    [LookupScript("OsnovnaSredstva.OsnovnoLookup2")]
+    public sealed class OsnovnoLookup2 : RowLookupScript<OsnovnoSredstvoRow>
+    {
+        public OsnovnoLookup2()
+        {
+            IdField = OsnovnoSredstvoRow.Fields.OsnovnoId.PropertyName;
+            TextField = OsnovnoSredstvoRow.Fields.OsnovnoId.PropertyName;
+        }
+
+
+
+
+        protected override void PrepareQuery(SqlQuery query)
+        {
+
+            base.PrepareQuery(query);
+            var fldComputer = OsnovnoSredstvoRow.Fields;
+            var flcComputer = OsnovnoSredstvoRow.Fields.SerijskiBroj.ToString() + " " + OsnovnoSredstvoRow.Fields.OsnovnoId.ToString();
+            query.Select(fldComputer.OsnovnoId, fldComputer.OsnovnoId);
+
+        }
+    }
+
+    //[LookupScript("OsnovnaSredstva.OsnovnoLookup2")]
+    //public sealed class OsnovnoLookup2 : RowLookupScript<OsnovnoSredstvoRow>
+    //{
+    //    public OsnovnoLookup2()
+    //    {
+    //        IdField = OsnovnoSredstvoRow.Fields.OsnovnoId.PropertyName;
+    //        TextField = OsnovnoSredstvoRow.Fields.NazivOpreme.PropertyName;
+    //    }
+
+
+
+
+    //    protected override void PrepareQuery(SqlQuery query)
+    //    {
+
+    //        base.PrepareQuery(query);
+    //        var fldComputer = OsnovnoSredstvoRow.Fields;
+    //        var flcComputer = OsnovnoSredstvoRow.Fields.SerijskiBroj.ToString() + " " + OsnovnoSredstvoRow.Fields.NazivOpreme.ToString();
+    //        query.Select(fldComputer.OsnovnoId, fldComputer.NazivOpreme);
+
+    //    }
+    //}
 
     [LookupScript("OsnovnaSredstva.PartnerUserLookup")]
     public sealed class PartnerUserLookup : RowLookupScript<PartneriRow>
@@ -239,6 +291,29 @@ namespace Osnovna_Sredstva.Default.Lookups
                 .Select(fld.AmGrupaId)
                 .Select(fld.GodisnjaAmortizacija);
                  
+        }
+
+        protected override void ApplyOrder(SqlQuery query)
+        {
+        }
+    }
+
+
+    [LookupScript]
+    public class NabavnaVrijednostLookup : RowLookupScript<OsnovnoSredstvoRow>
+    {
+        public NabavnaVrijednostLookup()
+        {
+            IdField = TextField = OsnovnoSredstvoRow.Fields.NabavnaVrijednost.PropertyName;
+        }
+
+        protected override void PrepareQuery(SqlQuery query)
+        {
+            var fld = OsnovnoSredstvoRow.Fields;
+            query.Distinct(true)
+                .Select(fld.OsnovnoId)
+                .Select(fld.NabavnaVrijednost);
+
         }
 
         protected override void ApplyOrder(SqlQuery query)

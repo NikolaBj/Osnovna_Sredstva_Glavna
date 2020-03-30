@@ -1,9 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
-    export class SektoriForm extends Serenity.PrefixedContext {
-        static formKey = 'OsnovnaSredstva.Sektori';
-    }
-
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface SektoriForm {
         Naziv: Serenity.StringEditor;
         Šifra: Serenity.StringEditor;
@@ -11,16 +6,29 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         DateTimeCreated: Serenity.DateEditor;
     }
 
-    [,
-        ['Naziv', () => Serenity.StringEditor],
-        ['Šifra', () => Serenity.StringEditor],
-        ['Active', () => Serenity.BooleanEditor],
-        ['DateTimeCreated', () => Serenity.DateEditor]
-    ].forEach(x => Object.defineProperty(SektoriForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class SektoriForm extends Serenity.PrefixedContext {
+        static formKey = 'OsnovnaSredstva.Sektori';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!SektoriForm.init)  {
+                SektoriForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.BooleanEditor;
+                var w2 = s.DateEditor;
+
+                Q.initFormType(SektoriForm, [
+                    'Naziv', w0,
+                    'Šifra', w0,
+                    'Active', w1,
+                    'DateTimeCreated', w2
+                ]);
+            }
+        }
+    }
 }
+

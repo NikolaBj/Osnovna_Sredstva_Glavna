@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface KontaUraRow {
         KontaUraId?: number;
         UraId?: number;
@@ -44,74 +43,40 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const KontaUraId;
-            export declare const UraId;
-            export declare const KontoId;
-            export declare const IznosDuguje;
-            export declare const IznosPotrazuje;
-            export declare const MjestoTroskaId;
-            export declare const Opis;
-            export declare const Active;
-            export declare const DateTimeCreated;
-            export declare const UraPArtnerId;
-            export declare const UraUraBroj;
-            export declare const UraBrojRacuna;
-            export declare const UraDatumRacuna;
-            export declare const UraDatumKnjizenja;
-            export declare const UraDatumDospijeca;
-            export declare const UraDatumIsporuke;
-            export declare const UraPoslovnaGodina;
-            export declare const UraMjestoTroskaId;
-            export declare const UraIznosOsnovice;
-            export declare const UraIznosPoreza;
-            export declare const UraUkupanIznos;
-            export declare const UraOpis;
-            export declare const UraActive;
-            export declare const UraDateTimeCreated;
-            export declare const KontoNaziv;
-            export declare const KontoActive;
-            export declare const KontoDateTimeCreated;
-            export declare const Konto;
-            export declare const MjestoTroskaSifra;
-            export declare const MjestoTroskaNaziv;
-            export declare const MjestoTroskaActive;
-            export declare const MjestoTroskaDateTimeCreated;
+        export declare const enum Fields {
+            KontaUraId = "KontaUraId",
+            UraId = "UraId",
+            KontoId = "KontoId",
+            IznosDuguje = "IznosDuguje",
+            IznosPotrazuje = "IznosPotrazuje",
+            MjestoTroskaId = "MjestoTroskaId",
+            Opis = "Opis",
+            Active = "Active",
+            DateTimeCreated = "DateTimeCreated",
+            UraPArtnerId = "UraPArtnerId",
+            UraUraBroj = "UraUraBroj",
+            UraBrojRacuna = "UraBrojRacuna",
+            UraDatumRacuna = "UraDatumRacuna",
+            UraDatumKnjizenja = "UraDatumKnjizenja",
+            UraDatumDospijeca = "UraDatumDospijeca",
+            UraDatumIsporuke = "UraDatumIsporuke",
+            UraPoslovnaGodina = "UraPoslovnaGodina",
+            UraMjestoTroskaId = "UraMjestoTroskaId",
+            UraIznosOsnovice = "UraIznosOsnovice",
+            UraIznosPoreza = "UraIznosPoreza",
+            UraUkupanIznos = "UraUkupanIznos",
+            UraOpis = "UraOpis",
+            UraActive = "UraActive",
+            UraDateTimeCreated = "UraDateTimeCreated",
+            KontoNaziv = "KontoNaziv",
+            KontoActive = "KontoActive",
+            KontoDateTimeCreated = "KontoDateTimeCreated",
+            Konto = "Konto",
+            MjestoTroskaSifra = "MjestoTroskaSifra",
+            MjestoTroskaNaziv = "MjestoTroskaNaziv",
+            MjestoTroskaActive = "MjestoTroskaActive",
+            MjestoTroskaDateTimeCreated = "MjestoTroskaDateTimeCreated"
         }
-
-        [
-            'KontaUraId',
-            'UraId',
-            'KontoId',
-            'IznosDuguje',
-            'IznosPotrazuje',
-            'MjestoTroskaId',
-            'Opis',
-            'Active',
-            'DateTimeCreated',
-            'UraPArtnerId',
-            'UraUraBroj',
-            'UraBrojRacuna',
-            'UraDatumRacuna',
-            'UraDatumKnjizenja',
-            'UraDatumDospijeca',
-            'UraDatumIsporuke',
-            'UraPoslovnaGodina',
-            'UraMjestoTroskaId',
-            'UraIznosOsnovice',
-            'UraIznosPoreza',
-            'UraUkupanIznos',
-            'UraOpis',
-            'UraActive',
-            'UraDateTimeCreated',
-            'KontoNaziv',
-            'KontoActive',
-            'KontoDateTimeCreated',
-            'Konto',
-            'MjestoTroskaSifra',
-            'MjestoTroskaNaziv',
-            'MjestoTroskaActive',
-            'MjestoTroskaDateTimeCreated'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

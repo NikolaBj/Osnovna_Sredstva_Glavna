@@ -1113,6 +1113,63 @@
     <Content Include="tools\Node\less\lib\less\visitor.js" />
     <Content Include="tools\Node\node.exe" />
     <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Administration.PermissionKeys.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Modules.OsnovnaSredstva.Izvjesca.ProcParam.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Modules.OsnovnaSredstva.Izvjesca.ProcResponse.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Modules.OsnovnaSredstva.Obracun.PokreniObracunAction.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Modules.OsnovnaSredstva.Obracun.PokreniObracunRequest.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Northwind.PermissionKeys.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.AktivacijaSredstvaColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.AmortizacijskeGrupeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.KontaColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.KontaUraColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.MjestoTroskaColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.ObracunColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.ObracunStavkeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.OsnovnoListRequest.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.OsnovnoSredstvoColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.PartneriColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.SektoriColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.TemeljnicaStavkeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.UlazniRacunColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -2114,6 +2171,7 @@
     <Compile Include="Modules\OsnovnaSredstva\Izvjesca\sp_KarticaSredstvaPojedinacno_Result.cs">
       <DependentUpon>Kartica.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\OsnovnaSredstva\Obracun\Obracun.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Content Include="Modules\AdminLTE\DashboardV2.cshtml" />
     <Compile Include="Modules\Administration\User\Authentication\DirectoryEntry.cs" />
@@ -2489,6 +2547,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Modules\OsnovnaSredstva\Controller\" />
     <Folder Include="Modules\OsnovnaSredstva\OsnovnoSredstvo\App_LocalResources\" />
+    <Folder Include="Osnovna_Sredstva_Glavna\Modules\OsnovnaSredstva\" />
     <Folder Include="Views\SP_Kartica\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface KontaRow {
         KontoId?: number;
         Naziv?: string;
@@ -17,20 +16,13 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const KontoId;
-            export declare const Naziv;
-            export declare const Active;
-            export declare const DateTimeCreated;
-            export declare const Konto;
+        export declare const enum Fields {
+            KontoId = "KontoId",
+            Naziv = "Naziv",
+            Active = "Active",
+            DateTimeCreated = "DateTimeCreated",
+            Konto = "Konto"
         }
-
-        [
-            'KontoId',
-            'Naziv',
-            'Active',
-            'DateTimeCreated',
-            'Konto'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

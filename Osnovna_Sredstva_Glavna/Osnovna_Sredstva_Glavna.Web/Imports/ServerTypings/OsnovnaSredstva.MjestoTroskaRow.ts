@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface MjestoTroskaRow {
         MjestoTroskaId?: number;
         Sifra?: string;
@@ -17,20 +16,13 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const MjestoTroskaId;
-            export declare const Sifra;
-            export declare const Naziv;
-            export declare const Active;
-            export declare const DateTimeCreated;
+        export declare const enum Fields {
+            MjestoTroskaId = "MjestoTroskaId",
+            Sifra = "Sifra",
+            Naziv = "Naziv",
+            Active = "Active",
+            DateTimeCreated = "DateTimeCreated"
         }
-
-        [
-            'MjestoTroskaId',
-            'Sifra',
-            'Naziv',
-            'Active',
-            'DateTimeCreated'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

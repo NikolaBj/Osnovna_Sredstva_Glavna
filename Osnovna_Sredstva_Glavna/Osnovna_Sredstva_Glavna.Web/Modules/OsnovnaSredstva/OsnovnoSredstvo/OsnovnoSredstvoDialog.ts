@@ -1,6 +1,6 @@
 ﻿
 namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
-
+    @Serenity.Decorators.panel()
     @Serenity.Decorators.registerClass()
     export class OsnovnoSredstvoDialog extends Serenity.EntityDialog<OsnovnoSredstvoRow, any> {
         protected getFormKey() { return OsnovnoSredstvoForm.formKey; }
@@ -12,10 +12,17 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         protected getInsertPermission() { return OsnovnoSredstvoRow.insertPermission; }
         protected getUpdatePermission() { return OsnovnoSredstvoRow.updatePermission; }
 
+       
         protected form = new OsnovnoSredstvoForm(this.idPrefix);
-
+        private obracunGrid: ObracunGrid;
+        private loadedState: string;
            constructor() {
             super();
+
+               //this.obracunGrid = new ObracunGrid(this.byId('ObracunGrid'));
+               //this.obracunGrid.openDialogsAsPanel = false;
+               //DialogUtils.pendingChangesConfirmation(this.element, () => this.getSaveState() != this.loadedState);
+
 
             this.form.SerijskiBroj.element.on('keyup', (e) => {
                 // only auto number when a key between 'A' and 'Z' is pressed
@@ -24,16 +31,36 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
             });
         }
 
-        //protected afterLoadEntity() {
-        //    super.afterLoadEntity();
-        //              $('<a class="inplace-button inplace-create"><b><\/b><\/a>')
-        //        .insertAfter(this.form.PartnerId.element)  // <======================
-        //        .click(() => this.myFunction());
-        //    // fill next number in new record mode
-        //    if (this.isNew())
-        //        this.getNextNumber();
+
+        //getSaveState() {
+        //    try {
+        //        return $.toJSON(this.getSaveEntity());
+        //    }
+        //    catch (e) {
+        //        return null;
+        //    }
         //}
 
+        //loadResponse(data) {
+        //    super.loadResponse(data);
+        //    this.loadedState = this.getSaveState();
+        //}
+        ////protected afterLoadEntity() {
+        ////    super.afterLoadEntity();
+        ////              $('<a class="inplace-button inplace-create"><b><\/b><\/a>')
+        ////        .insertAfter(this.form.PartnerId.element)  // <======================
+        ////        .click(() => this.myFunction());
+        ////    // fill next number in new record mode
+        ////    if (this.isNew())
+        ////        this.getNextNumber();
+        ////}
+        //loadEntity(entity: OsnovnoSredstvoRow) {
+        //    super.loadEntity(entity);
+
+        //    Serenity.TabsExtensions.setDisabled(this.tabs, 'Obračuni', this.isNewOrDeleted());
+
+        //    this.obracunGrid.osnovnoId = entity.OsnovnoId;
+       
         protected afterLoadEntity() {
             super.afterLoadEntity();
 
@@ -115,6 +142,11 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         //    // this.deleteButton.toggleClass('disabled', true);
         //}
 
+        //onSaveSuccess(response) {
+        //    super.onSaveSuccess(response);
+
+        //    Q.reloadLookup('OsnovnaSredstva.OsnovnoSredstvo');
+        //}
 
     };
 }

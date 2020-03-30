@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface PartneriRow {
         PartnerId?: number;
         Naziv?: string;
@@ -21,28 +20,17 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const PartnerId;
-            export declare const Naziv;
-            export declare const Adresa;
-            export declare const Ptt;
-            export declare const Mjesto;
-            export declare const Grad;
-            export declare const Active;
-            export declare const DateTimeCreated;
-            export declare const Drzava;
+        export declare const enum Fields {
+            PartnerId = "PartnerId",
+            Naziv = "Naziv",
+            Adresa = "Adresa",
+            Ptt = "Ptt",
+            Mjesto = "Mjesto",
+            Grad = "Grad",
+            Active = "Active",
+            DateTimeCreated = "DateTimeCreated",
+            Drzava = "Drzava"
         }
-
-        [
-            'PartnerId',
-            'Naziv',
-            'Adresa',
-            'Ptt',
-            'Mjesto',
-            'Grad',
-            'Active',
-            'DateTimeCreated',
-            'Drzava'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

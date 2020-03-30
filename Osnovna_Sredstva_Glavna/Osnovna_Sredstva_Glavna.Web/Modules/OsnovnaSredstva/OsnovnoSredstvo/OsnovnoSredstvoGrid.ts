@@ -224,34 +224,34 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
 
 
 
-                //    Q.serviceCall(new ServiceCallOptions
-                //    {
-                //            URL = Q.ResolveUrl("~/Accounting/LedgersBalance/ExecuteProc"),
-                //            Request = new ProcParam{ Param1="Param1" },
-                //        OnSuccess = response => {
-                //            var result = ((ProcResponse)response);
-                //    Q.alert(result.ExecutionResult);
-                //}
-           
-           
-
-                //  onclick = "location.href='<%: Url.Action("Action", "Controller") %>'" />
+                    //    Q.serviceCall(new ServiceCallOptions
+                    //    {
+                    //            URL = Q.ResolveUrl("~/Accounting/LedgersBalance/ExecuteProc"),
+                    //            Request = new ProcParam{ Param1="Param1" },
+                    //        OnSuccess = response => {
+                    //            var result = ((ProcResponse)response);
+                    //    Q.alert(result.ExecutionResult);
+                    //}
 
 
-                //var dlga = new ObracunDialog;
-                //this.initDialog(dlga);
-                //    var id = null
+
+                    //  onclick = "location.href='<%: Url.Action("Action", "Controller") %>'" />
+
+
+                    //var dlga = new ObracunDialog;
+                    //this.initDialog(dlga);
+                    //    var id = null
                     window.location.href = 'http://desktop-jbaab7c/ReportServer/Pages/ReportViewer.aspx?%2fKarticaSredstvaGlavna&rs:Command=Render&OsnovnoId=' + item.OsnovnoId;
-                //  //
+                    //  //
 
-                //       =”javascript: void(window.open(‘http://myserver/mypath/myasppage.html&#8217;, ‘_blank’, ‘width=300,height=300,top=300,left=500,toolbar=1,menubar=1,location=1,status=1,scrollbars=1,resizable=1′))”
-                // window.location.href ='javascript: void (window.open(‘http://desktop-jbaab7c/Reports/Pages/Report.aspx?ItemPath=%2fKarticaSredstva;, ‘_blank’, ‘width=300,height=300,top=300,left=500,toolbar=1,menubar=1,location=1,status=1,scrollbars=1,resizable=1′))'
+                    //       =”javascript: void(window.open(‘http://myserver/mypath/myasppage.html&#8217;, ‘_blank’, ‘width=300,height=300,top=300,left=500,toolbar=1,menubar=1,location=1,status=1,scrollbars=1,resizable=1′))”
+                    // window.location.href ='javascript: void (window.open(‘http://desktop-jbaab7c/Reports/Pages/Report.aspx?ItemPath=%2fKarticaSredstva;, ‘_blank’, ‘width=300,height=300,top=300,left=500,toolbar=1,menubar=1,location=1,status=1,scrollbars=1,resizable=1′))'
+                }
+
+                //}
+
+
             }
-
-     //}
-                
-                 
-
             
         }
 
@@ -311,6 +311,8 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
 
             return filters;
         }
+
+ 
 
         //public set_shippingState(value: number): void {
         //    this.shippingStateFilter.value = value == null ? '' : value.toString();

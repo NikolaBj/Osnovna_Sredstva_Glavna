@@ -1,22 +1,29 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
-    export class AktivacijaSredstvaForm extends Serenity.PrefixedContext {
-        static formKey = 'OsnovnaSredstva.AktivacijaSredstva';
-    }
-
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface AktivacijaSredstvaForm {
-        OsnovnoId: Serenity.IntegerEditor;
+        OsnovnoId: Serenity.LookupEditor;
         DatumAktivacije: Serenity.DateEditor;
     }
 
-    [,
-        ['OsnovnoId', () => Serenity.IntegerEditor],
-        ['DatumAktivacije', () => Serenity.DateEditor]
-    ].forEach(x => Object.defineProperty(AktivacijaSredstvaForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class AktivacijaSredstvaForm extends Serenity.PrefixedContext {
+        static formKey = 'OsnovnaSredstva.AktivacijaSredstva';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!AktivacijaSredstvaForm.init)  {
+                AktivacijaSredstvaForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.LookupEditor;
+                var w1 = s.DateEditor;
+
+                Q.initFormType(AktivacijaSredstvaForm, [
+                    'OsnovnoId', w0,
+                    'DatumAktivacije', w1
+                ]);
+            }
+        }
+    }
 }
+

@@ -1,21 +1,34 @@
 ﻿
 namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
 {
-    using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
-    using System.IO;
+
+
 
     [ConnectionKey("Osnovna_Sredstva"), Module("OsnovnaSredstva"), TableName("[dbo].[Osnovno_Sredstvo]")]
     [DisplayName("Osnovno Sredstvo"), InstanceName("Osnovno Sredstvo")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+     
+
+
+
+
+
+
     public sealed class OsnovnoSredstvoRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Osnovno Id"), Identity]
+
+
+       
+
+
+    [DisplayName("Osnovno Id"), Identity]
         public Int32? OsnovnoId
         {
             get { return Fields.OsnovnoId[this]; }
@@ -58,9 +71,6 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
         }
 
 
-        
-
-
         [DisplayName("Nabavna Vrijednost"), Column("Nabavna_vrijednost"), Size(11), Scale(2), NotNull, DisplayFormat("#,##0.00"), AlignRight]
         public Decimal? NabavnaVrijednost
         {
@@ -84,10 +94,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
             set { Fields.KnjigovodstvenaVrijednost[this] = value; }
         }
 
-        public Decimal? Izracun()
-        {
-            return NabavnaVrijednost - AmortiziranaVrijednost;
-        }
+        
         [DisplayName("Uvecanje Vrijednosti"), Column("Uvecanje_vrijednosti"), Size(11), Scale(2), DisplayFormat("#,##0.00"), AlignRight]
         public Decimal? UvecanjeVrijednosti
         {
@@ -531,8 +538,8 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
 
         public static readonly RowFields Fields = new RowFields().Init();
 
-        
-        public OsnovnoSredstvoRow()
+   
+    public OsnovnoSredstvoRow()
             : base(Fields)
         {
         }

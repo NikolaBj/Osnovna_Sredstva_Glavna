@@ -1,34 +1,44 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
-    export class KontaUraForm extends Serenity.PrefixedContext {
-        static formKey = 'OsnovnaSredstva.KontaUra';
-    }
-
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface KontaUraForm {
-        UraId: Serenity.IntegerEditor;
-        KontoId: Serenity.IntegerEditor;
+        UraId: Serenity.LookupEditor;
+        KontoId: Serenity.LookupEditor;
         IznosDuguje: Serenity.DecimalEditor;
         IznosPotrazuje: Serenity.DecimalEditor;
-        MjestoTroskaId: Serenity.IntegerEditor;
+        MjestoTroskaId: Serenity.LookupEditor;
         Opis: Serenity.StringEditor;
         Active: Serenity.BooleanEditor;
         DateTimeCreated: Serenity.DateEditor;
     }
 
-    [,
-        ['UraId', () => Serenity.IntegerEditor],
-        ['KontoId', () => Serenity.IntegerEditor],
-        ['IznosDuguje', () => Serenity.DecimalEditor],
-        ['IznosPotrazuje', () => Serenity.DecimalEditor],
-        ['MjestoTroskaId', () => Serenity.IntegerEditor],
-        ['Opis', () => Serenity.StringEditor],
-        ['Active', () => Serenity.BooleanEditor],
-        ['DateTimeCreated', () => Serenity.DateEditor]
-    ].forEach(x => Object.defineProperty(KontaUraForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class KontaUraForm extends Serenity.PrefixedContext {
+        static formKey = 'OsnovnaSredstva.KontaUra';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!KontaUraForm.init)  {
+                KontaUraForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.LookupEditor;
+                var w1 = s.DecimalEditor;
+                var w2 = s.StringEditor;
+                var w3 = s.BooleanEditor;
+                var w4 = s.DateEditor;
+
+                Q.initFormType(KontaUraForm, [
+                    'UraId', w0,
+                    'KontoId', w0,
+                    'IznosDuguje', w1,
+                    'IznosPotrazuje', w1,
+                    'MjestoTroskaId', w0,
+                    'Opis', w2,
+                    'Active', w3,
+                    'DateTimeCreated', w4
+                ]);
+            }
+        }
+    }
 }
+

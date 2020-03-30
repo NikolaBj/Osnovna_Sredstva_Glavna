@@ -13,6 +13,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
     [DisplayName("Obracun Stavke"), InstanceName("Obracun Stavke")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    //[LookupScript(typeof(Osnovna_Sredstva.Default.Lookups.OsnovnoLookup2))]
     public sealed class ObracunStavkeRow : Row, IIdRow, INameRow
     {
         [DisplayName("Obracun Stavke Id"), Column("ObracunStavkeID"), Identity]
@@ -36,7 +37,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
             set { Fields.PartnerId[this] = value; }
         }
 
-        [DisplayName("Osnovno"), NotNull, ForeignKey("[dbo].[Osnovno_Sredstvo]", "OsnovnoId"), LeftJoin("jOsnovno"), TextualField("OsnovnoNazivOpreme")]
+        [DisplayName("Osnovno"), NotNull, ForeignKey("[dbo].[Osnovno_Sredstvo]", "OsnovnoId"), LeftJoin("jOsnovno"), LookupEditor(typeof(Osnovna_Sredstva.Default.Lookups.OsnovnoLookup2), AutoComplete = true)]
         public Int32? OsnovnoId
         {
             get { return Fields.OsnovnoId[this]; }
@@ -64,11 +65,11 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
             set { Fields.StopaAmort[this] = value; }
         }
 
-        [DisplayName("Iznos Osnovice"), Column("Iznos_Osnovice"), Size(11), Scale(2), NotNull]
+        [DisplayName("Iznos Osnovice"), Column("Iznos_Osnovice"), Size(11), Scale(2), NotNull, TextualField("IznosOsnovice")]
         public Decimal? IznosOsnovice
         {
-            get { return Fields.IznosOsnovice[this]; }
-            set { Fields.IznosOsnovice[this] = value; }
+            get { return Fields.IznosOsnovice[this] ; }
+            set { Fields.IznosOsnovice[this] = value  ; }
         }
 
         [DisplayName("Iznos Amortizacije"), Column("Iznos_Amortizacije"), Size(11), Scale(2), NotNull]

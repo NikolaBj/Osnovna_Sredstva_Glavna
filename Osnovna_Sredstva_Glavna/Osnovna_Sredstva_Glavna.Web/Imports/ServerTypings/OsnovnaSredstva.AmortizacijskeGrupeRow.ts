@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface AmortizacijskeGrupeRow {
         AmGrupaId?: number;
         Naziv?: string;
@@ -30,46 +29,26 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const AmGrupaId;
-            export declare const Naziv;
-            export declare const Naziv2;
-            export declare const AmVijekTrajanja;
-            export declare const GodisnjaAmortizacija;
-            export declare const DvostrukaGodisnjaAm;
-            export declare const KontoIvId;
-            export declare const KontoTrId;
-            export declare const Active;
-            export declare const DateTimeCreated;
-            export declare const KontoIvNaziv;
-            export declare const KontoIvActive;
-            export declare const KontoIvDateTimeCreated;
-            export declare const KontoIvKonto;
-            export declare const KontoTrNaziv;
-            export declare const KontoTrActive;
-            export declare const KontoTrDateTimeCreated;
-            export declare const KontoTrKonto;
+        export declare const enum Fields {
+            AmGrupaId = "AmGrupaId",
+            Naziv = "Naziv",
+            Naziv2 = "Naziv2",
+            AmVijekTrajanja = "AmVijekTrajanja",
+            GodisnjaAmortizacija = "GodisnjaAmortizacija",
+            DvostrukaGodisnjaAm = "DvostrukaGodisnjaAm",
+            KontoIvId = "KontoIvId",
+            KontoTrId = "KontoTrId",
+            Active = "Active",
+            DateTimeCreated = "DateTimeCreated",
+            KontoIvNaziv = "KontoIvNaziv",
+            KontoIvActive = "KontoIvActive",
+            KontoIvDateTimeCreated = "KontoIvDateTimeCreated",
+            KontoIvKonto = "KontoIvKonto",
+            KontoTrNaziv = "KontoTrNaziv",
+            KontoTrActive = "KontoTrActive",
+            KontoTrDateTimeCreated = "KontoTrDateTimeCreated",
+            KontoTrKonto = "KontoTrKonto"
         }
-
-        [
-            'AmGrupaId',
-            'Naziv',
-            'Naziv2',
-            'AmVijekTrajanja',
-            'GodisnjaAmortizacija',
-            'DvostrukaGodisnjaAm',
-            'KontoIvId',
-            'KontoTrId',
-            'Active',
-            'DateTimeCreated',
-            'KontoIvNaziv',
-            'KontoIvActive',
-            'KontoIvDateTimeCreated',
-            'KontoIvKonto',
-            'KontoTrNaziv',
-            'KontoTrActive',
-            'KontoTrDateTimeCreated',
-            'KontoTrKonto'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

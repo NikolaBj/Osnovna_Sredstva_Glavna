@@ -16,7 +16,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Columns
         [ DisplayName("Db.Shared.RecordId"), AlignRight]
          
         public Int32 OsnovnoId { get; set; }
-        [QuickFilter]
+        [EditLink,QuickFilter]
         public String NazivOpreme { get; set; }
         [QuickFilter]
         public String PartnerNaziv { get; set; }

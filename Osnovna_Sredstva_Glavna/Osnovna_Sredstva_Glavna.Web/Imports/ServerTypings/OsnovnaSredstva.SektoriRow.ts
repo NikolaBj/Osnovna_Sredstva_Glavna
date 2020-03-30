@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface SektoriRow {
         SektorId?: number;
         Naziv?: string;
@@ -17,20 +16,13 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const SektorId;
-            export declare const Naziv;
-            export declare const Šifra;
-            export declare const Active;
-            export declare const DateTimeCreated;
+        export declare const enum Fields {
+            SektorId = "SektorId",
+            Naziv = "Naziv",
+            Šifra = "Šifra",
+            Active = "Active",
+            DateTimeCreated = "DateTimeCreated"
         }
-
-        [
-            'SektorId',
-            'Naziv',
-            'Šifra',
-            'Active',
-            'DateTimeCreated'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

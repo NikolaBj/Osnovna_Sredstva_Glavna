@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface ObracunRow {
         ObracunId?: number;
         PartnerId?: number;
@@ -71,128 +70,67 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const ObracunId;
-            export declare const PartnerId;
-            export declare const OsnovnoId;
-            export declare const SektorId;
-            export declare const AmGrupaId;
-            export declare const DatumObracuna;
-            export declare const RazdobljeOd;
-            export declare const RazdobljeDo;
-            export declare const Napomena;
-            export declare const Otpisano;
-            export declare const Active;
-            export declare const Zavrsen;
-            export declare const DateTimeCreated;
-            export declare const PartnerNaziv;
-            export declare const PartnerAdresa;
-            export declare const PartnerPtt;
-            export declare const PartnerMjesto;
-            export declare const PartnerGrad;
-            export declare const PartnerActive;
-            export declare const PartnerDateTimeCreated;
-            export declare const PartnerDrzava;
-            export declare const OsnovnoNazivOpreme;
-            export declare const OsnovnoPartnerId;
-            export declare const OsnovnoUraId;
-            export declare const OsnovnoSerijskiBroj;
-            export declare const OsnovnoInventarskiBroj;
-            export declare const OsnovnoNabavnaVrijednost;
-            export declare const OsnovnoAmortiziranaVrijednost;
-            export declare const OsnovnoKnjigovodstvenaVrijednost;
-            export declare const OsnovnoUvecanjeVrijednosti;
-            export declare const OsnovnoUmanjenjeVrijednosti;
-            export declare const OsnovnoSektorId;
-            export declare const OsnovnoActive;
-            export declare const OsnovnoDatumNabave;
-            export declare const OsnovnoDatumAmortizacije;
-            export declare const OsnovnoDatumOtpisa;
-            export declare const OsnovnoDatumPripreme;
-            export declare const OsnovnoOtpisano;
-            export declare const OsnovnoKoličina;
-            export declare const OsnovnoAmGrupaId;
-            export declare const OsnovnoDateTimeCreated;
-            export declare const OsnovnoKontoId;
-            export declare const OsnovnoKontoIvId;
-            export declare const OsnovnoNapomena;
-            export declare const OsnovnoJedinicaMjere;
-            export declare const OsnovnoStopaAmSredstva;
-            export declare const SektorNaziv;
-            export declare const SektorŠifra;
-            export declare const SektorActive;
-            export declare const SektorDateTimeCreated;
-            export declare const AmGrupaNaziv;
-            export declare const AmGrupaNaziv2;
-            export declare const AmGrupaAmVijekTrajanja;
-            export declare const AmGrupaGodisnjaAmortizacija;
-            export declare const AmGrupaDvostrukaGodisnjaAm;
-            export declare const AmGrupaKontoIvId;
-            export declare const AmGrupaKontoTrId;
-            export declare const AmGrupaActive;
-            export declare const AmGrupaDateTimeCreated;
+        export declare const enum Fields {
+            ObracunId = "ObracunId",
+            PartnerId = "PartnerId",
+            OsnovnoId = "OsnovnoId",
+            SektorId = "SektorId",
+            AmGrupaId = "AmGrupaId",
+            DatumObracuna = "DatumObracuna",
+            RazdobljeOd = "RazdobljeOd",
+            RazdobljeDo = "RazdobljeDo",
+            Napomena = "Napomena",
+            Otpisano = "Otpisano",
+            Active = "Active",
+            Zavrsen = "Zavrsen",
+            DateTimeCreated = "DateTimeCreated",
+            PartnerNaziv = "PartnerNaziv",
+            PartnerAdresa = "PartnerAdresa",
+            PartnerPtt = "PartnerPtt",
+            PartnerMjesto = "PartnerMjesto",
+            PartnerGrad = "PartnerGrad",
+            PartnerActive = "PartnerActive",
+            PartnerDateTimeCreated = "PartnerDateTimeCreated",
+            PartnerDrzava = "PartnerDrzava",
+            OsnovnoNazivOpreme = "OsnovnoNazivOpreme",
+            OsnovnoPartnerId = "OsnovnoPartnerId",
+            OsnovnoUraId = "OsnovnoUraId",
+            OsnovnoSerijskiBroj = "OsnovnoSerijskiBroj",
+            OsnovnoInventarskiBroj = "OsnovnoInventarskiBroj",
+            OsnovnoNabavnaVrijednost = "OsnovnoNabavnaVrijednost",
+            OsnovnoAmortiziranaVrijednost = "OsnovnoAmortiziranaVrijednost",
+            OsnovnoKnjigovodstvenaVrijednost = "OsnovnoKnjigovodstvenaVrijednost",
+            OsnovnoUvecanjeVrijednosti = "OsnovnoUvecanjeVrijednosti",
+            OsnovnoUmanjenjeVrijednosti = "OsnovnoUmanjenjeVrijednosti",
+            OsnovnoSektorId = "OsnovnoSektorId",
+            OsnovnoActive = "OsnovnoActive",
+            OsnovnoDatumNabave = "OsnovnoDatumNabave",
+            OsnovnoDatumAmortizacije = "OsnovnoDatumAmortizacije",
+            OsnovnoDatumOtpisa = "OsnovnoDatumOtpisa",
+            OsnovnoDatumPripreme = "OsnovnoDatumPripreme",
+            OsnovnoOtpisano = "OsnovnoOtpisano",
+            OsnovnoKoličina = "OsnovnoKoličina",
+            OsnovnoAmGrupaId = "OsnovnoAmGrupaId",
+            OsnovnoDateTimeCreated = "OsnovnoDateTimeCreated",
+            OsnovnoKontoId = "OsnovnoKontoId",
+            OsnovnoKontoIvId = "OsnovnoKontoIvId",
+            OsnovnoNapomena = "OsnovnoNapomena",
+            OsnovnoJedinicaMjere = "OsnovnoJedinicaMjere",
+            OsnovnoStopaAmSredstva = "OsnovnoStopaAmSredstva",
+            SektorNaziv = "SektorNaziv",
+            SektorŠifra = "SektorŠifra",
+            SektorActive = "SektorActive",
+            SektorDateTimeCreated = "SektorDateTimeCreated",
+            AmGrupaNaziv = "AmGrupaNaziv",
+            AmGrupaNaziv2 = "AmGrupaNaziv2",
+            AmGrupaAmVijekTrajanja = "AmGrupaAmVijekTrajanja",
+            AmGrupaGodisnjaAmortizacija = "AmGrupaGodisnjaAmortizacija",
+            AmGrupaDvostrukaGodisnjaAm = "AmGrupaDvostrukaGodisnjaAm",
+            AmGrupaKontoIvId = "AmGrupaKontoIvId",
+            AmGrupaKontoTrId = "AmGrupaKontoTrId",
+            AmGrupaActive = "AmGrupaActive",
+            AmGrupaDateTimeCreated = "AmGrupaDateTimeCreated"
         }
-
-        [
-            'ObracunId',
-            'PartnerId',
-            'OsnovnoId',
-            'SektorId',
-            'AmGrupaId',
-            'DatumObracuna',
-            'RazdobljeOd',
-            'RazdobljeDo',
-            'Napomena',
-            'Otpisano',
-            'Active',
-            'Zavrsen',
-            'DateTimeCreated',
-            'PartnerNaziv',
-            'PartnerAdresa',
-            'PartnerPtt',
-            'PartnerMjesto',
-            'PartnerGrad',
-            'PartnerActive',
-            'PartnerDateTimeCreated',
-            'PartnerDrzava',
-            'OsnovnoNazivOpreme',
-            'OsnovnoPartnerId',
-            'OsnovnoUraId',
-            'OsnovnoSerijskiBroj',
-            'OsnovnoInventarskiBroj',
-            'OsnovnoNabavnaVrijednost',
-            'OsnovnoAmortiziranaVrijednost',
-            'OsnovnoKnjigovodstvenaVrijednost',
-            'OsnovnoUvecanjeVrijednosti',
-            'OsnovnoUmanjenjeVrijednosti',
-            'OsnovnoSektorId',
-            'OsnovnoActive',
-            'OsnovnoDatumNabave',
-            'OsnovnoDatumAmortizacije',
-            'OsnovnoDatumOtpisa',
-            'OsnovnoDatumPripreme',
-            'OsnovnoOtpisano',
-            'OsnovnoKoličina',
-            'OsnovnoAmGrupaId',
-            'OsnovnoDateTimeCreated',
-            'OsnovnoKontoId',
-            'OsnovnoKontoIvId',
-            'OsnovnoNapomena',
-            'OsnovnoJedinicaMjere',
-            'OsnovnoStopaAmSredstva',
-            'SektorNaziv',
-            'SektorŠifra',
-            'SektorActive',
-            'SektorDateTimeCreated',
-            'AmGrupaNaziv',
-            'AmGrupaNaziv2',
-            'AmGrupaAmVijekTrajanja',
-            'AmGrupaGodisnjaAmortizacija',
-            'AmGrupaDvostrukaGodisnjaAm',
-            'AmGrupaKontoIvId',
-            'AmGrupaKontoTrId',
-            'AmGrupaActive',
-            'AmGrupaDateTimeCreated'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

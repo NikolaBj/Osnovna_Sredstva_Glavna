@@ -117,11 +117,6 @@ namespace MVC
                     public const string Index = "~/Modules/BasicSamples/Dialogs/GetInsertedRecordId/Index.cshtml";
                 }
 
-                public static class MultiColumnResponsiveDialog
-                {
-                    public const string Index = "~/Modules/BasicSamples/Dialogs/MultiColumnResponsiveDialog/Index.cshtml";
-                }
-
                 public static class OtherFormInTab
                 {
                     public const string Index = "~/Modules/BasicSamples/Dialogs/OtherFormInTab/Index.cshtml";
@@ -140,11 +135,6 @@ namespace MVC
                 public static class ReadOnlyDialog
                 {
                     public const string Index = "~/Modules/BasicSamples/Dialogs/ReadOnlyDialog/Index.cshtml";
-                }
-
-                public static class ResponsiveDialog
-                {
-                    public const string Index = "~/Modules/BasicSamples/Dialogs/ResponsiveDialog/Index.cshtml";
                 }
 
                 public static class SerialAutoNumber
@@ -297,6 +287,11 @@ namespace MVC
             public const string ValidationError = "~/Views/Errors/ValidationError.cshtml";
         }
 
+        public static class Kartica
+        {
+            public const string Index = "~/Views/Kartica/Index.cshtml";
+        }
+
         public static class Membership
         {
             public static class Account
@@ -331,17 +326,6 @@ namespace MVC
 
         }
 
-        
-        public static class OsnovnaSredstva
-        {
-            public static class UlazniRacun
-            {
-                public const string UlazniRacunReport = "~/Modules/OsnovnaSredstva/UlazniRacun/UlazniRacunReport.cshtml";
-                 
-            }
-        }
-        
-        
         public static class Northwind
         {
             public static class Category
@@ -389,6 +373,76 @@ namespace MVC
             {
                 public const string TerritoryIndex = "~/Modules/Northwind/Territory/TerritoryIndex.cshtml";
             }
+
+        }
+
+        public static class OsnovnaSredstva
+        {
+            public static class AktivacijaSredstva
+            {
+                public const string AktivacijaSredstvaIndex = "~/Modules/OsnovnaSredstva/AktivacijaSredstva/AktivacijaSredstvaIndex.cshtml";
+            }
+
+            public static class AmortizacijskeGrupe
+            {
+                public const string AmortizacijskeGrupeIndex = "~/Modules/OsnovnaSredstva/AmortizacijskeGrupe/AmortizacijskeGrupeIndex.cshtml";
+            }
+
+            public static class Konta
+            {
+                public const string KontaIndex = "~/Modules/OsnovnaSredstva/Konta/KontaIndex.cshtml";
+            }
+
+            public static class KontaUra
+            {
+                public const string KontaUraIndex = "~/Modules/OsnovnaSredstva/KontaUra/KontaUraIndex.cshtml";
+            }
+
+            public static class MjestoTroska
+            {
+                public const string MjestoTroskaIndex = "~/Modules/OsnovnaSredstva/MjestoTroska/MjestoTroskaIndex.cshtml";
+            }
+
+            public static class Obracun
+            {
+                public const string ObracunIndex = "~/Modules/OsnovnaSredstva/Obracun/ObracunIndex.cshtml";
+            }
+
+            public static class ObracunStavke
+            {
+                public const string ObracunStavkeIndex = "~/Modules/OsnovnaSredstva/ObracunStavke/ObracunStavkeIndex.cshtml";
+            }
+
+            public static class OsnovnoSredstvo
+            {
+                public const string OsnovnoSredstvoIndex = "~/Modules/OsnovnaSredstva/OsnovnoSredstvo/OsnovnoSredstvoIndex.cshtml";
+            }
+
+            public static class Partneri
+            {
+                public const string PartneriIndex = "~/Modules/OsnovnaSredstva/Partneri/PartneriIndex.cshtml";
+            }
+
+            public static class Sektori
+            {
+                public const string SektoriIndex = "~/Modules/OsnovnaSredstva/Sektori/SektoriIndex.cshtml";
+            }
+
+            public static class TemeljnicaStavke
+            {
+                public const string TemeljnicaStavkeIndex = "~/Modules/OsnovnaSredstva/TemeljnicaStavke/TemeljnicaStavkeIndex.cshtml";
+            }
+
+            public static class UlazniRacun
+            {
+                public const string UlazniRacunIndex = "~/Modules/OsnovnaSredstva/UlazniRacun/UlazniRacunIndex.cshtml";
+                public const string UlazniRacunReport = "~/Modules/OsnovnaSredstva/UlazniRacun/UlazniRacunReport.cshtml";
+            }
+
+            public static class Views
+            {
+                public const string _Layout = "~/Modules/OsnovnaSredstva/Views/_Layout.cshtml";
+            }
         }
 
         public static class Shared
@@ -400,6 +454,7 @@ namespace MVC
             public const string _LayoutSlimHead = "~/Views/Shared/_LayoutSlimHead.cshtml";
             public const string Error = "~/Views/Shared/Error.cshtml";
             public const string LeftNavigation = "~/Views/Shared/LeftNavigation.cshtml";
+            public const string Page = "~/Views/Shared/Page.cshtml";
         }
     }
 }

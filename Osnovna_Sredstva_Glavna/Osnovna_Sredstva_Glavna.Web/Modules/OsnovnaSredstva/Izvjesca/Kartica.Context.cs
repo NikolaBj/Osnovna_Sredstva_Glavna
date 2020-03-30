@@ -14,8 +14,7 @@ namespace Osnovna_Sredstva_Glavna.Modules.OsnovnaSredstva.Izvjesca
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    using Serenity.Data;
-
+    
     public partial class Osnovna_Sredstva_GlavnaEntities : DbContext
     {
         public Osnovna_Sredstva_GlavnaEntities()
@@ -37,10 +36,14 @@ namespace Osnovna_Sredstva_Glavna.Modules.OsnovnaSredstva.Izvjesca
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_KarticaSredstvaPojedinacno_Result>("sp_KarticaSredstvaPojedinacno", osnovnoIdParameter);
         }
-
-        internal object sp_KarticaSredstvaPojedinacno(Int32Field osnovnoId)
+    
+        public virtual int sp_ObracunAmortizacije(Nullable<int> obracunID)
         {
-            throw new NotImplementedException();
+            var obracunIDParameter = obracunID.HasValue ?
+                new ObjectParameter("ObracunID", obracunID) :
+                new ObjectParameter("ObracunID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ObracunAmortizacije", obracunIDParameter);
         }
     }
 }

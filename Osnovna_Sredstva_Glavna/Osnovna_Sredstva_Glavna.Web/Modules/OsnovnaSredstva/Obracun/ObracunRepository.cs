@@ -7,6 +7,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Repositories
     using System;
     using System.Data;
     using MyRow = Entities.ObracunRow;
+     
 
     public class ObracunRepository
     {
@@ -46,5 +47,8 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Repositories
         {
             return GetNextNumberHelper.GetNextNumber(connection, request, fld.Napomena);
         }
+
+
+         
     }
 }

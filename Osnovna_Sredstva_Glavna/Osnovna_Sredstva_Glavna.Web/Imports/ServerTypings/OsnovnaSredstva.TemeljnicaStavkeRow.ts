@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface TemeljnicaStavkeRow {
         TemeljnicaId?: number;
         ObracunId?: number;
@@ -30,46 +29,26 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const TemeljnicaId;
-            export declare const ObracunId;
-            export declare const DateTimeCreated;
-            export declare const Kontoid;
-            export declare const Duguje;
-            export declare const Potrazuje;
-            export declare const ObracunPartnerId;
-            export declare const ObracunOsnovnoId;
-            export declare const ObracunSektorId;
-            export declare const ObracunAmGrupaId;
-            export declare const ObracunDatumObracuna;
-            export declare const ObracunRazdobljeOd;
-            export declare const ObracunRazdobljeDo;
-            export declare const ObracunNapomena;
-            export declare const ObracunOtpisano;
-            export declare const ObracunActive;
-            export declare const ObracunZavrsen;
-            export declare const ObracunDateTimeCreated;
+        export declare const enum Fields {
+            TemeljnicaId = "TemeljnicaId",
+            ObracunId = "ObracunId",
+            DateTimeCreated = "DateTimeCreated",
+            Kontoid = "Kontoid",
+            Duguje = "Duguje",
+            Potrazuje = "Potrazuje",
+            ObracunPartnerId = "ObracunPartnerId",
+            ObracunOsnovnoId = "ObracunOsnovnoId",
+            ObracunSektorId = "ObracunSektorId",
+            ObracunAmGrupaId = "ObracunAmGrupaId",
+            ObracunDatumObracuna = "ObracunDatumObracuna",
+            ObracunRazdobljeOd = "ObracunRazdobljeOd",
+            ObracunRazdobljeDo = "ObracunRazdobljeDo",
+            ObracunNapomena = "ObracunNapomena",
+            ObracunOtpisano = "ObracunOtpisano",
+            ObracunActive = "ObracunActive",
+            ObracunZavrsen = "ObracunZavrsen",
+            ObracunDateTimeCreated = "ObracunDateTimeCreated"
         }
-
-        [
-            'TemeljnicaId',
-            'ObracunId',
-            'DateTimeCreated',
-            'Kontoid',
-            'Duguje',
-            'Potrazuje',
-            'ObracunPartnerId',
-            'ObracunOsnovnoId',
-            'ObracunSektorId',
-            'ObracunAmGrupaId',
-            'ObracunDatumObracuna',
-            'ObracunRazdobljeOd',
-            'ObracunRazdobljeDo',
-            'ObracunNapomena',
-            'ObracunOtpisano',
-            'ObracunActive',
-            'ObracunZavrsen',
-            'ObracunDateTimeCreated'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

@@ -1,5 +1,4 @@
-﻿
-namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface AktivacijaSredstvaRow {
         Int?: number;
         OsnovnoId?: number;
@@ -39,66 +38,36 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Int;
-            export declare const OsnovnoId;
-            export declare const DatumAktivacije;
-            export declare const OsnovnoNazivOpreme;
-            export declare const OsnovnoPartnerId;
-            export declare const OsnovnoUraId;
-            export declare const OsnovnoSerijskiBroj;
-            export declare const OsnovnoInventarskiBroj;
-            export declare const OsnovnoNabavnaVrijednost;
-            export declare const OsnovnoAmortiziranaVrijednost;
-            export declare const OsnovnoKnjigovodstvenaVrijednost;
-            export declare const OsnovnoUvecanjeVrijednosti;
-            export declare const OsnovnoUmanjenjeVrijednosti;
-            export declare const OsnovnoSektorId;
-            export declare const OsnovnoActive;
-            export declare const OsnovnoDatumNabave;
-            export declare const OsnovnoDatumAmortizacije;
-            export declare const OsnovnoDatumOtpisa;
-            export declare const OsnovnoDatumPripreme;
-            export declare const OsnovnoOtpisano;
-            export declare const OsnovnoKoličina;
-            export declare const OsnovnoAmGrupaId;
-            export declare const OsnovnoDateTimeCreated;
-            export declare const OsnovnoKontoId;
-            export declare const OsnovnoKontoIvId;
-            export declare const OsnovnoNapomena;
-            export declare const OsnovnoJedinicaMjere;
-            export declare const OsnovnoStopaAmSredstva;
+        export declare const enum Fields {
+            Int = "Int",
+            OsnovnoId = "OsnovnoId",
+            DatumAktivacije = "DatumAktivacije",
+            OsnovnoNazivOpreme = "OsnovnoNazivOpreme",
+            OsnovnoPartnerId = "OsnovnoPartnerId",
+            OsnovnoUraId = "OsnovnoUraId",
+            OsnovnoSerijskiBroj = "OsnovnoSerijskiBroj",
+            OsnovnoInventarskiBroj = "OsnovnoInventarskiBroj",
+            OsnovnoNabavnaVrijednost = "OsnovnoNabavnaVrijednost",
+            OsnovnoAmortiziranaVrijednost = "OsnovnoAmortiziranaVrijednost",
+            OsnovnoKnjigovodstvenaVrijednost = "OsnovnoKnjigovodstvenaVrijednost",
+            OsnovnoUvecanjeVrijednosti = "OsnovnoUvecanjeVrijednosti",
+            OsnovnoUmanjenjeVrijednosti = "OsnovnoUmanjenjeVrijednosti",
+            OsnovnoSektorId = "OsnovnoSektorId",
+            OsnovnoActive = "OsnovnoActive",
+            OsnovnoDatumNabave = "OsnovnoDatumNabave",
+            OsnovnoDatumAmortizacije = "OsnovnoDatumAmortizacije",
+            OsnovnoDatumOtpisa = "OsnovnoDatumOtpisa",
+            OsnovnoDatumPripreme = "OsnovnoDatumPripreme",
+            OsnovnoOtpisano = "OsnovnoOtpisano",
+            OsnovnoKoličina = "OsnovnoKoličina",
+            OsnovnoAmGrupaId = "OsnovnoAmGrupaId",
+            OsnovnoDateTimeCreated = "OsnovnoDateTimeCreated",
+            OsnovnoKontoId = "OsnovnoKontoId",
+            OsnovnoKontoIvId = "OsnovnoKontoIvId",
+            OsnovnoNapomena = "OsnovnoNapomena",
+            OsnovnoJedinicaMjere = "OsnovnoJedinicaMjere",
+            OsnovnoStopaAmSredstva = "OsnovnoStopaAmSredstva"
         }
-
-        [
-            'Int',
-            'OsnovnoId',
-            'DatumAktivacije',
-            'OsnovnoNazivOpreme',
-            'OsnovnoPartnerId',
-            'OsnovnoUraId',
-            'OsnovnoSerijskiBroj',
-            'OsnovnoInventarskiBroj',
-            'OsnovnoNabavnaVrijednost',
-            'OsnovnoAmortiziranaVrijednost',
-            'OsnovnoKnjigovodstvenaVrijednost',
-            'OsnovnoUvecanjeVrijednosti',
-            'OsnovnoUmanjenjeVrijednosti',
-            'OsnovnoSektorId',
-            'OsnovnoActive',
-            'OsnovnoDatumNabave',
-            'OsnovnoDatumAmortizacije',
-            'OsnovnoDatumOtpisa',
-            'OsnovnoDatumPripreme',
-            'OsnovnoOtpisano',
-            'OsnovnoKoličina',
-            'OsnovnoAmGrupaId',
-            'OsnovnoDateTimeCreated',
-            'OsnovnoKontoId',
-            'OsnovnoKontoIvId',
-            'OsnovnoNapomena',
-            'OsnovnoJedinicaMjere',
-            'OsnovnoStopaAmSredstva'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+
