@@ -22,6 +22,7 @@
         DatumAmortizacije: Serenity.DateEditor;
         DatumOtpisa: Serenity.DateEditor;
         DatumPripreme: Serenity.DateEditor;
+        DatumServisa: Serenity.DateEditor;
         DateTimeCreated: Serenity.DateEditor;
         SektorId: Serenity.LookupEditor;
         Napomena: Serenity.TextAreaEditor;
@@ -68,6 +69,7 @@
                     'DatumAmortizacije', w4,
                     'DatumOtpisa', w4,
                     'DatumPripreme', w4,
+                    'DatumServisa', w4,
                     'DateTimeCreated', w4,
                     'SektorId', w2,
                     'Napomena', w5

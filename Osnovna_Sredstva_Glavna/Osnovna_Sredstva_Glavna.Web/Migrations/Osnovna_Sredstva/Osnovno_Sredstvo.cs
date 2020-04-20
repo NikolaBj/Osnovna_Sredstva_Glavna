@@ -53,6 +53,9 @@ namespace Osnovna_Sredstva_Glavna.Migrations.Osnovna_Sredstva
         [Column(TypeName = "datetime2")]
         public DateTime? Datum_pripreme { get; set; }
 
+        [Column(TypeName = "datetime2")]
+        public DateTime? DatumServisa { get; set; }
+
         public bool? Otpisano { get; set; }
 
         public decimal Količina { get; set; }

@@ -42,5 +42,10 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Endpoints
         {
             return new MyRepository().List(connection, request);
         }
+
+        public GetNextNumberResponse GetNextNumber(IDbConnection connection, GetNextNumberRequest request)
+        {
+            return new MyRepository().GetNextNumber(connection, request);
+        }
     }
 }

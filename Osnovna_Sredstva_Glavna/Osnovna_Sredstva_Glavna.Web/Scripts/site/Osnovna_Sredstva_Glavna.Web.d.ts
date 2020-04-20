@@ -678,6 +678,217 @@ declare namespace Osnovna_Sredstva_Glavna.Common {
         Value?: string;
     }
 }
+declare namespace Osnovna_Sredstva_Glavna.Default {
+}
+declare namespace Osnovna_Sredstva_Glavna.Default {
+    interface OsnovnoSredstvoForm {
+        NazivOpreme: Serenity.StringEditor;
+        PartnerId: Serenity.IntegerEditor;
+        UraId: Serenity.IntegerEditor;
+        SerijskiBroj: Serenity.StringEditor;
+        InventarskiBroj: Serenity.StringEditor;
+        NabavnaVrijednost: Serenity.DecimalEditor;
+        AmortiziranaVrijednost: Serenity.DecimalEditor;
+        KnjigovodstvenaVrijednost: Serenity.DecimalEditor;
+        UvecanjeVrijednosti: Serenity.DecimalEditor;
+        UmanjenjeVrijednosti: Serenity.DecimalEditor;
+        SektorId: Serenity.IntegerEditor;
+        Active: Serenity.BooleanEditor;
+        DatumNabave: Serenity.DateEditor;
+        DatumAmortizacije: Serenity.DateEditor;
+        DatumOtpisa: Serenity.DateEditor;
+        DatumPripreme: Serenity.DateEditor;
+        Otpisano: Serenity.BooleanEditor;
+        Količina: Serenity.DecimalEditor;
+        AmGrupaId: Serenity.IntegerEditor;
+        DateTimeCreated: Serenity.DateEditor;
+        KontoId: Serenity.IntegerEditor;
+        KontoIvId: Serenity.IntegerEditor;
+        Napomena: Serenity.StringEditor;
+        JedinicaMjere: Serenity.StringEditor;
+        StopaAmSredstva: Serenity.DecimalEditor;
+        DatumServisa: Serenity.DateEditor;
+    }
+    class OsnovnoSredstvoForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.Default {
+    interface OsnovnoSredstvoRow {
+        OsnovnoId?: number;
+        NazivOpreme?: string;
+        PartnerId?: number;
+        UraId?: number;
+        SerijskiBroj?: string;
+        InventarskiBroj?: string;
+        NabavnaVrijednost?: number;
+        AmortiziranaVrijednost?: number;
+        KnjigovodstvenaVrijednost?: number;
+        UvecanjeVrijednosti?: number;
+        UmanjenjeVrijednosti?: number;
+        SektorId?: number;
+        Active?: boolean;
+        DatumNabave?: string;
+        DatumAmortizacije?: string;
+        DatumOtpisa?: string;
+        DatumPripreme?: string;
+        Otpisano?: boolean;
+        Količina?: number;
+        AmGrupaId?: number;
+        DateTimeCreated?: string;
+        KontoId?: number;
+        KontoIvId?: number;
+        Napomena?: string;
+        JedinicaMjere?: string;
+        StopaAmSredstva?: number;
+        DatumServisa?: string;
+        PartnerNaziv?: string;
+        PartnerAdresa?: string;
+        PartnerPtt?: number;
+        PartnerMjesto?: string;
+        PartnerGrad?: string;
+        PartnerActive?: boolean;
+        PartnerDateTimeCreated?: string;
+        PartnerDrzava?: string;
+        UraPArtnerId?: number;
+        UraUraBroj?: string;
+        UraBrojRacuna?: string;
+        UraDatumRacuna?: string;
+        UraDatumKnjizenja?: string;
+        UraDatumDospijeca?: string;
+        UraDatumIsporuke?: string;
+        UraPoslovnaGodina?: number;
+        UraMjestoTroskaId?: number;
+        UraIznosOsnovice?: number;
+        UraIznosPoreza?: number;
+        UraUkupanIznos?: number;
+        UraOpis?: string;
+        UraActive?: boolean;
+        UraDateTimeCreated?: string;
+        SektorNaziv?: string;
+        SektorŠifra?: string;
+        SektorActive?: boolean;
+        SektorDateTimeCreated?: string;
+        AmGrupaNaziv?: string;
+        AmGrupaNaziv2?: string;
+        AmGrupaAmVijekTrajanja?: number;
+        AmGrupaGodisnjaAmortizacija?: number;
+        AmGrupaDvostrukaGodisnjaAm?: number;
+        AmGrupaKontoIvId?: number;
+        AmGrupaKontoTrId?: number;
+        AmGrupaActive?: boolean;
+        AmGrupaDateTimeCreated?: string;
+        KontoNaziv?: string;
+        KontoActive?: boolean;
+        KontoDateTimeCreated?: string;
+        Konto?: string;
+        KontoIvNaziv?: string;
+        KontoIvActive?: boolean;
+        KontoIvDateTimeCreated?: string;
+        KontoIvKonto?: string;
+    }
+    namespace OsnovnoSredstvoRow {
+        const idProperty = "OsnovnoId";
+        const nameProperty = "NazivOpreme";
+        const localTextPrefix = "Default.OsnovnoSredstvo";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            OsnovnoId = "OsnovnoId",
+            NazivOpreme = "NazivOpreme",
+            PartnerId = "PartnerId",
+            UraId = "UraId",
+            SerijskiBroj = "SerijskiBroj",
+            InventarskiBroj = "InventarskiBroj",
+            NabavnaVrijednost = "NabavnaVrijednost",
+            AmortiziranaVrijednost = "AmortiziranaVrijednost",
+            KnjigovodstvenaVrijednost = "KnjigovodstvenaVrijednost",
+            UvecanjeVrijednosti = "UvecanjeVrijednosti",
+            UmanjenjeVrijednosti = "UmanjenjeVrijednosti",
+            SektorId = "SektorId",
+            Active = "Active",
+            DatumNabave = "DatumNabave",
+            DatumAmortizacije = "DatumAmortizacije",
+            DatumOtpisa = "DatumOtpisa",
+            DatumPripreme = "DatumPripreme",
+            Otpisano = "Otpisano",
+            Količina = "Koli\u010Dina",
+            AmGrupaId = "AmGrupaId",
+            DateTimeCreated = "DateTimeCreated",
+            KontoId = "KontoId",
+            KontoIvId = "KontoIvId",
+            Napomena = "Napomena",
+            JedinicaMjere = "JedinicaMjere",
+            StopaAmSredstva = "StopaAmSredstva",
+            DatumServisa = "DatumServisa",
+            PartnerNaziv = "PartnerNaziv",
+            PartnerAdresa = "PartnerAdresa",
+            PartnerPtt = "PartnerPtt",
+            PartnerMjesto = "PartnerMjesto",
+            PartnerGrad = "PartnerGrad",
+            PartnerActive = "PartnerActive",
+            PartnerDateTimeCreated = "PartnerDateTimeCreated",
+            PartnerDrzava = "PartnerDrzava",
+            UraPArtnerId = "UraPArtnerId",
+            UraUraBroj = "UraUraBroj",
+            UraBrojRacuna = "UraBrojRacuna",
+            UraDatumRacuna = "UraDatumRacuna",
+            UraDatumKnjizenja = "UraDatumKnjizenja",
+            UraDatumDospijeca = "UraDatumDospijeca",
+            UraDatumIsporuke = "UraDatumIsporuke",
+            UraPoslovnaGodina = "UraPoslovnaGodina",
+            UraMjestoTroskaId = "UraMjestoTroskaId",
+            UraIznosOsnovice = "UraIznosOsnovice",
+            UraIznosPoreza = "UraIznosPoreza",
+            UraUkupanIznos = "UraUkupanIznos",
+            UraOpis = "UraOpis",
+            UraActive = "UraActive",
+            UraDateTimeCreated = "UraDateTimeCreated",
+            SektorNaziv = "SektorNaziv",
+            SektorŠifra = "Sektor\u0160ifra",
+            SektorActive = "SektorActive",
+            SektorDateTimeCreated = "SektorDateTimeCreated",
+            AmGrupaNaziv = "AmGrupaNaziv",
+            AmGrupaNaziv2 = "AmGrupaNaziv2",
+            AmGrupaAmVijekTrajanja = "AmGrupaAmVijekTrajanja",
+            AmGrupaGodisnjaAmortizacija = "AmGrupaGodisnjaAmortizacija",
+            AmGrupaDvostrukaGodisnjaAm = "AmGrupaDvostrukaGodisnjaAm",
+            AmGrupaKontoIvId = "AmGrupaKontoIvId",
+            AmGrupaKontoTrId = "AmGrupaKontoTrId",
+            AmGrupaActive = "AmGrupaActive",
+            AmGrupaDateTimeCreated = "AmGrupaDateTimeCreated",
+            KontoNaziv = "KontoNaziv",
+            KontoActive = "KontoActive",
+            KontoDateTimeCreated = "KontoDateTimeCreated",
+            Konto = "Konto",
+            KontoIvNaziv = "KontoIvNaziv",
+            KontoIvActive = "KontoIvActive",
+            KontoIvDateTimeCreated = "KontoIvDateTimeCreated",
+            KontoIvKonto = "KontoIvKonto"
+        }
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.Default {
+    namespace OsnovnoSredstvoService {
+        const baseUrl = "Default/OsnovnoSredstvo";
+        function Create(request: Serenity.SaveRequest<OsnovnoSredstvoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OsnovnoSredstvoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OsnovnoSredstvoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OsnovnoSredstvoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Default/OsnovnoSredstvo/Create",
+            Update = "Default/OsnovnoSredstvo/Update",
+            Delete = "Default/OsnovnoSredstvo/Delete",
+            Retrieve = "Default/OsnovnoSredstvo/Retrieve",
+            List = "Default/OsnovnoSredstvo/List"
+        }
+    }
+}
 declare namespace Osnovna_Sredstva_Glavna {
     interface ExcelImportRequest extends Serenity.ServiceRequest {
         FileName?: string;
@@ -812,6 +1023,18 @@ declare namespace Osnovna_Sredstva_Glavna.Modules.OsnovnaSredstva.Obracun {
     interface PokreniObracunRequest extends Serenity.ServiceRequest {
         ObracunID?: number;
         IdObracun?: number;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.Modules.OsnovnaSredstva.OsnovnoSredstvo {
+    interface PokreniAktivacijuAction extends Serenity.ServiceResponse {
+        OsnovnoId?: number;
+        osnovnoId?: number;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.Modules.OsnovnaSredstva.OsnovnoSredstvo {
+    interface PokreniAktivacijuRequest extends Serenity.ServiceRequest {
+        OsnovnoId?: number;
+        osnovnoId?: number;
     }
 }
 declare namespace Osnovna_Sredstva_Glavna.Northwind {
@@ -2039,7 +2262,7 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
 }
 declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     interface AktivacijaSredstvaForm {
-        OsnovnoId: Serenity.LookupEditor;
+        OsnovnoId: Serenity.IntegerEditor;
         DatumAktivacije: Serenity.DateEditor;
     }
     class AktivacijaSredstvaForm extends Serenity.PrefixedContext {
@@ -2126,12 +2349,14 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AktivacijaSredstvaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AktivacijaSredstvaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function GetNextNumber(request: GetNextNumberRequest, onSuccess?: (response: GetNextNumberResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "OsnovnaSredstva/AktivacijaSredstva/Create",
             Update = "OsnovnaSredstva/AktivacijaSredstva/Update",
             Delete = "OsnovnaSredstva/AktivacijaSredstva/Delete",
             Retrieve = "OsnovnaSredstva/AktivacijaSredstva/Retrieve",
-            List = "OsnovnaSredstva/AktivacijaSredstva/List"
+            List = "OsnovnaSredstva/AktivacijaSredstva/List",
+            GetNextNumber = "OsnovnaSredstva/AktivacijaSredstva/GetNextNumber"
         }
     }
 }
@@ -2220,6 +2445,138 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
             Delete = "OsnovnaSredstva/AmortizacijskeGrupe/Delete",
             Retrieve = "OsnovnaSredstva/AmortizacijskeGrupe/Retrieve",
             List = "OsnovnaSredstva/AmortizacijskeGrupe/List"
+        }
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    interface DokumentacijaForm {
+        Naziv: Serenity.StringEditor;
+        Active: Serenity.BooleanEditor;
+        FileContent: Serenity.ImageUploadEditor;
+        DateTimeCreated: Serenity.DateEditor;
+        OsnovnoId: Serenity.IntegerEditor;
+    }
+    class DokumentacijaForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    interface DokumentacijaRow {
+        DokumentId?: number;
+        Naziv?: string;
+        Active?: boolean;
+        FileContent?: string;
+        DateTimeCreated?: string;
+        OsnovnoId?: number;
+        ServisId?: number;
+        OsnovnoNazivOpreme?: string;
+        OsnovnoPartnerId?: number;
+        OsnovnoUraId?: number;
+        OsnovnoSerijskiBroj?: string;
+        OsnovnoInventarskiBroj?: string;
+        OsnovnoNabavnaVrijednost?: number;
+        OsnovnoAmortiziranaVrijednost?: number;
+        OsnovnoKnjigovodstvenaVrijednost?: number;
+        OsnovnoUvecanjeVrijednosti?: number;
+        OsnovnoUmanjenjeVrijednosti?: number;
+        OsnovnoSektorId?: number;
+        OsnovnoActive?: boolean;
+        OsnovnoDatumNabave?: string;
+        OsnovnoDatumAmortizacije?: string;
+        OsnovnoDatumOtpisa?: string;
+        OsnovnoDatumPripreme?: string;
+        OsnovnoOtpisano?: boolean;
+        OsnovnoKoličina?: number;
+        OsnovnoAmGrupaId?: number;
+        OsnovnoDateTimeCreated?: string;
+        OsnovnoKontoId?: number;
+        OsnovnoKontoIvId?: number;
+        OsnovnoNapomena?: string;
+        OsnovnoJedinicaMjere?: string;
+        OsnovnoStopaAmSredstva?: number;
+        OsnovnoDatumServisa?: string;
+        ServisPartnerId?: number;
+        ServisOsnovnoId?: number;
+        ServisDatumServisa?: string;
+        ServisDatumEndServisa?: string;
+        ServisNapomena?: string;
+        ServisActive?: boolean;
+        ServisDateTimeCreated?: string;
+        ServisIznosServisa?: number;
+        ServisVrstaTroskaId?: number;
+    }
+    namespace DokumentacijaRow {
+        const idProperty = "DokumentId";
+        const nameProperty = "Naziv";
+        const localTextPrefix = "OsnovnaSredstva.Dokumentacija";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            DokumentId = "DokumentId",
+            Naziv = "Naziv",
+            Active = "Active",
+            FileContent = "FileContent",
+            DateTimeCreated = "DateTimeCreated",
+            OsnovnoId = "OsnovnoId",
+            ServisId = "ServisId",
+            OsnovnoNazivOpreme = "OsnovnoNazivOpreme",
+            OsnovnoPartnerId = "OsnovnoPartnerId",
+            OsnovnoUraId = "OsnovnoUraId",
+            OsnovnoSerijskiBroj = "OsnovnoSerijskiBroj",
+            OsnovnoInventarskiBroj = "OsnovnoInventarskiBroj",
+            OsnovnoNabavnaVrijednost = "OsnovnoNabavnaVrijednost",
+            OsnovnoAmortiziranaVrijednost = "OsnovnoAmortiziranaVrijednost",
+            OsnovnoKnjigovodstvenaVrijednost = "OsnovnoKnjigovodstvenaVrijednost",
+            OsnovnoUvecanjeVrijednosti = "OsnovnoUvecanjeVrijednosti",
+            OsnovnoUmanjenjeVrijednosti = "OsnovnoUmanjenjeVrijednosti",
+            OsnovnoSektorId = "OsnovnoSektorId",
+            OsnovnoActive = "OsnovnoActive",
+            OsnovnoDatumNabave = "OsnovnoDatumNabave",
+            OsnovnoDatumAmortizacije = "OsnovnoDatumAmortizacije",
+            OsnovnoDatumOtpisa = "OsnovnoDatumOtpisa",
+            OsnovnoDatumPripreme = "OsnovnoDatumPripreme",
+            OsnovnoOtpisano = "OsnovnoOtpisano",
+            OsnovnoKoličina = "OsnovnoKoli\u010Dina",
+            OsnovnoAmGrupaId = "OsnovnoAmGrupaId",
+            OsnovnoDateTimeCreated = "OsnovnoDateTimeCreated",
+            OsnovnoKontoId = "OsnovnoKontoId",
+            OsnovnoKontoIvId = "OsnovnoKontoIvId",
+            OsnovnoNapomena = "OsnovnoNapomena",
+            OsnovnoJedinicaMjere = "OsnovnoJedinicaMjere",
+            OsnovnoStopaAmSredstva = "OsnovnoStopaAmSredstva",
+            OsnovnoDatumServisa = "OsnovnoDatumServisa",
+            ServisPartnerId = "ServisPartnerId",
+            ServisOsnovnoId = "ServisOsnovnoId",
+            ServisDatumServisa = "ServisDatumServisa",
+            ServisDatumEndServisa = "ServisDatumEndServisa",
+            ServisNapomena = "ServisNapomena",
+            ServisActive = "ServisActive",
+            ServisDateTimeCreated = "ServisDateTimeCreated",
+            ServisIznosServisa = "ServisIznosServisa",
+            ServisVrstaTroskaId = "ServisVrstaTroskaId"
+        }
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    namespace DokumentacijaService {
+        const baseUrl = "OsnovnaSredstva/Dokumentacija";
+        function Create(request: Serenity.SaveRequest<DokumentacijaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DokumentacijaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DokumentacijaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DokumentacijaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "OsnovnaSredstva/Dokumentacija/Create",
+            Update = "OsnovnaSredstva/Dokumentacija/Update",
+            Delete = "OsnovnaSredstva/Dokumentacija/Delete",
+            Retrieve = "OsnovnaSredstva/Dokumentacija/Retrieve",
+            List = "OsnovnaSredstva/Dokumentacija/List"
         }
     }
 }
@@ -2857,6 +3214,7 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         DatumAmortizacije: Serenity.DateEditor;
         DatumOtpisa: Serenity.DateEditor;
         DatumPripreme: Serenity.DateEditor;
+        DatumServisa: Serenity.DateEditor;
         DateTimeCreated: Serenity.DateEditor;
         SektorId: Serenity.LookupEditor;
         Napomena: Serenity.TextAreaEditor;
@@ -2886,6 +3244,7 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         DatumAmortizacije?: string;
         DatumOtpisa?: string;
         DatumPripreme?: string;
+        DatumServisa?: string;
         Otpisano?: boolean;
         Količina?: number;
         AmGrupaId?: number;
@@ -2966,6 +3325,7 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
             DatumAmortizacije = "DatumAmortizacije",
             DatumOtpisa = "DatumOtpisa",
             DatumPripreme = "DatumPripreme",
+            DatumServisa = "DatumServisa",
             Otpisano = "Otpisano",
             Količina = "Koli\u010Dina",
             AmGrupaId = "AmGrupaId",
@@ -3023,6 +3383,16 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     }
 }
 declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    interface OsnovnoSredstvoSecondForm {
+        DatumServisa: Serenity.DateEditor;
+    }
+    class OsnovnoSredstvoSecondForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     namespace OsnovnoSredstvoService {
         const baseUrl = "OsnovnaSredstva/OsnovnoSredstvo";
         function Create(request: Serenity.SaveRequest<OsnovnoSredstvoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -3031,13 +3401,15 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OsnovnoSredstvoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OsnovnoSredstvoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function PokreniAktivaciju(request: Modules.OsnovnaSredstva.OsnovnoSredstvo.PokreniAktivacijuRequest, onSuccess?: (response: Serenity.ServiceResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "OsnovnaSredstva/OsnovnoSredstvo/Create",
             Update = "OsnovnaSredstva/OsnovnoSredstvo/Update",
             GetNextNumber = "OsnovnaSredstva/OsnovnoSredstvo/GetNextNumber",
             Delete = "OsnovnaSredstva/OsnovnoSredstvo/Delete",
             Retrieve = "OsnovnaSredstva/OsnovnoSredstvo/Retrieve",
-            List = "OsnovnaSredstva/OsnovnoSredstvo/List"
+            List = "OsnovnaSredstva/OsnovnoSredstvo/List",
+            PokreniAktivaciju = "OsnovnaSredstva/OsnovnoSredstvo/PokreniAktivaciju"
         }
     }
 }
@@ -3164,6 +3536,160 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
             Delete = "OsnovnaSredstva/Sektori/Delete",
             Retrieve = "OsnovnaSredstva/Sektori/Retrieve",
             List = "OsnovnaSredstva/Sektori/List"
+        }
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    interface ServisForm {
+        PartnerId: Serenity.LookupEditor;
+        OsnovnoId: Serenity.LookupEditor;
+        DatumServisa: Serenity.DateEditor;
+        DatumEndServisa: Serenity.DateEditor;
+        Napomena: Serenity.StringEditor;
+        Active: Serenity.BooleanEditor;
+        DateTimeCreated: Serenity.DateEditor;
+        IznosServisa: Serenity.DecimalEditor;
+        VrstaTroskaId: Serenity.LookupEditor;
+        DetailList: DokumentacijaEditor;
+    }
+    class ServisForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    interface ServisListRequest extends Serenity.ListRequest {
+        DokumentId?: number;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    interface ServisRow {
+        ServisId?: number;
+        PartnerId?: number;
+        OsnovnoId?: number;
+        DatumServisa?: string;
+        DatumEndServisa?: string;
+        Napomena?: string;
+        Active?: boolean;
+        DateTimeCreated?: string;
+        IznosServisa?: number;
+        VrstaTroskaId?: number;
+        PartnerNaziv?: string;
+        PartnerAdresa?: string;
+        PartnerPtt?: number;
+        PartnerMjesto?: string;
+        PartnerGrad?: string;
+        PartnerActive?: boolean;
+        PartnerDateTimeCreated?: string;
+        PartnerDrzava?: string;
+        OsnovnoNazivOpreme?: string;
+        OsnovnoPartnerId?: number;
+        OsnovnoUraId?: number;
+        OsnovnoSerijskiBroj?: string;
+        OsnovnoInventarskiBroj?: string;
+        OsnovnoNabavnaVrijednost?: number;
+        OsnovnoAmortiziranaVrijednost?: number;
+        OsnovnoKnjigovodstvenaVrijednost?: number;
+        OsnovnoUvecanjeVrijednosti?: number;
+        OsnovnoUmanjenjeVrijednosti?: number;
+        OsnovnoSektorId?: number;
+        OsnovnoActive?: boolean;
+        OsnovnoDatumNabave?: string;
+        OsnovnoDatumAmortizacije?: string;
+        OsnovnoDatumOtpisa?: string;
+        OsnovnoDatumPripreme?: string;
+        OsnovnoOtpisano?: boolean;
+        OsnovnoKoličina?: number;
+        OsnovnoAmGrupaId?: number;
+        OsnovnoDateTimeCreated?: string;
+        OsnovnoKontoId?: number;
+        OsnovnoKontoIvId?: number;
+        OsnovnoNapomena?: string;
+        OsnovnoJedinicaMjere?: string;
+        OsnovnoStopaAmSredstva?: number;
+        OsnovnoDatumServisa?: string;
+        VrstaTroskaNaziv?: string;
+        VrstaTroskaDateTimeCreated?: string;
+        VrstaTroskaActive?: boolean;
+        DetailList?: DokumentacijaRow[];
+    }
+    namespace ServisRow {
+        const idProperty = "ServisId";
+        const nameProperty = "Napomena";
+        const localTextPrefix = "OsnovnaSredstva.Servis";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            ServisId = "ServisId",
+            PartnerId = "PartnerId",
+            OsnovnoId = "OsnovnoId",
+            DatumServisa = "DatumServisa",
+            DatumEndServisa = "DatumEndServisa",
+            Napomena = "Napomena",
+            Active = "Active",
+            DateTimeCreated = "DateTimeCreated",
+            IznosServisa = "IznosServisa",
+            VrstaTroskaId = "VrstaTroskaId",
+            PartnerNaziv = "PartnerNaziv",
+            PartnerAdresa = "PartnerAdresa",
+            PartnerPtt = "PartnerPtt",
+            PartnerMjesto = "PartnerMjesto",
+            PartnerGrad = "PartnerGrad",
+            PartnerActive = "PartnerActive",
+            PartnerDateTimeCreated = "PartnerDateTimeCreated",
+            PartnerDrzava = "PartnerDrzava",
+            OsnovnoNazivOpreme = "OsnovnoNazivOpreme",
+            OsnovnoPartnerId = "OsnovnoPartnerId",
+            OsnovnoUraId = "OsnovnoUraId",
+            OsnovnoSerijskiBroj = "OsnovnoSerijskiBroj",
+            OsnovnoInventarskiBroj = "OsnovnoInventarskiBroj",
+            OsnovnoNabavnaVrijednost = "OsnovnoNabavnaVrijednost",
+            OsnovnoAmortiziranaVrijednost = "OsnovnoAmortiziranaVrijednost",
+            OsnovnoKnjigovodstvenaVrijednost = "OsnovnoKnjigovodstvenaVrijednost",
+            OsnovnoUvecanjeVrijednosti = "OsnovnoUvecanjeVrijednosti",
+            OsnovnoUmanjenjeVrijednosti = "OsnovnoUmanjenjeVrijednosti",
+            OsnovnoSektorId = "OsnovnoSektorId",
+            OsnovnoActive = "OsnovnoActive",
+            OsnovnoDatumNabave = "OsnovnoDatumNabave",
+            OsnovnoDatumAmortizacije = "OsnovnoDatumAmortizacije",
+            OsnovnoDatumOtpisa = "OsnovnoDatumOtpisa",
+            OsnovnoDatumPripreme = "OsnovnoDatumPripreme",
+            OsnovnoOtpisano = "OsnovnoOtpisano",
+            OsnovnoKoličina = "OsnovnoKoli\u010Dina",
+            OsnovnoAmGrupaId = "OsnovnoAmGrupaId",
+            OsnovnoDateTimeCreated = "OsnovnoDateTimeCreated",
+            OsnovnoKontoId = "OsnovnoKontoId",
+            OsnovnoKontoIvId = "OsnovnoKontoIvId",
+            OsnovnoNapomena = "OsnovnoNapomena",
+            OsnovnoJedinicaMjere = "OsnovnoJedinicaMjere",
+            OsnovnoStopaAmSredstva = "OsnovnoStopaAmSredstva",
+            OsnovnoDatumServisa = "OsnovnoDatumServisa",
+            VrstaTroskaNaziv = "VrstaTroskaNaziv",
+            VrstaTroskaDateTimeCreated = "VrstaTroskaDateTimeCreated",
+            VrstaTroskaActive = "VrstaTroskaActive",
+            DetailList = "DetailList"
+        }
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    namespace ServisService {
+        const baseUrl = "OsnovnaSredstva/Servis";
+        function Create(request: Serenity.SaveRequest<ServisRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ServisRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ServisRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: ServisListRequest, onSuccess?: (response: Serenity.ListResponse<ServisRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "OsnovnaSredstva/Servis/Create",
+            Update = "OsnovnaSredstva/Servis/Update",
+            Delete = "OsnovnaSredstva/Servis/Delete",
+            Retrieve = "OsnovnaSredstva/Servis/Retrieve",
+            List = "OsnovnaSredstva/Servis/List"
         }
     }
 }
@@ -3364,6 +3890,62 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
             Delete = "OsnovnaSredstva/UlazniRacun/Delete",
             Retrieve = "OsnovnaSredstva/UlazniRacun/Retrieve",
             List = "OsnovnaSredstva/UlazniRacun/List"
+        }
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    interface VrstaTroskaForm {
+        Naziv: Serenity.StringEditor;
+        DateTimeCreated: Serenity.DateEditor;
+        Active: Serenity.BooleanEditor;
+    }
+    class VrstaTroskaForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    interface VrstaTroskaRow {
+        VrstaTroskaId?: number;
+        Naziv?: string;
+        DateTimeCreated?: string;
+        Active?: boolean;
+    }
+    namespace VrstaTroskaRow {
+        const idProperty = "VrstaTroskaId";
+        const nameProperty = "Naziv";
+        const localTextPrefix = "OsnovnaSredstva.VrstaTroska";
+        const lookupKey = "OsnovnaSredstva.VrstaTroska";
+        function getLookup(): Q.Lookup<VrstaTroskaRow>;
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            VrstaTroskaId = "VrstaTroskaId",
+            Naziv = "Naziv",
+            DateTimeCreated = "DateTimeCreated",
+            Active = "Active"
+        }
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    namespace VrstaTroskaService {
+        const baseUrl = "OsnovnaSredstva/VrstaTroska";
+        function Create(request: Serenity.SaveRequest<VrstaTroskaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<VrstaTroskaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<VrstaTroskaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<VrstaTroskaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "OsnovnaSredstva/VrstaTroska/Create",
+            Update = "OsnovnaSredstva/VrstaTroska/Update",
+            Delete = "OsnovnaSredstva/VrstaTroska/Delete",
+            Retrieve = "OsnovnaSredstva/VrstaTroska/Retrieve",
+            List = "OsnovnaSredstva/VrstaTroska/List"
         }
     }
 }
@@ -3878,9 +4460,15 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: OsnovnoSredstvoForm;
-        private obracunGrid;
+        private servisGrid;
         private loadedState;
+        protected getToolbarButtons(): Serenity.ToolButton[];
+        private confirmBeforeSave;
         constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
+        loadEntity(entity: OsnovnoSredstvoRow): void;
+        onSaveSuccess(response: any): void;
         protected afterLoadEntity(): void;
         private getNextNumber;
     }
@@ -4630,6 +5218,30 @@ declare namespace Osnovna_Sredstva_Glavna.Common {
         setItem(key: string, data: string): void;
     }
 }
+declare namespace Osnovna_Sredstva_Glavna.Default {
+    class OsnovnoSredstvoDialog extends Serenity.EntityDialog<OsnovnoSredstvoRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: OsnovnoSredstvoForm;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.Default {
+    class OsnovnoSredstvoGrid extends Serenity.EntityGrid<OsnovnoSredstvoRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OsnovnoSredstvoDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
 declare namespace Osnovna_Sredstva_Glavna.Membership {
     class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
         protected getFormKey(): string;
@@ -4839,6 +5451,7 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: AktivacijaSredstvaForm;
+        protected afterLoadEntity(): void;
     }
 }
 declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
@@ -4850,6 +5463,8 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
@@ -4869,6 +5484,38 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     class AmortizacijskeGrupeGrid extends Serenity.EntityGrid<AmortizacijskeGrupeRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof AmortizacijskeGrupeDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class DokumentacijaDialog extends Common.GridEditorDialog<DokumentacijaRow> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: DokumentacijaForm;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class DokumentacijaEditor extends Common.GridEditorBase<DokumentacijaRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DokumentacijaDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class DokumentacijaGrid extends Serenity.EntityGrid<DokumentacijaRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DokumentacijaDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;
@@ -5005,6 +5652,49 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     }
 }
 declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class ServisDialog extends Serenity.EntityDialog<ServisRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ServisForm;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class OsnovnoServisDialog extends ServisDialog {
+        constructor();
+        updateInterface(): void;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class ServisGrid extends Serenity.EntityGrid<ServisRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ServisDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class OsnovnoServisGrid extends ServisGrid {
+        protected getDialogType(): typeof OsnovnoServisDialog;
+        constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected initEntityDialog(itemType: any, dialog: any): void;
+        protected addButtonClick(): void;
+        protected getInitialTitle(): any;
+        protected getGridCanLoad(): boolean;
+        private _osnovnoId;
+        osnovnoId: string;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     class OsnovnoSredstvoGrid extends Serenity.EntityGrid<OsnovnoSredstvoRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof OsnovnoSredstvoDialog;
@@ -5017,6 +5707,19 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         protected getColumns(): Slick.Column[];
         protected onClick(e: JQueryEventObject, row: number, cell: number): void;
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class OsnovnoSredstvoSecondDialog extends Serenity.EntityDialog<OsnovnoSredstvoRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: OsnovnoSredstvoSecondForm;
     }
 }
 declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
@@ -5111,6 +5814,30 @@ declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     class UlazniRacunGrid extends Serenity.EntityGrid<UlazniRacunRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof UlazniRacunDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class VrstaTroskaDialog extends Serenity.EntityDialog<VrstaTroskaRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: VrstaTroskaForm;
+    }
+}
+declare namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
+    class VrstaTroskaGrid extends Serenity.EntityGrid<VrstaTroskaRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof VrstaTroskaDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;

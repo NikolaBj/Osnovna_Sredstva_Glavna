@@ -1,0 +1,26 @@
+﻿
+namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Forms
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using System;
+    using System.ComponentModel;
+    using System.Collections.Generic;
+    using System.IO;
+
+    [FormScript("OsnovnaSredstva.Servis")]
+    [BasedOnRow(typeof(Entities.ServisRow), CheckNames = true)]
+    public class ServisForm
+    {
+        public Int32 PartnerId { get; set; }
+        public Int32 OsnovnoId { get; set; }
+        public DateTime DatumServisa { get; set; }
+        public DateTime DatumEndServisa { get; set; }
+        public String Napomena { get; set; }
+        public Boolean Active { get; set; }
+        public DateTime DateTimeCreated { get; set; }
+        public Decimal IznosServisa { get; set; }
+        public Int32 VrstaTroskaId { get; set; }
+    }
+}

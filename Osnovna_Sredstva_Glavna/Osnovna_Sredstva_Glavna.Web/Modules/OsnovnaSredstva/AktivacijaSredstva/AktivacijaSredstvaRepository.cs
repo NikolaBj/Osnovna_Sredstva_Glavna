@@ -32,6 +32,11 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Repositories
             return new MyRetrieveHandler().Process(connection, request);
         }
 
+        public GetNextNumberResponse GetNextNumber(IDbConnection connection, GetNextNumberRequest request)
+        {
+            return GetNextNumberHelper.GetNextNumber(connection, request, fld.OsnovnoId);
+        }
+
         public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
         {
             return new MyListHandler().Process(connection, request);

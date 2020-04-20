@@ -17,6 +17,7 @@
         DatumAmortizacije?: string;
         DatumOtpisa?: string;
         DatumPripreme?: string;
+        DatumServisa?: string;
         Otpisano?: boolean;
         Količina?: number;
         AmGrupaId?: number;
@@ -99,6 +100,7 @@
             DatumAmortizacije = "DatumAmortizacije",
             DatumOtpisa = "DatumOtpisa",
             DatumPripreme = "DatumPripreme",
+            DatumServisa = "DatumServisa",
             Otpisano = "Otpisano",
             Količina = "Količina",
             AmGrupaId = "AmGrupaId",

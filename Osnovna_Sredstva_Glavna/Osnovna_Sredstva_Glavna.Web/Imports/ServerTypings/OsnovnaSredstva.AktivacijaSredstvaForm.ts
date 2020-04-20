@@ -1,6 +1,6 @@
 ﻿namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
     export interface AktivacijaSredstvaForm {
-        OsnovnoId: Serenity.LookupEditor;
+        OsnovnoId: Serenity.IntegerEditor;
         DatumAktivacije: Serenity.DateEditor;
     }
 
@@ -15,7 +15,7 @@
                 AktivacijaSredstvaForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.LookupEditor;
+                var w0 = s.IntegerEditor;
                 var w1 = s.DateEditor;
 
                 Q.initFormType(AktivacijaSredstvaForm, [

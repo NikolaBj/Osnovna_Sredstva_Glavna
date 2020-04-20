@@ -46,6 +46,8 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Columns
         public DateTime DatumOtpisa { get; set; }
         [Hidden]
         public DateTime DatumPripreme { get; set; }
+
+        public DateTime DatumServisa { get; set; }
         [Hidden]
         public Boolean Otpisano { get; set; }
        

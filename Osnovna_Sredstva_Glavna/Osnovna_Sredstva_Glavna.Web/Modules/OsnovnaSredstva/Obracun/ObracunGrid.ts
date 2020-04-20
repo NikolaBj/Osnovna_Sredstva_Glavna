@@ -219,6 +219,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
 
                     var servicecall = ObracunService.PokreniObracun(
                         {
+                            IdObracun: item.ObracunId,
                             ObracunID: item.ObracunId
                         },
                         response => {

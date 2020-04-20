@@ -64,10 +64,17 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Forms
 
         
         [Category("Datumi")]
+        [HalfWidth]
         public DateTime DatumNabave { get; set; }
+        [HalfWidth]
         public DateTime DatumAmortizacije { get; set; }
+        [HalfWidth]
         public DateTime DatumOtpisa { get; set; }
+        [HalfWidth]
         public DateTime DatumPripreme { get; set; }
+        [HalfWidth]
+        public DateTime DatumServisa { get; set; }
+        [HalfWidth]
         [DefaultValue("now")]
         public DateTime DateTimeCreated { get; set; }
 

@@ -279,6 +279,15 @@ namespace MVC
             {
                 public const string ReportPage = "~/Modules/Common/Reporting/ReportPage.cshtml";
             }
+
+        }
+
+        public static class Default
+        {
+            public static class OsnovnoSredstvo
+            {
+                public const string OsnovnoSredstvoIndex = "~/Modules/Default/OsnovnoSredstvo/OsnovnoSredstvoIndex.cshtml";
+            }
         }
 
         public static class Errors
@@ -388,6 +397,11 @@ namespace MVC
                 public const string AmortizacijskeGrupeIndex = "~/Modules/OsnovnaSredstva/AmortizacijskeGrupe/AmortizacijskeGrupeIndex.cshtml";
             }
 
+            public static class Dokumentacija
+            {
+                public const string DokumentacijaIndex = "~/Modules/OsnovnaSredstva/Dokumentacija/DokumentacijaIndex.cshtml";
+            }
+
             public static class Konta
             {
                 public const string KontaIndex = "~/Modules/OsnovnaSredstva/Konta/KontaIndex.cshtml";
@@ -428,6 +442,11 @@ namespace MVC
                 public const string SektoriIndex = "~/Modules/OsnovnaSredstva/Sektori/SektoriIndex.cshtml";
             }
 
+            public static class Servis
+            {
+                public const string ServisIndex = "~/Modules/OsnovnaSredstva/Servis/ServisIndex.cshtml";
+            }
+
             public static class TemeljnicaStavke
             {
                 public const string TemeljnicaStavkeIndex = "~/Modules/OsnovnaSredstva/TemeljnicaStavke/TemeljnicaStavkeIndex.cshtml";
@@ -442,6 +461,11 @@ namespace MVC
             public static class Views
             {
                 public const string _Layout = "~/Modules/OsnovnaSredstva/Views/_Layout.cshtml";
+            }
+
+            public static class VrstaTroska
+            {
+                public const string VrstaTroskaIndex = "~/Modules/OsnovnaSredstva/VrstaTroska/VrstaTroskaIndex.cshtml";
             }
         }
 

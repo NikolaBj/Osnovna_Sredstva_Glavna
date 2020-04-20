@@ -2,6 +2,7 @@
 namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
 
     @Serenity.Decorators.registerClass()
+    @Serenity.Decorators.panel()
     export class SektoriDialog extends Serenity.EntityDialog<SektoriRow, any> {
         protected getFormKey() { return SektoriForm.formKey; }
         protected getIdProperty() { return SektoriRow.idProperty; }
@@ -13,6 +14,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         protected getUpdatePermission() { return SektoriRow.updatePermission; }
 
         protected form = new SektoriForm(this.idPrefix);
+
 
     }
 }

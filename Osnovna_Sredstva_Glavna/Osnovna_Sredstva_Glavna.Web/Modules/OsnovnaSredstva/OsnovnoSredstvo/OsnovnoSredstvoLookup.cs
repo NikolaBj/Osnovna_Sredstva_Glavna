@@ -77,6 +77,31 @@ namespace Osnovna_Sredstva.Default.Lookups
         }
     }
 
+
+    [LookupScript("OsnovnaSredstva.VrstaTroska")]
+    public sealed class VrstaTroska : RowLookupScript<VrstaTroskaRow>
+    {
+        public VrstaTroska()
+        {
+            IdField = VrstaTroskaRow.Fields.VrstaTroskaId.PropertyName;
+            TextField = VrstaTroskaRow.Fields.Naziv.PropertyName;
+        }
+
+
+
+
+        protected override void PrepareQuery(SqlQuery query)
+        {
+
+            base.PrepareQuery(query);
+            var fldComputer = VrstaTroskaRow.Fields;
+
+            query.Select(fldComputer.VrstaTroskaId, fldComputer.Naziv);
+
+        }
+    
+}
+
     //[LookupScript("OsnovnaSredstva.OsnovnoLookup2")]
     //public sealed class OsnovnoLookup2 : RowLookupScript<OsnovnoSredstvoRow>
     //{

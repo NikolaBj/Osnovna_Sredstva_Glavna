@@ -22,7 +22,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
             set { Fields.Int[this] = value; }
         }
 
-        [DisplayName("Osnovno"), ForeignKey("[dbo].[Osnovno_Sredstvo]", "OsnovnoId"), LeftJoin("jOsnovno"), TextualField("OsnovnoNazivOpreme"), LookupEditor(typeof(Osnovna_Sredstva.Default.Lookups.OsnovnoLookup), AutoComplete = true)]
+        [DisplayName("Osnovno"), ForeignKey("[dbo].[Osnovno_Sredstvo]", "OsnovnoId"), LeftJoin("jOsnovno"), TextualField("OsnovnoNazivOpreme")] //LookupEditor(typeof(Osnovna_Sredstva.Default.Lookups.OsnovnoLookup), AutoComplete = true)
         public Int32? OsnovnoId
         {
             get { return Fields.OsnovnoId[this]; }

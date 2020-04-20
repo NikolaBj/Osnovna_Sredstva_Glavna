@@ -13,3 +13,6 @@ using MyPages = Osnovna_Sredstva_Glavna.OsnovnaSredstva.Pages;
 [assembly: NavigationLink(int.MaxValue, "OsnovnaSredstva/Obracun", typeof(MyPages.ObracunController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "OsnovnaSredstva/Obracun Stavke", typeof(MyPages.ObracunStavkeController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "OsnovnaSredstva/Temeljnica Stavke", typeof(MyPages.TemeljnicaStavkeController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "OsnovnaSredstva/Dokumentacija", typeof(MyPages.DokumentacijaController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "OsnovnaSredstva/Servis", typeof(MyPages.ServisController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "OsnovnaSredstva/Vrsta Troska", typeof(MyPages.VrstaTroskaController), icon: null)]

@@ -621,6 +621,7 @@
       <DependentUpon>Kartica.edmx</DependentUpon>
       <LastGenOutput>Kartica.cs</LastGenOutput>
     </Content>
+    <Content Include="Modules\OsnovnaSredstva\OsnovnoSredstvo\OsnovnaSredstva.OsnovnoSredstvoDialog.Template.html" />
     <Content Include="MvcReportViewer.aspx" />
     <Content Include="MvcReportViewerErrorPage.html" />
     <Content Include="Readme.CodeGenerator.txt" />
@@ -1116,6 +1117,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.PermissionKeys.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.OsnovnoSredstvoColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Modules.OsnovnaSredstva.Izvjesca.ProcParam.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1128,6 +1132,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Modules.OsnovnaSredstva.Obracun.PokreniObracunRequest.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Modules.OsnovnaSredstva.OsnovnoSredstvo.PokreniAktivacijuAction.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Modules.OsnovnaSredstva.OsnovnoSredstvo.PokreniAktivacijuRequest.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Northwind.PermissionKeys.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1135,6 +1145,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.AmortizacijskeGrupeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.DokumentacijaColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.KontaColumns.ts">
@@ -1158,10 +1171,19 @@
     <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.OsnovnoSredstvoColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.OsnovnoSredstvoSecondForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.PartneriColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.SektoriColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.ServisColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.ServisListRequest.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.TemeljnicaStavkeColumns.ts">
@@ -1170,9 +1192,16 @@
     <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.UlazniRacunColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.VrstaTroskaColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaEditor.ts" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\OsnovnoSredstvo\OsnovnoServisDialog.ts" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\OsnovnoSredstvo\OsnovnoServisGrid.ts" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\OsnovnoSredstvo\OsnovnoSredstvoSecondDialog.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery.blockui\index.d.ts" />
@@ -2108,6 +2137,55 @@
     <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.TemeljnicaStavkeForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.DokumentacijaRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.DokumentacijaService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaDialog.ts" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.DokumentacijaForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.ServisRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.ServisService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\OsnovnaSredstva\Servis\ServisIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\Servis\ServisDialog.ts" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\Servis\ServisGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.ServisForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.VrstaTroskaRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.VrstaTroskaService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaDialog.ts" />
+    <TypeScriptCompile Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\OsnovnaSredstva.VrstaTroskaForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.OsnovnoSredstvoRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.OsnovnoSredstvoService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoDialog.ts" />
+    <TypeScriptCompile Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.OsnovnoSredstvoForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Content\site\site.default.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2124,6 +2202,9 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\OsnovnaSredstva.DokumentacijaEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Osnovna_Sredstva\AktivacijaSredstva.cs" />
     <Compile Include="Migrations\Osnovna_Sredstva\Amortizacijske_grupe.cs" />
@@ -2172,6 +2253,10 @@
       <DependentUpon>Kartica.tt</DependentUpon>
     </Compile>
     <Compile Include="Modules\OsnovnaSredstva\Obracun\Obracun.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\OsnovnoSredstvo\OsnovnoSredstvo.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\OsnovnoSredstvo\OsnovnoSredstvoSecondForm.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Servis\DokumentacijaDialogAttribute.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Servis\ServisListRequest.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Content Include="Modules\AdminLTE\DashboardV2.cshtml" />
     <Compile Include="Modules\Administration\User\Authentication\DirectoryEntry.cs" />
@@ -2542,6 +2627,31 @@
     <Compile Include="Modules\OsnovnaSredstva\TemeljnicaStavke\TemeljnicaStavkePage.cs" />
     <Compile Include="Modules\OsnovnaSredstva\TemeljnicaStavke\TemeljnicaStavkeColumns.cs" />
     <Compile Include="Modules\OsnovnaSredstva\TemeljnicaStavke\TemeljnicaStavkeForm.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaRow.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaRepository.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaEndpoint.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaPage.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaColumns.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Dokumentacija\DokumentacijaForm.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Servis\ServisRow.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Servis\ServisRepository.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Servis\ServisEndpoint.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Servis\ServisPage.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Servis\ServisColumns.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\Servis\ServisForm.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaRow.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaRepository.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaEndpoint.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaPage.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaColumns.cs" />
+    <Compile Include="Modules\OsnovnaSredstva\VrstaTroska\VrstaTroskaForm.cs" />
+    <Compile Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoRow.cs" />
+    <Compile Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoRepository.cs" />
+    <Compile Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoEndpoint.cs" />
+    <Compile Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoPage.cs" />
+    <Compile Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoColumns.cs" />
+    <Compile Include="Modules\Default\OsnovnoSredstvo\OsnovnoSredstvoForm.cs" />
+    <Compile Include="Modules\Default\DefaultNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

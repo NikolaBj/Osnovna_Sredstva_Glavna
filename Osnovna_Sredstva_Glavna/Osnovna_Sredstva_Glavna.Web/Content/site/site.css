@@ -8114,3 +8114,27 @@ section.content > .s-DataGrid {
 .s-OsnovnaSredstva-TemeljnicaStavkeDialog .caption {
   width: 150px;
 }
+.s-OsnovnaSredstva-DokumentacijaDialog > .size {
+  width: 650px;
+}
+.s-OsnovnaSredstva-DokumentacijaDialog .caption {
+  width: 150px;
+}
+.s-OsnovnaSredstva-ServisDialog > .size {
+  width: 650px;
+}
+.s-OsnovnaSredstva-ServisDialog .caption {
+  width: 150px;
+}
+.s-OsnovnaSredstva-VrstaTroskaDialog > .size {
+  width: 650px;
+}
+.s-OsnovnaSredstva-VrstaTroskaDialog .caption {
+  width: 150px;
+}
+.s-Default-OsnovnoSredstvoDialog > .size {
+  width: 650px;
+}
+.s-Default-OsnovnoSredstvoDialog .caption {
+  width: 150px;
+}

@@ -56,7 +56,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
             set { Fields.UraId[this] = value; }
         }
 
-        [DisplayName("Serijski Broj"), Column("Serijski_broj"), Size(50), NotNull]
+        [DisplayName("Serijski Broj"), Column("Serijski_broj"), Size(50), NotNull, Updatable(false)]
         public String SerijskiBroj
         {
             get { return Fields.SerijskiBroj[this]; }
@@ -70,7 +70,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
             set { Fields.InventarskiBroj[this] = value; }
         }
 
-
+        
         [DisplayName("Nabavna Vrijednost"), Column("Nabavna_vrijednost"), Size(11), Scale(2), NotNull, DisplayFormat("#,##0.00"), AlignRight]
         public Decimal? NabavnaVrijednost
         {
@@ -151,6 +151,13 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
         {
             get { return Fields.DatumPripreme[this]; }
             set { Fields.DatumPripreme[this] = value; }
+        }
+
+        [DisplayName("Datum Servisa"), Column("DatumServisa")]
+        public DateTime? DatumServisa
+        {
+            get { return Fields.DatumServisa[this]; }
+            set { Fields.DatumServisa[this] = value; }
         }
 
         [DisplayName("Otpisano")]
@@ -563,6 +570,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva.Entities
             public DateTimeField DatumAmortizacije;
             public DateTimeField DatumOtpisa;
             public DateTimeField DatumPripreme;
+            public DateTimeField DatumServisa;
             public BooleanField Otpisano;
             public DecimalField Količina;
             public Int32Field AmGrupaId;

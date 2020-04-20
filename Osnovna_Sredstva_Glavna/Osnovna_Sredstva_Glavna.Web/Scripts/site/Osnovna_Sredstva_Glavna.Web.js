@@ -715,6 +715,96 @@ var Osnovna_Sredstva_Glavna;
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 var Osnovna_Sredstva_Glavna;
 (function (Osnovna_Sredstva_Glavna) {
+    var Default;
+    (function (Default) {
+        var OsnovnoSredstvoForm = /** @class */ (function (_super) {
+            __extends(OsnovnoSredstvoForm, _super);
+            function OsnovnoSredstvoForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OsnovnoSredstvoForm.init) {
+                    OsnovnoSredstvoForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.BooleanEditor;
+                    var w4 = s.DateEditor;
+                    Q.initFormType(OsnovnoSredstvoForm, [
+                        'NazivOpreme', w0,
+                        'PartnerId', w1,
+                        'UraId', w1,
+                        'SerijskiBroj', w0,
+                        'InventarskiBroj', w0,
+                        'NabavnaVrijednost', w2,
+                        'AmortiziranaVrijednost', w2,
+                        'KnjigovodstvenaVrijednost', w2,
+                        'UvecanjeVrijednosti', w2,
+                        'UmanjenjeVrijednosti', w2,
+                        'SektorId', w1,
+                        'Active', w3,
+                        'DatumNabave', w4,
+                        'DatumAmortizacije', w4,
+                        'DatumOtpisa', w4,
+                        'DatumPripreme', w4,
+                        'Otpisano', w3,
+                        'Količina', w2,
+                        'AmGrupaId', w1,
+                        'DateTimeCreated', w4,
+                        'KontoId', w1,
+                        'KontoIvId', w1,
+                        'Napomena', w0,
+                        'JedinicaMjere', w0,
+                        'StopaAmSredstva', w2,
+                        'DatumServisa', w4
+                    ]);
+                }
+                return _this;
+            }
+            OsnovnoSredstvoForm.formKey = 'Default.OsnovnoSredstvo';
+            return OsnovnoSredstvoForm;
+        }(Serenity.PrefixedContext));
+        Default.OsnovnoSredstvoForm = OsnovnoSredstvoForm;
+    })(Default = Osnovna_Sredstva_Glavna.Default || (Osnovna_Sredstva_Glavna.Default = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var Default;
+    (function (Default) {
+        var OsnovnoSredstvoRow;
+        (function (OsnovnoSredstvoRow) {
+            OsnovnoSredstvoRow.idProperty = 'OsnovnoId';
+            OsnovnoSredstvoRow.nameProperty = 'NazivOpreme';
+            OsnovnoSredstvoRow.localTextPrefix = 'Default.OsnovnoSredstvo';
+            OsnovnoSredstvoRow.deletePermission = 'Administration:General';
+            OsnovnoSredstvoRow.insertPermission = 'Administration:General';
+            OsnovnoSredstvoRow.readPermission = 'Administration:General';
+            OsnovnoSredstvoRow.updatePermission = 'Administration:General';
+        })(OsnovnoSredstvoRow = Default.OsnovnoSredstvoRow || (Default.OsnovnoSredstvoRow = {}));
+    })(Default = Osnovna_Sredstva_Glavna.Default || (Osnovna_Sredstva_Glavna.Default = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var Default;
+    (function (Default) {
+        var OsnovnoSredstvoService;
+        (function (OsnovnoSredstvoService) {
+            OsnovnoSredstvoService.baseUrl = 'Default/OsnovnoSredstvo';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OsnovnoSredstvoService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OsnovnoSredstvoService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(OsnovnoSredstvoService = Default.OsnovnoSredstvoService || (Default.OsnovnoSredstvoService = {}));
+    })(Default = Osnovna_Sredstva_Glavna.Default || (Osnovna_Sredstva_Glavna.Default = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
     var Membership;
     (function (Membership) {
         var ChangePasswordForm = /** @class */ (function (_super) {
@@ -1794,7 +1884,7 @@ var Osnovna_Sredstva_Glavna;
                 if (!AktivacijaSredstvaForm.init) {
                     AktivacijaSredstvaForm.init = true;
                     var s = Serenity;
-                    var w0 = s.LookupEditor;
+                    var w0 = s.IntegerEditor;
                     var w1 = s.DateEditor;
                     Q.initFormType(AktivacijaSredstvaForm, [
                         'OsnovnoId', w0,
@@ -1836,7 +1926,8 @@ var Osnovna_Sredstva_Glavna;
                 'Update',
                 'Delete',
                 'Retrieve',
-                'List'
+                'List',
+                'GetNextNumber'
             ].forEach(function (x) {
                 AktivacijaSredstvaService[x] = function (r, s, o) {
                     return Q.serviceRequest(AktivacijaSredstvaService.baseUrl + '/' + x, r, s, o);
@@ -1917,6 +2008,75 @@ var Osnovna_Sredstva_Glavna;
                 };
             });
         })(AmortizacijskeGrupeService = OsnovnaSredstva.AmortizacijskeGrupeService || (OsnovnaSredstva.AmortizacijskeGrupeService = {}));
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var DokumentacijaForm = /** @class */ (function (_super) {
+            __extends(DokumentacijaForm, _super);
+            function DokumentacijaForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!DokumentacijaForm.init) {
+                    DokumentacijaForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.BooleanEditor;
+                    var w2 = s.ImageUploadEditor;
+                    var w3 = s.DateEditor;
+                    var w4 = s.IntegerEditor;
+                    Q.initFormType(DokumentacijaForm, [
+                        'Naziv', w0,
+                        'Active', w1,
+                        'FileContent', w2,
+                        'DateTimeCreated', w3,
+                        'OsnovnoId', w4
+                    ]);
+                }
+                return _this;
+            }
+            DokumentacijaForm.formKey = 'OsnovnaSredstva.Dokumentacija';
+            return DokumentacijaForm;
+        }(Serenity.PrefixedContext));
+        OsnovnaSredstva.DokumentacijaForm = DokumentacijaForm;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var DokumentacijaRow;
+        (function (DokumentacijaRow) {
+            DokumentacijaRow.idProperty = 'DokumentId';
+            DokumentacijaRow.nameProperty = 'Naziv';
+            DokumentacijaRow.localTextPrefix = 'OsnovnaSredstva.Dokumentacija';
+            DokumentacijaRow.deletePermission = 'Administration:General';
+            DokumentacijaRow.insertPermission = 'Administration:General';
+            DokumentacijaRow.readPermission = 'Administration:General';
+            DokumentacijaRow.updatePermission = 'Administration:General';
+        })(DokumentacijaRow = OsnovnaSredstva.DokumentacijaRow || (OsnovnaSredstva.DokumentacijaRow = {}));
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var DokumentacijaService;
+        (function (DokumentacijaService) {
+            DokumentacijaService.baseUrl = 'OsnovnaSredstva/Dokumentacija';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DokumentacijaService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DokumentacijaService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(DokumentacijaService = OsnovnaSredstva.DokumentacijaService || (OsnovnaSredstva.DokumentacijaService = {}));
     })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 var Osnovna_Sredstva_Glavna;
@@ -2317,6 +2477,7 @@ var Osnovna_Sredstva_Glavna;
                         'DatumAmortizacije', w4,
                         'DatumOtpisa', w4,
                         'DatumPripreme', w4,
+                        'DatumServisa', w4,
                         'DateTimeCreated', w4,
                         'SektorId', w2,
                         'Napomena', w5
@@ -2350,6 +2511,30 @@ var Osnovna_Sredstva_Glavna;
 (function (Osnovna_Sredstva_Glavna) {
     var OsnovnaSredstva;
     (function (OsnovnaSredstva) {
+        var OsnovnoSredstvoSecondForm = /** @class */ (function (_super) {
+            __extends(OsnovnoSredstvoSecondForm, _super);
+            function OsnovnoSredstvoSecondForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OsnovnoSredstvoSecondForm.init) {
+                    OsnovnoSredstvoSecondForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.DateEditor;
+                    Q.initFormType(OsnovnoSredstvoSecondForm, [
+                        'DatumServisa', w0
+                    ]);
+                }
+                return _this;
+            }
+            OsnovnoSredstvoSecondForm.formKey = 'Osnovna_Sredstva_Glavna.OsnovnaSredstva.OsnovnoSredstvo.OsnovnoSredstvoSecondForm';
+            return OsnovnoSredstvoSecondForm;
+        }(Serenity.PrefixedContext));
+        OsnovnaSredstva.OsnovnoSredstvoSecondForm = OsnovnoSredstvoSecondForm;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
         var OsnovnoSredstvoService;
         (function (OsnovnoSredstvoService) {
             OsnovnoSredstvoService.baseUrl = 'OsnovnaSredstva/OsnovnoSredstvo';
@@ -2359,7 +2544,8 @@ var Osnovna_Sredstva_Glavna;
                 'GetNextNumber',
                 'Delete',
                 'Retrieve',
-                'List'
+                'List',
+                'PokreniAktivaciju'
             ].forEach(function (x) {
                 OsnovnoSredstvoService[x] = function (r, s, o) {
                     return Q.serviceRequest(OsnovnoSredstvoService.baseUrl + '/' + x, r, s, o);
@@ -2503,6 +2689,81 @@ var Osnovna_Sredstva_Glavna;
                 };
             });
         })(SektoriService = OsnovnaSredstva.SektoriService || (OsnovnaSredstva.SektoriService = {}));
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var ServisForm = /** @class */ (function (_super) {
+            __extends(ServisForm, _super);
+            function ServisForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ServisForm.init) {
+                    ServisForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.StringEditor;
+                    var w3 = s.BooleanEditor;
+                    var w4 = s.DecimalEditor;
+                    var w5 = OsnovnaSredstva.DokumentacijaEditor;
+                    Q.initFormType(ServisForm, [
+                        'PartnerId', w0,
+                        'OsnovnoId', w0,
+                        'DatumServisa', w1,
+                        'DatumEndServisa', w1,
+                        'Napomena', w2,
+                        'Active', w3,
+                        'DateTimeCreated', w1,
+                        'IznosServisa', w4,
+                        'VrstaTroskaId', w0,
+                        'DetailList', w5
+                    ]);
+                }
+                return _this;
+            }
+            ServisForm.formKey = 'OsnovnaSredstva.Servis';
+            return ServisForm;
+        }(Serenity.PrefixedContext));
+        OsnovnaSredstva.ServisForm = ServisForm;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var ServisRow;
+        (function (ServisRow) {
+            ServisRow.idProperty = 'ServisId';
+            ServisRow.nameProperty = 'Napomena';
+            ServisRow.localTextPrefix = 'OsnovnaSredstva.Servis';
+            ServisRow.deletePermission = 'Administration:General';
+            ServisRow.insertPermission = 'Administration:General';
+            ServisRow.readPermission = 'Administration:General';
+            ServisRow.updatePermission = 'Administration:General';
+        })(ServisRow = OsnovnaSredstva.ServisRow || (OsnovnaSredstva.ServisRow = {}));
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var ServisService;
+        (function (ServisService) {
+            ServisService.baseUrl = 'OsnovnaSredstva/Servis';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ServisService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ServisService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ServisService = OsnovnaSredstva.ServisService || (OsnovnaSredstva.ServisService = {}));
     })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 var Osnovna_Sredstva_Glavna;
@@ -2656,9 +2917,79 @@ var Osnovna_Sredstva_Glavna;
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 var Osnovna_Sredstva_Glavna;
 (function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var VrstaTroskaForm = /** @class */ (function (_super) {
+            __extends(VrstaTroskaForm, _super);
+            function VrstaTroskaForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!VrstaTroskaForm.init) {
+                    VrstaTroskaForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.BooleanEditor;
+                    Q.initFormType(VrstaTroskaForm, [
+                        'Naziv', w0,
+                        'DateTimeCreated', w1,
+                        'Active', w2
+                    ]);
+                }
+                return _this;
+            }
+            VrstaTroskaForm.formKey = 'OsnovnaSredstva.VrstaTroska';
+            return VrstaTroskaForm;
+        }(Serenity.PrefixedContext));
+        OsnovnaSredstva.VrstaTroskaForm = VrstaTroskaForm;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var VrstaTroskaRow;
+        (function (VrstaTroskaRow) {
+            VrstaTroskaRow.idProperty = 'VrstaTroskaId';
+            VrstaTroskaRow.nameProperty = 'Naziv';
+            VrstaTroskaRow.localTextPrefix = 'OsnovnaSredstva.VrstaTroska';
+            VrstaTroskaRow.lookupKey = 'OsnovnaSredstva.VrstaTroska';
+            function getLookup() {
+                return Q.getLookup('OsnovnaSredstva.VrstaTroska');
+            }
+            VrstaTroskaRow.getLookup = getLookup;
+            VrstaTroskaRow.deletePermission = 'Administration:General';
+            VrstaTroskaRow.insertPermission = 'Administration:General';
+            VrstaTroskaRow.readPermission = 'Administration:General';
+            VrstaTroskaRow.updatePermission = 'Administration:General';
+        })(VrstaTroskaRow = OsnovnaSredstva.VrstaTroskaRow || (OsnovnaSredstva.VrstaTroskaRow = {}));
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var VrstaTroskaService;
+        (function (VrstaTroskaService) {
+            VrstaTroskaService.baseUrl = 'OsnovnaSredstva/VrstaTroska';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                VrstaTroskaService[x] = function (r, s, o) {
+                    return Q.serviceRequest(VrstaTroskaService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(VrstaTroskaService = OsnovnaSredstva.VrstaTroskaService || (OsnovnaSredstva.VrstaTroskaService = {}));
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
     var Texts;
     (function (Texts) {
-        Osnovna_Sredstva_Glavna['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Northwind: { Category: { CategoryID: 1, CategoryName: 1, Description: 1, Picture: 1 }, CategoryLang: { CategoryId: 1, CategoryName: 1, Description: 1, Id: 1, LanguageId: 1 }, Customer: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, CustomerID: 1, Email: 1, Fax: 1, ID: 1, LastContactDate: 1, LastContactedBy: 1, NoteList: 1, Phone: 1, PostalCode: 1, Region: 1, Representatives: 1, SendBulletin: 1 }, CustomerCustomerDemo: { CustomerAddress: 1, CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerPostalCode: 1, CustomerRegion: 1, CustomerTypeCustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDemographic: { CustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDetails: { Email: 1, Id: 1, LastContactDate: 1, LastContactedBy: 1, LastContactedByAddress: 1, LastContactedByBirthDate: 1, LastContactedByCity: 1, LastContactedByCountry: 1, LastContactedByExtension: 1, LastContactedByFirstName: 1, LastContactedByHireDate: 1, LastContactedByHomePhone: 1, LastContactedByLastName: 1, LastContactedByNotes: 1, LastContactedByPhoto: 1, LastContactedByPhotoPath: 1, LastContactedByPostalCode: 1, LastContactedByRegion: 1, LastContactedByReportsTo: 1, LastContactedByTitle: 1, LastContactedByTitleOfCourtesy: 1, SendBulletin: 1 }, CustomerGrossSales: { ContactName: 1, CustomerId: 1, GrossAmount: 1, ProductId: 1, ProductName: 1 }, CustomerRepresentatives: { CustomerId: 1, EmployeeId: 1, RepresentativeId: 1 }, DragDropSample: { Id: 1, ParentId: 1, Title: 1 }, Employee: { Address: 1, BirthDate: 1, City: 1, Country: 1, EmployeeID: 1, Extension: 1, FirstName: 1, FullName: 1, Gender: 1, HireDate: 1, HomePhone: 1, LastName: 1, Notes: 1, Photo: 1, PhotoPath: 1, PostalCode: 1, Region: 1, ReportsTo: 1, ReportsToAddress: 1, ReportsToBirthDate: 1, ReportsToCity: 1, ReportsToCountry: 1, ReportsToExtension: 1, ReportsToFirstName: 1, ReportsToFullName: 1, ReportsToHireDate: 1, ReportsToHomePhone: 1, ReportsToLastName: 1, ReportsToNotes: 1, ReportsToPhoto: 1, ReportsToPhotoPath: 1, ReportsToPostalCode: 1, ReportsToRegion: 1, ReportsToReportsTo: 1, ReportsToTitle: 1, ReportsToTitleOfCourtesy: 1, Title: 1, TitleOfCourtesy: 1 }, EmployeeTerritory: { EmployeeAddress: 1, EmployeeBirthDate: 1, EmployeeCity: 1, EmployeeCountry: 1, EmployeeExtension: 1, EmployeeFirstName: 1, EmployeeHireDate: 1, EmployeeHomePhone: 1, EmployeeID: 1, EmployeeLastName: 1, EmployeeNotes: 1, EmployeePhoto: 1, EmployeePhotoPath: 1, EmployeePostalCode: 1, EmployeeRegion: 1, EmployeeReportsTo: 1, EmployeeTitle: 1, EmployeeTitleOfCourtesy: 1, TerritoryID: 1, TerritoryRegionID: 1, TerritoryTerritoryDescription: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Order: { CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerRegion: 1, DetailList: 1, EmployeeFullName: 1, EmployeeGender: 1, EmployeeID: 1, EmployeeReportsToFullName: 1, Freight: 1, OrderDate: 1, OrderID: 1, RequiredDate: 1, ShipAddress: 1, ShipCity: 1, ShipCountry: 1, ShipName: 1, ShipPostalCode: 1, ShipRegion: 1, ShipVia: 1, ShipViaCompanyName: 1, ShipViaPhone: 1, ShippedDate: 1, ShippingState: 1 }, OrderDetail: { DetailID: 1, Discount: 1, LineTotal: 1, OrderCustomerID: 1, OrderDate: 1, OrderEmployeeID: 1, OrderID: 1, OrderShipCity: 1, OrderShipCountry: 1, OrderShipVia: 1, OrderShippedDate: 1, ProductDiscontinued: 1, ProductID: 1, ProductName: 1, ProductQuantityPerUnit: 1, ProductSupplierID: 1, ProductUnitPrice: 1, Quantity: 1, UnitPrice: 1 }, Product: { CategoryDescription: 1, CategoryID: 1, CategoryName: 1, CategoryPicture: 1, Discontinued: 1, ProductID: 1, ProductImage: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierAddress: 1, SupplierCity: 1, SupplierCompanyName: 1, SupplierContactName: 1, SupplierContactTitle: 1, SupplierCountry: 1, SupplierFax: 1, SupplierHomePage: 1, SupplierID: 1, SupplierPhone: 1, SupplierPostalCode: 1, SupplierRegion: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1 }, ProductLang: { Id: 1, LanguageId: 1, ProductId: 1, ProductName: 1 }, ProductLog: { CategoryID: 1, ChangingUserId: 1, Discontinued: 1, OperationType: 1, ProductID: 1, ProductImage: 1, ProductLogID: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierID: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1, ValidFrom: 1, ValidUntil: 1 }, Region: { RegionDescription: 1, RegionID: 1 }, SalesByCategory: { CategoryId: 1, CategoryName: 1, ProductName: 1, ProductSales: 1 }, Shipper: { CompanyName: 1, Phone: 1, ShipperID: 1 }, Supplier: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, Fax: 1, HomePage: 1, Phone: 1, PostalCode: 1, Region: 1, SupplierID: 1 }, Territory: { ID: 1, RegionDescription: 1, RegionID: 1, TerritoryDescription: 1, TerritoryID: 1 } }, OsnovnaSredstva: { AktivacijaSredstva: { DatumAktivacije: 1, Int: 1, OsnovnoActive: 1, OsnovnoAmGrupaId: 1, OsnovnoAmortiziranaVrijednost: 1, OsnovnoDateTimeCreated: 1, OsnovnoDatumAmortizacije: 1, OsnovnoDatumNabave: 1, OsnovnoDatumOtpisa: 1, OsnovnoDatumPripreme: 1, OsnovnoId: 1, OsnovnoInventarskiBroj: 1, OsnovnoJedinicaMjere: 1, OsnovnoKnjigovodstvenaVrijednost: 1, OsnovnoKoličina: 1, OsnovnoKontoId: 1, OsnovnoKontoIvId: 1, OsnovnoNabavnaVrijednost: 1, OsnovnoNapomena: 1, OsnovnoNazivOpreme: 1, OsnovnoOtpisano: 1, OsnovnoPartnerId: 1, OsnovnoSektorId: 1, OsnovnoSerijskiBroj: 1, OsnovnoStopaAmSredstva: 1, OsnovnoUmanjenjeVrijednosti: 1, OsnovnoUraId: 1, OsnovnoUvecanjeVrijednosti: 1 }, AmortizacijskeGrupe: { Active: 1, AmGrupaId: 1, AmVijekTrajanja: 1, DateTimeCreated: 1, DvostrukaGodisnjaAm: 1, GodisnjaAmortizacija: 1, KontoIvActive: 1, KontoIvDateTimeCreated: 1, KontoIvId: 1, KontoIvKonto: 1, KontoIvNaziv: 1, KontoTrActive: 1, KontoTrDateTimeCreated: 1, KontoTrId: 1, KontoTrKonto: 1, KontoTrNaziv: 1, Naziv: 1, Naziv2: 1 }, Konta: { Active: 1, DateTimeCreated: 1, Konto: 1, KontoId: 1, Naziv: 1 }, KontaUra: { Active: 1, DateTimeCreated: 1, IznosDuguje: 1, IznosPotrazuje: 1, KontaUraId: 1, Konto: 1, KontoActive: 1, KontoDateTimeCreated: 1, KontoId: 1, KontoNaziv: 1, MjestoTroskaActive: 1, MjestoTroskaDateTimeCreated: 1, MjestoTroskaId: 1, MjestoTroskaNaziv: 1, MjestoTroskaSifra: 1, Opis: 1, UraActive: 1, UraBrojRacuna: 1, UraDateTimeCreated: 1, UraDatumDospijeca: 1, UraDatumIsporuke: 1, UraDatumKnjizenja: 1, UraDatumRacuna: 1, UraId: 1, UraIznosOsnovice: 1, UraIznosPoreza: 1, UraMjestoTroskaId: 1, UraOpis: 1, UraPArtnerId: 1, UraPoslovnaGodina: 1, UraUkupanIznos: 1, UraUraBroj: 1 }, MjestoTroska: { Active: 1, DateTimeCreated: 1, MjestoTroskaId: 1, Naziv: 1, Sifra: 1 }, Obracun: { Active: 1, AmGrupaActive: 1, AmGrupaAmVijekTrajanja: 1, AmGrupaDateTimeCreated: 1, AmGrupaDvostrukaGodisnjaAm: 1, AmGrupaGodisnjaAmortizacija: 1, AmGrupaId: 1, AmGrupaKontoIvId: 1, AmGrupaKontoTrId: 1, AmGrupaNaziv: 1, AmGrupaNaziv2: 1, DateTimeCreated: 1, DatumObracuna: 1, Napomena: 1, ObracunId: 1, OsnovnoActive: 1, OsnovnoAmGrupaId: 1, OsnovnoAmortiziranaVrijednost: 1, OsnovnoDateTimeCreated: 1, OsnovnoDatumAmortizacije: 1, OsnovnoDatumNabave: 1, OsnovnoDatumOtpisa: 1, OsnovnoDatumPripreme: 1, OsnovnoId: 1, OsnovnoInventarskiBroj: 1, OsnovnoJedinicaMjere: 1, OsnovnoKnjigovodstvenaVrijednost: 1, OsnovnoKoličina: 1, OsnovnoKontoId: 1, OsnovnoKontoIvId: 1, OsnovnoNabavnaVrijednost: 1, OsnovnoNapomena: 1, OsnovnoNazivOpreme: 1, OsnovnoOtpisano: 1, OsnovnoPartnerId: 1, OsnovnoSektorId: 1, OsnovnoSerijskiBroj: 1, OsnovnoStopaAmSredstva: 1, OsnovnoUmanjenjeVrijednosti: 1, OsnovnoUraId: 1, OsnovnoUvecanjeVrijednosti: 1, Otpisano: 1, PartnerActive: 1, PartnerAdresa: 1, PartnerDateTimeCreated: 1, PartnerDrzava: 1, PartnerGrad: 1, PartnerId: 1, PartnerMjesto: 1, PartnerNaziv: 1, PartnerPtt: 1, RazdobljeDo: 1, RazdobljeOd: 1, SektorActive: 1, SektorDateTimeCreated: 1, SektorId: 1, SektorNaziv: 1, SektorŠifra: 1, Zavrsen: 1 }, ObracunStavke: { Active: 1, AmGrupaActive: 1, AmGrupaAmVijekTrajanja: 1, AmGrupaDateTimeCreated: 1, AmGrupaDvostrukaGodisnjaAm: 1, AmGrupaGodisnjaAmortizacija: 1, AmGrupaId: 1, AmGrupaKontoIvId: 1, AmGrupaKontoTrId: 1, AmGrupaNaziv: 1, AmGrupaNaziv2: 1, DateTimeCreated: 1, DatumOdObracuna: 1, IznosAmortizacije: 1, IznosOsnovice: 1, Napomena: 1, ObracunActive: 1, ObracunAmGrupaId: 1, ObracunDateTimeCreated: 1, ObracunDatumObracuna: 1, ObracunId: 1, ObracunNapomena: 1, ObracunOsnovnoId: 1, ObracunOtpisano: 1, ObracunPartnerId: 1, ObracunRazdobljeDo: 1, ObracunRazdobljeOd: 1, ObracunSektorId: 1, ObracunStavkeId: 1, ObracunZavrsen: 1, OsnovnoActive: 1, OsnovnoAmGrupaId: 1, OsnovnoAmortiziranaVrijednost: 1, OsnovnoDateTimeCreated: 1, OsnovnoDatumAmortizacije: 1, OsnovnoDatumNabave: 1, OsnovnoDatumOtpisa: 1, OsnovnoDatumPripreme: 1, OsnovnoId: 1, OsnovnoInventarskiBroj: 1, OsnovnoJedinicaMjere: 1, OsnovnoKnjigovodstvenaVrijednost: 1, OsnovnoKoličina: 1, OsnovnoKontoId: 1, OsnovnoKontoIvId: 1, OsnovnoNabavnaVrijednost: 1, OsnovnoNapomena: 1, OsnovnoNazivOpreme: 1, OsnovnoOtpisano: 1, OsnovnoPartnerId: 1, OsnovnoSektorId: 1, OsnovnoSerijskiBroj: 1, OsnovnoStopaAmSredstva: 1, OsnovnoUmanjenjeVrijednosti: 1, OsnovnoUraId: 1, OsnovnoUvecanjeVrijednosti: 1, PartnerActive: 1, PartnerAdresa: 1, PartnerDateTimeCreated: 1, PartnerDrzava: 1, PartnerGrad: 1, PartnerId: 1, PartnerMjesto: 1, PartnerNaziv: 1, PartnerPtt: 1, SektorActive: 1, SektorDateTimeCreated: 1, SektorId: 1, SektorNaziv: 1, SektorŠifra: 1, StopaAmort: 1 }, OsnovnoSredstvo: { Active: 1, AmGrupaActive: 1, AmGrupaAmVijekTrajanja: 1, AmGrupaDateTimeCreated: 1, AmGrupaDvostrukaGodisnjaAm: 1, AmGrupaGodisnjaAmortizacija: 1, AmGrupaId: 1, AmGrupaKontoIvId: 1, AmGrupaKontoTrId: 1, AmGrupaNaziv: 1, AmGrupaNaziv2: 1, AmortiziranaVrijednost: 1, DateTimeCreated: 1, DatumAmortizacije: 1, DatumNabave: 1, DatumOtpisa: 1, DatumPripreme: 1, InventarskiBroj: 1, JedinicaMjere: 1, KnjigovodstvenaVrijednost: 1, Količina: 1, Konto: 1, KontoActive: 1, KontoDateTimeCreated: 1, KontoId: 1, KontoIvActive: 1, KontoIvDateTimeCreated: 1, KontoIvId: 1, KontoIvKonto: 1, KontoIvNaziv: 1, KontoNaziv: 1, NabavnaVrijednost: 1, Napomena: 1, NazivOpreme: 1, OsnovnoId: 1, Otpisano: 1, PartnerActive: 1, PartnerAdresa: 1, PartnerDateTimeCreated: 1, PartnerDrzava: 1, PartnerGrad: 1, PartnerId: 1, PartnerMjesto: 1, PartnerNaziv: 1, PartnerPtt: 1, SektorActive: 1, SektorDateTimeCreated: 1, SektorId: 1, SektorNaziv: 1, SektorŠifra: 1, SerijskiBroj: 1, StopaAmSredstva: 1, UmanjenjeVrijednosti: 1, UraActive: 1, UraBrojRacuna: 1, UraDateTimeCreated: 1, UraDatumDospijeca: 1, UraDatumIsporuke: 1, UraDatumKnjizenja: 1, UraDatumRacuna: 1, UraId: 1, UraIznosOsnovice: 1, UraIznosPoreza: 1, UraMjestoTroskaId: 1, UraOpis: 1, UraPArtnerId: 1, UraPoslovnaGodina: 1, UraUkupanIznos: 1, UraUraBroj: 1, UvecanjeVrijednosti: 1 }, Partneri: { Active: 1, Adresa: 1, DateTimeCreated: 1, Drzava: 1, Grad: 1, Mjesto: 1, Naziv: 1, PartnerId: 1, Ptt: 1 }, Sektori: { Active: 1, DateTimeCreated: 1, Naziv: 1, SektorId: 1, Šifra: 1 }, TemeljnicaStavke: { DateTimeCreated: 1, Duguje: 1, Kontoid: 1, ObracunActive: 1, ObracunAmGrupaId: 1, ObracunDateTimeCreated: 1, ObracunDatumObracuna: 1, ObracunId: 1, ObracunNapomena: 1, ObracunOsnovnoId: 1, ObracunOtpisano: 1, ObracunPartnerId: 1, ObracunRazdobljeDo: 1, ObracunRazdobljeOd: 1, ObracunSektorId: 1, ObracunZavrsen: 1, Potrazuje: 1, TemeljnicaId: 1 }, UlazniRacun: { Active: 1, BrojRacuna: 1, DateTimeCreated: 1, DatumDospijeca: 1, DatumIsporuke: 1, DatumKnjizenja: 1, DatumRacuna: 1, IznosOsnovice: 1, IznosPoreza: 1, MjestoTroskaActive: 1, MjestoTroskaDateTimeCreated: 1, MjestoTroskaId: 1, MjestoTroskaNaziv: 1, MjestoTroskaSifra: 1, Opis: 1, PArtnerActive: 1, PArtnerAdresa: 1, PArtnerDateTimeCreated: 1, PArtnerDrzava: 1, PArtnerGrad: 1, PArtnerId: 1, PArtnerMjesto: 1, PArtnerNaziv: 1, PArtnerPtt: 1, PoslovnaGodina: 1, UkupanIznos: 1, UraBroj: 1, UraId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, NorthwindPhone: 1, NorthwindPhoneMultiple: 1, SavePrimaryKeyError: 1 } });
+        Osnovna_Sredstva_Glavna['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Default: { OsnovnoSredstvo: { Active: 1, AmGrupaActive: 1, AmGrupaAmVijekTrajanja: 1, AmGrupaDateTimeCreated: 1, AmGrupaDvostrukaGodisnjaAm: 1, AmGrupaGodisnjaAmortizacija: 1, AmGrupaId: 1, AmGrupaKontoIvId: 1, AmGrupaKontoTrId: 1, AmGrupaNaziv: 1, AmGrupaNaziv2: 1, AmortiziranaVrijednost: 1, DateTimeCreated: 1, DatumAmortizacije: 1, DatumNabave: 1, DatumOtpisa: 1, DatumPripreme: 1, DatumServisa: 1, InventarskiBroj: 1, JedinicaMjere: 1, KnjigovodstvenaVrijednost: 1, Količina: 1, Konto: 1, KontoActive: 1, KontoDateTimeCreated: 1, KontoId: 1, KontoIvActive: 1, KontoIvDateTimeCreated: 1, KontoIvId: 1, KontoIvKonto: 1, KontoIvNaziv: 1, KontoNaziv: 1, NabavnaVrijednost: 1, Napomena: 1, NazivOpreme: 1, OsnovnoId: 1, Otpisano: 1, PartnerActive: 1, PartnerAdresa: 1, PartnerDateTimeCreated: 1, PartnerDrzava: 1, PartnerGrad: 1, PartnerId: 1, PartnerMjesto: 1, PartnerNaziv: 1, PartnerPtt: 1, SektorActive: 1, SektorDateTimeCreated: 1, SektorId: 1, SektorNaziv: 1, SektorŠifra: 1, SerijskiBroj: 1, StopaAmSredstva: 1, UmanjenjeVrijednosti: 1, UraActive: 1, UraBrojRacuna: 1, UraDateTimeCreated: 1, UraDatumDospijeca: 1, UraDatumIsporuke: 1, UraDatumKnjizenja: 1, UraDatumRacuna: 1, UraId: 1, UraIznosOsnovice: 1, UraIznosPoreza: 1, UraMjestoTroskaId: 1, UraOpis: 1, UraPArtnerId: 1, UraPoslovnaGodina: 1, UraUkupanIznos: 1, UraUraBroj: 1, UvecanjeVrijednosti: 1 } }, Northwind: { Category: { CategoryID: 1, CategoryName: 1, Description: 1, Picture: 1 }, CategoryLang: { CategoryId: 1, CategoryName: 1, Description: 1, Id: 1, LanguageId: 1 }, Customer: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, CustomerID: 1, Email: 1, Fax: 1, ID: 1, LastContactDate: 1, LastContactedBy: 1, NoteList: 1, Phone: 1, PostalCode: 1, Region: 1, Representatives: 1, SendBulletin: 1 }, CustomerCustomerDemo: { CustomerAddress: 1, CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerPostalCode: 1, CustomerRegion: 1, CustomerTypeCustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDemographic: { CustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDetails: { Email: 1, Id: 1, LastContactDate: 1, LastContactedBy: 1, LastContactedByAddress: 1, LastContactedByBirthDate: 1, LastContactedByCity: 1, LastContactedByCountry: 1, LastContactedByExtension: 1, LastContactedByFirstName: 1, LastContactedByHireDate: 1, LastContactedByHomePhone: 1, LastContactedByLastName: 1, LastContactedByNotes: 1, LastContactedByPhoto: 1, LastContactedByPhotoPath: 1, LastContactedByPostalCode: 1, LastContactedByRegion: 1, LastContactedByReportsTo: 1, LastContactedByTitle: 1, LastContactedByTitleOfCourtesy: 1, SendBulletin: 1 }, CustomerGrossSales: { ContactName: 1, CustomerId: 1, GrossAmount: 1, ProductId: 1, ProductName: 1 }, CustomerRepresentatives: { CustomerId: 1, EmployeeId: 1, RepresentativeId: 1 }, DragDropSample: { Id: 1, ParentId: 1, Title: 1 }, Employee: { Address: 1, BirthDate: 1, City: 1, Country: 1, EmployeeID: 1, Extension: 1, FirstName: 1, FullName: 1, Gender: 1, HireDate: 1, HomePhone: 1, LastName: 1, Notes: 1, Photo: 1, PhotoPath: 1, PostalCode: 1, Region: 1, ReportsTo: 1, ReportsToAddress: 1, ReportsToBirthDate: 1, ReportsToCity: 1, ReportsToCountry: 1, ReportsToExtension: 1, ReportsToFirstName: 1, ReportsToFullName: 1, ReportsToHireDate: 1, ReportsToHomePhone: 1, ReportsToLastName: 1, ReportsToNotes: 1, ReportsToPhoto: 1, ReportsToPhotoPath: 1, ReportsToPostalCode: 1, ReportsToRegion: 1, ReportsToReportsTo: 1, ReportsToTitle: 1, ReportsToTitleOfCourtesy: 1, Title: 1, TitleOfCourtesy: 1 }, EmployeeTerritory: { EmployeeAddress: 1, EmployeeBirthDate: 1, EmployeeCity: 1, EmployeeCountry: 1, EmployeeExtension: 1, EmployeeFirstName: 1, EmployeeHireDate: 1, EmployeeHomePhone: 1, EmployeeID: 1, EmployeeLastName: 1, EmployeeNotes: 1, EmployeePhoto: 1, EmployeePhotoPath: 1, EmployeePostalCode: 1, EmployeeRegion: 1, EmployeeReportsTo: 1, EmployeeTitle: 1, EmployeeTitleOfCourtesy: 1, TerritoryID: 1, TerritoryRegionID: 1, TerritoryTerritoryDescription: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Order: { CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerRegion: 1, DetailList: 1, EmployeeFullName: 1, EmployeeGender: 1, EmployeeID: 1, EmployeeReportsToFullName: 1, Freight: 1, OrderDate: 1, OrderID: 1, RequiredDate: 1, ShipAddress: 1, ShipCity: 1, ShipCountry: 1, ShipName: 1, ShipPostalCode: 1, ShipRegion: 1, ShipVia: 1, ShipViaCompanyName: 1, ShipViaPhone: 1, ShippedDate: 1, ShippingState: 1 }, OrderDetail: { DetailID: 1, Discount: 1, LineTotal: 1, OrderCustomerID: 1, OrderDate: 1, OrderEmployeeID: 1, OrderID: 1, OrderShipCity: 1, OrderShipCountry: 1, OrderShipVia: 1, OrderShippedDate: 1, ProductDiscontinued: 1, ProductID: 1, ProductName: 1, ProductQuantityPerUnit: 1, ProductSupplierID: 1, ProductUnitPrice: 1, Quantity: 1, UnitPrice: 1 }, Product: { CategoryDescription: 1, CategoryID: 1, CategoryName: 1, CategoryPicture: 1, Discontinued: 1, ProductID: 1, ProductImage: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierAddress: 1, SupplierCity: 1, SupplierCompanyName: 1, SupplierContactName: 1, SupplierContactTitle: 1, SupplierCountry: 1, SupplierFax: 1, SupplierHomePage: 1, SupplierID: 1, SupplierPhone: 1, SupplierPostalCode: 1, SupplierRegion: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1 }, ProductLang: { Id: 1, LanguageId: 1, ProductId: 1, ProductName: 1 }, ProductLog: { CategoryID: 1, ChangingUserId: 1, Discontinued: 1, OperationType: 1, ProductID: 1, ProductImage: 1, ProductLogID: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierID: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1, ValidFrom: 1, ValidUntil: 1 }, Region: { RegionDescription: 1, RegionID: 1 }, SalesByCategory: { CategoryId: 1, CategoryName: 1, ProductName: 1, ProductSales: 1 }, Shipper: { CompanyName: 1, Phone: 1, ShipperID: 1 }, Supplier: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, Fax: 1, HomePage: 1, Phone: 1, PostalCode: 1, Region: 1, SupplierID: 1 }, Territory: { ID: 1, RegionDescription: 1, RegionID: 1, TerritoryDescription: 1, TerritoryID: 1 } }, OsnovnaSredstva: { AktivacijaSredstva: { DatumAktivacije: 1, Int: 1, OsnovnoActive: 1, OsnovnoAmGrupaId: 1, OsnovnoAmortiziranaVrijednost: 1, OsnovnoDateTimeCreated: 1, OsnovnoDatumAmortizacije: 1, OsnovnoDatumNabave: 1, OsnovnoDatumOtpisa: 1, OsnovnoDatumPripreme: 1, OsnovnoId: 1, OsnovnoInventarskiBroj: 1, OsnovnoJedinicaMjere: 1, OsnovnoKnjigovodstvenaVrijednost: 1, OsnovnoKoličina: 1, OsnovnoKontoId: 1, OsnovnoKontoIvId: 1, OsnovnoNabavnaVrijednost: 1, OsnovnoNapomena: 1, OsnovnoNazivOpreme: 1, OsnovnoOtpisano: 1, OsnovnoPartnerId: 1, OsnovnoSektorId: 1, OsnovnoSerijskiBroj: 1, OsnovnoStopaAmSredstva: 1, OsnovnoUmanjenjeVrijednosti: 1, OsnovnoUraId: 1, OsnovnoUvecanjeVrijednosti: 1 }, AmortizacijskeGrupe: { Active: 1, AmGrupaId: 1, AmVijekTrajanja: 1, DateTimeCreated: 1, DvostrukaGodisnjaAm: 1, GodisnjaAmortizacija: 1, KontoIvActive: 1, KontoIvDateTimeCreated: 1, KontoIvId: 1, KontoIvKonto: 1, KontoIvNaziv: 1, KontoTrActive: 1, KontoTrDateTimeCreated: 1, KontoTrId: 1, KontoTrKonto: 1, KontoTrNaziv: 1, Naziv: 1, Naziv2: 1 }, Dokumentacija: { Active: 1, DateTimeCreated: 1, DokumentId: 1, FileContent: 1, Naziv: 1, OsnovnoActive: 1, OsnovnoAmGrupaId: 1, OsnovnoAmortiziranaVrijednost: 1, OsnovnoDateTimeCreated: 1, OsnovnoDatumAmortizacije: 1, OsnovnoDatumNabave: 1, OsnovnoDatumOtpisa: 1, OsnovnoDatumPripreme: 1, OsnovnoDatumServisa: 1, OsnovnoId: 1, OsnovnoInventarskiBroj: 1, OsnovnoJedinicaMjere: 1, OsnovnoKnjigovodstvenaVrijednost: 1, OsnovnoKoličina: 1, OsnovnoKontoId: 1, OsnovnoKontoIvId: 1, OsnovnoNabavnaVrijednost: 1, OsnovnoNapomena: 1, OsnovnoNazivOpreme: 1, OsnovnoOtpisano: 1, OsnovnoPartnerId: 1, OsnovnoSektorId: 1, OsnovnoSerijskiBroj: 1, OsnovnoStopaAmSredstva: 1, OsnovnoUmanjenjeVrijednosti: 1, OsnovnoUraId: 1, OsnovnoUvecanjeVrijednosti: 1, ServisActive: 1, ServisDateTimeCreated: 1, ServisDatumEndServisa: 1, ServisDatumServisa: 1, ServisId: 1, ServisIznosServisa: 1, ServisNapomena: 1, ServisOsnovnoId: 1, ServisPartnerId: 1, ServisVrstaTroskaId: 1 }, Konta: { Active: 1, DateTimeCreated: 1, Konto: 1, KontoId: 1, Naziv: 1 }, KontaUra: { Active: 1, DateTimeCreated: 1, IznosDuguje: 1, IznosPotrazuje: 1, KontaUraId: 1, Konto: 1, KontoActive: 1, KontoDateTimeCreated: 1, KontoId: 1, KontoNaziv: 1, MjestoTroskaActive: 1, MjestoTroskaDateTimeCreated: 1, MjestoTroskaId: 1, MjestoTroskaNaziv: 1, MjestoTroskaSifra: 1, Opis: 1, UraActive: 1, UraBrojRacuna: 1, UraDateTimeCreated: 1, UraDatumDospijeca: 1, UraDatumIsporuke: 1, UraDatumKnjizenja: 1, UraDatumRacuna: 1, UraId: 1, UraIznosOsnovice: 1, UraIznosPoreza: 1, UraMjestoTroskaId: 1, UraOpis: 1, UraPArtnerId: 1, UraPoslovnaGodina: 1, UraUkupanIznos: 1, UraUraBroj: 1 }, MjestoTroska: { Active: 1, DateTimeCreated: 1, MjestoTroskaId: 1, Naziv: 1, Sifra: 1 }, Obracun: { Active: 1, AmGrupaActive: 1, AmGrupaAmVijekTrajanja: 1, AmGrupaDateTimeCreated: 1, AmGrupaDvostrukaGodisnjaAm: 1, AmGrupaGodisnjaAmortizacija: 1, AmGrupaId: 1, AmGrupaKontoIvId: 1, AmGrupaKontoTrId: 1, AmGrupaNaziv: 1, AmGrupaNaziv2: 1, DateTimeCreated: 1, DatumObracuna: 1, Napomena: 1, ObracunId: 1, OsnovnoActive: 1, OsnovnoAmGrupaId: 1, OsnovnoAmortiziranaVrijednost: 1, OsnovnoDateTimeCreated: 1, OsnovnoDatumAmortizacije: 1, OsnovnoDatumNabave: 1, OsnovnoDatumOtpisa: 1, OsnovnoDatumPripreme: 1, OsnovnoId: 1, OsnovnoInventarskiBroj: 1, OsnovnoJedinicaMjere: 1, OsnovnoKnjigovodstvenaVrijednost: 1, OsnovnoKoličina: 1, OsnovnoKontoId: 1, OsnovnoKontoIvId: 1, OsnovnoNabavnaVrijednost: 1, OsnovnoNapomena: 1, OsnovnoNazivOpreme: 1, OsnovnoOtpisano: 1, OsnovnoPartnerId: 1, OsnovnoSektorId: 1, OsnovnoSerijskiBroj: 1, OsnovnoStopaAmSredstva: 1, OsnovnoUmanjenjeVrijednosti: 1, OsnovnoUraId: 1, OsnovnoUvecanjeVrijednosti: 1, Otpisano: 1, PartnerActive: 1, PartnerAdresa: 1, PartnerDateTimeCreated: 1, PartnerDrzava: 1, PartnerGrad: 1, PartnerId: 1, PartnerMjesto: 1, PartnerNaziv: 1, PartnerPtt: 1, RazdobljeDo: 1, RazdobljeOd: 1, SektorActive: 1, SektorDateTimeCreated: 1, SektorId: 1, SektorNaziv: 1, SektorŠifra: 1, Zavrsen: 1 }, ObracunStavke: { Active: 1, AmGrupaActive: 1, AmGrupaAmVijekTrajanja: 1, AmGrupaDateTimeCreated: 1, AmGrupaDvostrukaGodisnjaAm: 1, AmGrupaGodisnjaAmortizacija: 1, AmGrupaId: 1, AmGrupaKontoIvId: 1, AmGrupaKontoTrId: 1, AmGrupaNaziv: 1, AmGrupaNaziv2: 1, DateTimeCreated: 1, DatumOdObracuna: 1, IznosAmortizacije: 1, IznosOsnovice: 1, Napomena: 1, ObracunActive: 1, ObracunAmGrupaId: 1, ObracunDateTimeCreated: 1, ObracunDatumObracuna: 1, ObracunId: 1, ObracunNapomena: 1, ObracunOsnovnoId: 1, ObracunOtpisano: 1, ObracunPartnerId: 1, ObracunRazdobljeDo: 1, ObracunRazdobljeOd: 1, ObracunSektorId: 1, ObracunStavkeId: 1, ObracunZavrsen: 1, OsnovnoActive: 1, OsnovnoAmGrupaId: 1, OsnovnoAmortiziranaVrijednost: 1, OsnovnoDateTimeCreated: 1, OsnovnoDatumAmortizacije: 1, OsnovnoDatumNabave: 1, OsnovnoDatumOtpisa: 1, OsnovnoDatumPripreme: 1, OsnovnoId: 1, OsnovnoInventarskiBroj: 1, OsnovnoJedinicaMjere: 1, OsnovnoKnjigovodstvenaVrijednost: 1, OsnovnoKoličina: 1, OsnovnoKontoId: 1, OsnovnoKontoIvId: 1, OsnovnoNabavnaVrijednost: 1, OsnovnoNapomena: 1, OsnovnoNazivOpreme: 1, OsnovnoOtpisano: 1, OsnovnoPartnerId: 1, OsnovnoSektorId: 1, OsnovnoSerijskiBroj: 1, OsnovnoStopaAmSredstva: 1, OsnovnoUmanjenjeVrijednosti: 1, OsnovnoUraId: 1, OsnovnoUvecanjeVrijednosti: 1, PartnerActive: 1, PartnerAdresa: 1, PartnerDateTimeCreated: 1, PartnerDrzava: 1, PartnerGrad: 1, PartnerId: 1, PartnerMjesto: 1, PartnerNaziv: 1, PartnerPtt: 1, SektorActive: 1, SektorDateTimeCreated: 1, SektorId: 1, SektorNaziv: 1, SektorŠifra: 1, StopaAmort: 1 }, OsnovnoSredstvo: { Active: 1, AmGrupaActive: 1, AmGrupaAmVijekTrajanja: 1, AmGrupaDateTimeCreated: 1, AmGrupaDvostrukaGodisnjaAm: 1, AmGrupaGodisnjaAmortizacija: 1, AmGrupaId: 1, AmGrupaKontoIvId: 1, AmGrupaKontoTrId: 1, AmGrupaNaziv: 1, AmGrupaNaziv2: 1, AmortiziranaVrijednost: 1, DateTimeCreated: 1, DatumAmortizacije: 1, DatumNabave: 1, DatumOtpisa: 1, DatumPripreme: 1, DatumServisa: 1, InventarskiBroj: 1, JedinicaMjere: 1, KnjigovodstvenaVrijednost: 1, Količina: 1, Konto: 1, KontoActive: 1, KontoDateTimeCreated: 1, KontoId: 1, KontoIvActive: 1, KontoIvDateTimeCreated: 1, KontoIvId: 1, KontoIvKonto: 1, KontoIvNaziv: 1, KontoNaziv: 1, NabavnaVrijednost: 1, Napomena: 1, NazivOpreme: 1, OsnovnoId: 1, Otpisano: 1, PartnerActive: 1, PartnerAdresa: 1, PartnerDateTimeCreated: 1, PartnerDrzava: 1, PartnerGrad: 1, PartnerId: 1, PartnerMjesto: 1, PartnerNaziv: 1, PartnerPtt: 1, SektorActive: 1, SektorDateTimeCreated: 1, SektorId: 1, SektorNaziv: 1, SektorŠifra: 1, SerijskiBroj: 1, StopaAmSredstva: 1, UmanjenjeVrijednosti: 1, UraActive: 1, UraBrojRacuna: 1, UraDateTimeCreated: 1, UraDatumDospijeca: 1, UraDatumIsporuke: 1, UraDatumKnjizenja: 1, UraDatumRacuna: 1, UraId: 1, UraIznosOsnovice: 1, UraIznosPoreza: 1, UraMjestoTroskaId: 1, UraOpis: 1, UraPArtnerId: 1, UraPoslovnaGodina: 1, UraUkupanIznos: 1, UraUraBroj: 1, UvecanjeVrijednosti: 1 }, Partneri: { Active: 1, Adresa: 1, DateTimeCreated: 1, Drzava: 1, Grad: 1, Mjesto: 1, Naziv: 1, PartnerId: 1, Ptt: 1 }, Sektori: { Active: 1, DateTimeCreated: 1, Naziv: 1, SektorId: 1, Šifra: 1 }, Servis: { Active: 1, DateTimeCreated: 1, DatumEndServisa: 1, DatumServisa: 1, DetailList: 1, IznosServisa: 1, Napomena: 1, OsnovnoActive: 1, OsnovnoAmGrupaId: 1, OsnovnoAmortiziranaVrijednost: 1, OsnovnoDateTimeCreated: 1, OsnovnoDatumAmortizacije: 1, OsnovnoDatumNabave: 1, OsnovnoDatumOtpisa: 1, OsnovnoDatumPripreme: 1, OsnovnoDatumServisa: 1, OsnovnoId: 1, OsnovnoInventarskiBroj: 1, OsnovnoJedinicaMjere: 1, OsnovnoKnjigovodstvenaVrijednost: 1, OsnovnoKoličina: 1, OsnovnoKontoId: 1, OsnovnoKontoIvId: 1, OsnovnoNabavnaVrijednost: 1, OsnovnoNapomena: 1, OsnovnoNazivOpreme: 1, OsnovnoOtpisano: 1, OsnovnoPartnerId: 1, OsnovnoSektorId: 1, OsnovnoSerijskiBroj: 1, OsnovnoStopaAmSredstva: 1, OsnovnoUmanjenjeVrijednosti: 1, OsnovnoUraId: 1, OsnovnoUvecanjeVrijednosti: 1, PartnerActive: 1, PartnerAdresa: 1, PartnerDateTimeCreated: 1, PartnerDrzava: 1, PartnerGrad: 1, PartnerId: 1, PartnerMjesto: 1, PartnerNaziv: 1, PartnerPtt: 1, ServisId: 1, VrstaTroskaActive: 1, VrstaTroskaDateTimeCreated: 1, VrstaTroskaId: 1, VrstaTroskaNaziv: 1 }, TemeljnicaStavke: { DateTimeCreated: 1, Duguje: 1, Kontoid: 1, ObracunActive: 1, ObracunAmGrupaId: 1, ObracunDateTimeCreated: 1, ObracunDatumObracuna: 1, ObracunId: 1, ObracunNapomena: 1, ObracunOsnovnoId: 1, ObracunOtpisano: 1, ObracunPartnerId: 1, ObracunRazdobljeDo: 1, ObracunRazdobljeOd: 1, ObracunSektorId: 1, ObracunZavrsen: 1, Potrazuje: 1, TemeljnicaId: 1 }, UlazniRacun: { Active: 1, BrojRacuna: 1, DateTimeCreated: 1, DatumDospijeca: 1, DatumIsporuke: 1, DatumKnjizenja: 1, DatumRacuna: 1, IznosOsnovice: 1, IznosPoreza: 1, MjestoTroskaActive: 1, MjestoTroskaDateTimeCreated: 1, MjestoTroskaId: 1, MjestoTroskaNaziv: 1, MjestoTroskaSifra: 1, Opis: 1, PArtnerActive: 1, PArtnerAdresa: 1, PArtnerDateTimeCreated: 1, PArtnerDrzava: 1, PArtnerGrad: 1, PArtnerId: 1, PArtnerMjesto: 1, PArtnerNaziv: 1, PArtnerPtt: 1, PoslovnaGodina: 1, UkupanIznos: 1, UraBroj: 1, UraId: 1 }, VrstaTroska: { Active: 1, DateTimeCreated: 1, Naziv: 1, VrstaTroskaId: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, NorthwindPhone: 1, NorthwindPhoneMultiple: 1, SavePrimaryKeyError: 1 } });
     })(Texts = Osnovna_Sredstva_Glavna.Texts || (Osnovna_Sredstva_Glavna.Texts = {}));
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 var Osnovna_Sredstva_Glavna;
@@ -4978,9 +5309,14 @@ var Osnovna_Sredstva_Glavna;
             function OsnovnoSredstvoDialog() {
                 var _this = _super.call(this) || this;
                 _this.form = new OsnovnaSredstva.OsnovnoSredstvoForm(_this.idPrefix);
+                _this.servisGrid = new OsnovnaSredstva.OsnovnoServisGrid(_this.byId('ServisGrid'));
+                _this.servisGrid.openDialogsAsPanel = false;
+                // force order dialog to open in Dialog mode instead of Panel mode
+                // which is set as default on OrderDialog with @panelAttribute
                 //this.obracunGrid = new ObracunGrid(this.byId('ObracunGrid'));
                 //this.obracunGrid.openDialogsAsPanel = false;
                 //DialogUtils.pendingChangesConfirmation(this.element, () => this.getSaveState() != this.loadedState);
+                Osnovna_Sredstva_Glavna.DialogUtils.pendingChangesConfirmation(_this.element, function () { return _this.getSaveState() != _this.loadedState; });
                 _this.form.SerijskiBroj.element.on('keyup', function (e) {
                     // only auto number when a key between 'A' and 'Z' is pressed
                     if (e.which >= 65 && e.which <= 90)
@@ -4996,6 +5332,43 @@ var Osnovna_Sredstva_Glavna;
             OsnovnoSredstvoDialog.prototype.getDeletePermission = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.deletePermission; };
             OsnovnoSredstvoDialog.prototype.getInsertPermission = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.insertPermission; };
             OsnovnoSredstvoDialog.prototype.getUpdatePermission = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.updatePermission; };
+            OsnovnoSredstvoDialog.prototype.getToolbarButtons = function () {
+                var _this = this;
+                var btns = _super.prototype.getToolbarButtons.call(this);
+                var btnSave = Q.first(btns, function (x) { return x.cssClass == "save-and-close-button"; });
+                var btnApply = Q.first(btns, function (x) { return x.cssClass == "apply-changes-button"; });
+                var oldSaveClick = btnSave.onClick;
+                var oldApplyClick = btnApply.onClick;
+                btnSave.onClick = function (e) { _this.confirmBeforeSave(oldSaveClick, e); };
+                btnApply.onClick = function (e) { _this.confirmBeforeSave(oldApplyClick, e); };
+                return btns;
+            };
+            OsnovnoSredstvoDialog.prototype.confirmBeforeSave = function (oldEvt, e) {
+                Q.confirm("Potvrdite unos novog Osnovnog sredstva", function () {
+                    oldEvt(e);
+                });
+            };
+            OsnovnoSredstvoDialog.prototype.getSaveState = function () {
+                try {
+                    return $.toJSON(this.getSaveEntity());
+                }
+                catch (e) {
+                    return null;
+                }
+            };
+            OsnovnoSredstvoDialog.prototype.loadResponse = function (data) {
+                _super.prototype.loadResponse.call(this, data);
+                this.loadedState = this.getSaveState();
+            };
+            OsnovnoSredstvoDialog.prototype.loadEntity = function (entity) {
+                _super.prototype.loadEntity.call(this, entity);
+                Serenity.TabsExtensions.setDisabled(this.tabs, 'Servis', this.isNewOrDeleted());
+                this.servisGrid.osnovnoId = entity.OsnovnoId.toString();
+            };
+            OsnovnoSredstvoDialog.prototype.onSaveSuccess = function (response) {
+                _super.prototype.onSaveSuccess.call(this, response);
+                Q.reloadLookup('Osnovnasredstva.OsnovnoSredstvo');
+            };
             //getSaveState() {
             //    try {
             //        return $.toJSON(this.getSaveEntity());
@@ -8186,6 +8559,56 @@ var Osnovna_Sredstva_Glavna;
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 var Osnovna_Sredstva_Glavna;
 (function (Osnovna_Sredstva_Glavna) {
+    var Default;
+    (function (Default) {
+        var OsnovnoSredstvoDialog = /** @class */ (function (_super) {
+            __extends(OsnovnoSredstvoDialog, _super);
+            function OsnovnoSredstvoDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Default.OsnovnoSredstvoForm(_this.idPrefix);
+                return _this;
+            }
+            OsnovnoSredstvoDialog.prototype.getFormKey = function () { return Default.OsnovnoSredstvoForm.formKey; };
+            OsnovnoSredstvoDialog.prototype.getIdProperty = function () { return Default.OsnovnoSredstvoRow.idProperty; };
+            OsnovnoSredstvoDialog.prototype.getLocalTextPrefix = function () { return Default.OsnovnoSredstvoRow.localTextPrefix; };
+            OsnovnoSredstvoDialog.prototype.getNameProperty = function () { return Default.OsnovnoSredstvoRow.nameProperty; };
+            OsnovnoSredstvoDialog.prototype.getService = function () { return Default.OsnovnoSredstvoService.baseUrl; };
+            OsnovnoSredstvoDialog.prototype.getDeletePermission = function () { return Default.OsnovnoSredstvoRow.deletePermission; };
+            OsnovnoSredstvoDialog.prototype.getInsertPermission = function () { return Default.OsnovnoSredstvoRow.insertPermission; };
+            OsnovnoSredstvoDialog.prototype.getUpdatePermission = function () { return Default.OsnovnoSredstvoRow.updatePermission; };
+            OsnovnoSredstvoDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OsnovnoSredstvoDialog);
+            return OsnovnoSredstvoDialog;
+        }(Serenity.EntityDialog));
+        Default.OsnovnoSredstvoDialog = OsnovnoSredstvoDialog;
+    })(Default = Osnovna_Sredstva_Glavna.Default || (Osnovna_Sredstva_Glavna.Default = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var Default;
+    (function (Default) {
+        var OsnovnoSredstvoGrid = /** @class */ (function (_super) {
+            __extends(OsnovnoSredstvoGrid, _super);
+            function OsnovnoSredstvoGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OsnovnoSredstvoGrid.prototype.getColumnsKey = function () { return 'Default.OsnovnoSredstvo'; };
+            OsnovnoSredstvoGrid.prototype.getDialogType = function () { return Default.OsnovnoSredstvoDialog; };
+            OsnovnoSredstvoGrid.prototype.getIdProperty = function () { return Default.OsnovnoSredstvoRow.idProperty; };
+            OsnovnoSredstvoGrid.prototype.getInsertPermission = function () { return Default.OsnovnoSredstvoRow.insertPermission; };
+            OsnovnoSredstvoGrid.prototype.getLocalTextPrefix = function () { return Default.OsnovnoSredstvoRow.localTextPrefix; };
+            OsnovnoSredstvoGrid.prototype.getService = function () { return Default.OsnovnoSredstvoService.baseUrl; };
+            OsnovnoSredstvoGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OsnovnoSredstvoGrid);
+            return OsnovnoSredstvoGrid;
+        }(Serenity.EntityGrid));
+        Default.OsnovnoSredstvoGrid = OsnovnoSredstvoGrid;
+    })(Default = Osnovna_Sredstva_Glavna.Default || (Osnovna_Sredstva_Glavna.Default = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
     var Membership;
     (function (Membership) {
         var ChangePasswordPanel = /** @class */ (function (_super) {
@@ -9092,6 +9515,78 @@ var Osnovna_Sredstva_Glavna;
             AktivacijaSredstvaDialog.prototype.getDeletePermission = function () { return OsnovnaSredstva.AktivacijaSredstvaRow.deletePermission; };
             AktivacijaSredstvaDialog.prototype.getInsertPermission = function () { return OsnovnaSredstva.AktivacijaSredstvaRow.insertPermission; };
             AktivacijaSredstvaDialog.prototype.getUpdatePermission = function () { return OsnovnaSredstva.AktivacijaSredstvaRow.updatePermission; };
+            AktivacijaSredstvaDialog.prototype.afterLoadEntity = function () {
+                _super.prototype.afterLoadEntity.call(this);
+                //    // fill next number in new record mode
+                //    if (this.isNew())
+                //        this.getNextNumber();
+                //}
+                //constructor() {
+                //    super();
+                //this.obracunGrid = new ObracunGrid(this.byId('ObracunGrid'));
+                //this.obracunGrid.openDialogsAsPanel = false;
+                //DialogUtils.pendingChangesConfirmation(this.element, () => this.getSaveState() != this.loadedState);
+                //    this.form.OsnovnoId.element.on('keyup', (e) => {
+                //        // only auto number when a key between 'A' and 'Z' is pressed
+                //        if (e.which >= 65 && e.which <= 90)
+                //            this.getNextNumber();
+                //    });
+                //}
+                //private getNextNumber() {
+                //    var val = Q.trimToNull(this.form.OsnovnoId.value.toString());
+                //    // we will only get next number when customer ID is empty or 1 character in length
+                //    if (!val || val.length <= 1) {
+                //        // if no customer ID yet (new record mode probably) use 'C' as a prefix
+                //       // var prefix = (val || 'O').toUpperCase();
+                //        // call our service, see CustomerEndpoint.cs and CustomerRepository.cs
+                //        Osnovna_Sredstva_Glavna.OsnovnaSredstva.OsnovnoSredstvoService.GetNextNumber({
+                //       //     Prefix: prefix,
+                //       //     Length: 5 // we want service to search for and return serials of 5 in length
+                //        }, response => {
+                //            this.form.OsnovnoId.value.toString() = response.Serial.toString();
+                //            // this is to mark numerical part after prefix
+                //            (this.form.OsnovnoId.element[0] as any).setSelectionRange(prefix.length, response.Serial.length);
+                //        });
+                //    }
+                //}
+                //protected getToolbarButtons(): Serenity.ToolButton[] {
+                //    let btns = super.getToolbarButtons();
+                //    var btnSave = Q.first(btns, x => x.cssClass == "save-and-close-button");
+                //    var btnApply = Q.first(btns, x => x.cssClass == "apply-changes-button");
+                //    var oldSaveClick = btnSave.onClick;
+                //    var oldApplyClick = btnApply.onClick;
+                //    btnSave.onClick = e => { this.confirmBeforeSave(oldSaveClick, e); };
+                //    btnApply.onClick = e => { this.confirmBeforeSave(oldApplyClick, e); };
+                //    return btns;
+                //}
+                //private confirmBeforeSave(oldEvt, e) {
+                //    var servicecall = OsnovnoSredstvoService.PokreniAktivaciju(
+                //        {
+                //            OsnovnoId: fld.OsnovnoId,
+                //            osnovnoId: fld.OsnovnoId
+                //        },
+                //        response => {
+                //            // Q.notifySuccess("Aktivacija Sredstva izvršena");
+                //            Q.confirm(
+                //                "Da li ste sigurni da želite aktivirati sredstvo?",
+                //                () => {
+                //                    Q.notifySuccess("Osnovno sredstvo:" + " " + fld.OsnovnoId + " aktivirano");
+                //                   // oldEvt(e);
+                //                },
+                //                {
+                //                    onNo: () => {
+                //                        oldEvt(e);
+                //                    },
+                //                    onCancel: () => {
+                //                        Q.notifyError("Aktivacija poništena!");
+                //                    },
+                //                    dialogClass: 's-MessageDialog s-WarningDialog'
+                //                });
+                //        });
+                //Q.confirm("Potvrdite unos novog Osnovnog sredstva", () => {
+                //    ;
+                //});
+            };
             AktivacijaSredstvaDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], AktivacijaSredstvaDialog);
@@ -9115,6 +9610,64 @@ var Osnovna_Sredstva_Glavna;
             AktivacijaSredstvaGrid.prototype.getInsertPermission = function () { return OsnovnaSredstva.AktivacijaSredstvaRow.insertPermission; };
             AktivacijaSredstvaGrid.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.AktivacijaSredstvaRow.localTextPrefix; };
             AktivacijaSredstvaGrid.prototype.getService = function () { return OsnovnaSredstva.AktivacijaSredstvaService.baseUrl; };
+            AktivacijaSredstvaGrid.prototype.getColumns = function () {
+                var columns = _super.prototype.getColumns.call(this);
+                columns.unshift({
+                    field: 'Aktiviraj sredstvo',
+                    name: '',
+                    format: function (ctx) {
+                        var curItem = ctx.item;
+                        var divId = "";
+                        if (curItem.DatumAktivacije != null)
+                            divId =
+                                '<a class="inline-action   glyphicon glyphicon-play" title = "Aktivacija Sredstva" > </a>';
+                        return divId;
+                    },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
+                });
+                return columns;
+            };
+            AktivacijaSredstvaGrid.prototype.onClick = function (e, row, cell) {
+                var _this = this;
+                _super.prototype.onClick.call(this, e, row, cell);
+                if (e.isDefaultPrevented())
+                    return;
+                var item = this.itemAt(row);
+                var target = $(e.target);
+                // var Osnovno = OsnovnaSredstva.OsnovnoSredstvoRow.Fields
+                // if user clicks "i" element, e.g. icon
+                if (target.parent().hasClass('inline-action'))
+                    target = target.parent();
+                if (target.hasClass('inline-action')) {
+                    //var id = Q.first(OsnovnaSredstva.OsnovnoSredstvoRow.getLookup().items, x => x.OsnovnoId == item.OsnovnoId);
+                    //OsnovnaSredstva.OsnovnoSredstvoService.Retrieve({
+                    //    EntityId: id
+                    //}, response => {
+                    //    this.setCustomerDetails(response.Entity);
+                    //});
+                    e.preventDefault();
+                    var servicecall = OsnovnaSredstva.OsnovnoSredstvoService.PokreniAktivaciju({
+                        OsnovnoId: item.OsnovnoId,
+                        osnovnoId: item.OsnovnoId
+                    }, function (response) {
+                        // Q.notifySuccess("Aktivacija Sredstva izvršena");
+                        Q.confirm("Da li ste sigurni da želite aktivirati sredstvo?", function () {
+                            Q.notifySuccess("Osnovno sredstvo:" + " " + item.OsnovnoId + " aktivirano");
+                        }, {
+                            onNo: function () {
+                                Q.notifyInfo("No?");
+                            },
+                            onCancel: function () {
+                                Q.notifyError("Aktivacija poništena!");
+                            },
+                            dialogClass: 's-MessageDialog s-WarningDialog'
+                        });
+                        _this.refresh();
+                    });
+                }
+            };
             AktivacijaSredstvaGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], AktivacijaSredstvaGrid);
@@ -9171,6 +9724,78 @@ var Osnovna_Sredstva_Glavna;
             return AmortizacijskeGrupeGrid;
         }(Serenity.EntityGrid));
         OsnovnaSredstva.AmortizacijskeGrupeGrid = AmortizacijskeGrupeGrid;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var DokumentacijaDialog = /** @class */ (function (_super) {
+            __extends(DokumentacijaDialog, _super);
+            function DokumentacijaDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new OsnovnaSredstva.DokumentacijaForm(_this.idPrefix);
+                return _this;
+            }
+            DokumentacijaDialog.prototype.getFormKey = function () { return OsnovnaSredstva.DokumentacijaForm.formKey; };
+            DokumentacijaDialog.prototype.getIdProperty = function () { return OsnovnaSredstva.DokumentacijaRow.idProperty; };
+            DokumentacijaDialog.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.DokumentacijaRow.localTextPrefix; };
+            DokumentacijaDialog.prototype.getNameProperty = function () { return OsnovnaSredstva.DokumentacijaRow.nameProperty; };
+            DokumentacijaDialog.prototype.getService = function () { return OsnovnaSredstva.DokumentacijaService.baseUrl; };
+            DokumentacijaDialog.prototype.getDeletePermission = function () { return OsnovnaSredstva.DokumentacijaRow.deletePermission; };
+            DokumentacijaDialog.prototype.getInsertPermission = function () { return OsnovnaSredstva.DokumentacijaRow.insertPermission; };
+            DokumentacijaDialog.prototype.getUpdatePermission = function () { return OsnovnaSredstva.DokumentacijaRow.updatePermission; };
+            DokumentacijaDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DokumentacijaDialog);
+            return DokumentacijaDialog;
+        }(Osnovna_Sredstva_Glavna.Common.GridEditorDialog));
+        OsnovnaSredstva.DokumentacijaDialog = DokumentacijaDialog;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var DokumentacijaEditor = /** @class */ (function (_super) {
+            __extends(DokumentacijaEditor, _super);
+            function DokumentacijaEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            DokumentacijaEditor.prototype.getColumnsKey = function () { return "OsnovnaSredstva.Dokumentacija"; };
+            DokumentacijaEditor.prototype.getDialogType = function () { return OsnovnaSredstva.DokumentacijaDialog; };
+            DokumentacijaEditor.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.DokumentacijaRow.localTextPrefix; };
+            DokumentacijaEditor = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DokumentacijaEditor);
+            return DokumentacijaEditor;
+        }(Osnovna_Sredstva_Glavna.Common.GridEditorBase));
+        OsnovnaSredstva.DokumentacijaEditor = DokumentacijaEditor;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var DokumentacijaGrid = /** @class */ (function (_super) {
+            __extends(DokumentacijaGrid, _super);
+            function DokumentacijaGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DokumentacijaGrid.prototype.getColumnsKey = function () { return 'OsnovnaSredstva.Dokumentacija'; };
+            DokumentacijaGrid.prototype.getDialogType = function () { return OsnovnaSredstva.DokumentacijaDialog; };
+            DokumentacijaGrid.prototype.getIdProperty = function () { return OsnovnaSredstva.DokumentacijaRow.idProperty; };
+            DokumentacijaGrid.prototype.getInsertPermission = function () { return OsnovnaSredstva.DokumentacijaRow.insertPermission; };
+            DokumentacijaGrid.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.DokumentacijaRow.localTextPrefix; };
+            DokumentacijaGrid.prototype.getService = function () { return OsnovnaSredstva.DokumentacijaService.baseUrl; };
+            DokumentacijaGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DokumentacijaGrid);
+            return DokumentacijaGrid;
+        }(Serenity.EntityGrid));
+        OsnovnaSredstva.DokumentacijaGrid = DokumentacijaGrid;
     })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 var Osnovna_Sredstva_Glavna;
@@ -9539,6 +10164,7 @@ var Osnovna_Sredstva_Glavna;
                     }
                     else if (target.hasClass('glyphicon glyphicon-duplicate')) {
                         var servicecall = OsnovnaSredstva.ObracunService.PokreniObracun({
+                            IdObracun: item.ObracunId,
                             ObracunID: item.ObracunId
                         }, function (response) {
                             Q.notifySuccess("Operation complete.");
@@ -9649,6 +10275,131 @@ var Osnovna_Sredstva_Glavna;
 (function (Osnovna_Sredstva_Glavna) {
     var OsnovnaSredstva;
     (function (OsnovnaSredstva) {
+        var ServisDialog = /** @class */ (function (_super) {
+            __extends(ServisDialog, _super);
+            function ServisDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new OsnovnaSredstva.ServisForm(_this.idPrefix);
+                return _this;
+                //private customerPropertyGrid: Serenity.PropertyGrid;
+                //private customerForm: Osnovna_Sredstva_Glavna.OsnovnaSredstva.DokumentacijaForm;
+                //private customerValidator: JQueryValidation.Validator;
+                //private selfChange = 0;
+            }
+            ServisDialog.prototype.getFormKey = function () { return OsnovnaSredstva.ServisForm.formKey; };
+            ServisDialog.prototype.getIdProperty = function () { return OsnovnaSredstva.ServisRow.idProperty; };
+            ServisDialog.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.ServisRow.localTextPrefix; };
+            ServisDialog.prototype.getNameProperty = function () { return OsnovnaSredstva.ServisRow.nameProperty; };
+            ServisDialog.prototype.getService = function () { return OsnovnaSredstva.ServisService.baseUrl; };
+            ServisDialog.prototype.getDeletePermission = function () { return OsnovnaSredstva.ServisRow.deletePermission; };
+            ServisDialog.prototype.getInsertPermission = function () { return OsnovnaSredstva.ServisRow.insertPermission; };
+            ServisDialog.prototype.getUpdatePermission = function () { return OsnovnaSredstva.ServisRow.updatePermission; };
+            ServisDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServisDialog);
+            return ServisDialog;
+        }(Serenity.EntityDialog));
+        OsnovnaSredstva.ServisDialog = ServisDialog;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+/// <reference path="../Servis/ServisDialog.ts" />
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var OsnovnoServisDialog = /** @class */ (function (_super) {
+            __extends(OsnovnoServisDialog, _super);
+            function OsnovnoServisDialog() {
+                return _super.call(this) || this;
+            }
+            OsnovnoServisDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                Serenity.EditorUtils.setReadOnly(this.form.OsnovnoId, true);
+            };
+            OsnovnoServisDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OsnovnoServisDialog);
+            return OsnovnoServisDialog;
+        }(OsnovnaSredstva.ServisDialog));
+        OsnovnaSredstva.OsnovnoServisDialog = OsnovnoServisDialog;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var ServisGrid = /** @class */ (function (_super) {
+            __extends(ServisGrid, _super);
+            function ServisGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ServisGrid.prototype.getColumnsKey = function () { return 'OsnovnaSredstva.Servis'; };
+            ServisGrid.prototype.getDialogType = function () { return OsnovnaSredstva.ServisDialog; };
+            ServisGrid.prototype.getIdProperty = function () { return OsnovnaSredstva.ServisRow.idProperty; };
+            ServisGrid.prototype.getInsertPermission = function () { return OsnovnaSredstva.ServisRow.insertPermission; };
+            ServisGrid.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.ServisRow.localTextPrefix; };
+            ServisGrid.prototype.getService = function () { return OsnovnaSredstva.ServisService.baseUrl; };
+            ServisGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ServisGrid);
+            return ServisGrid;
+        }(Serenity.EntityGrid));
+        OsnovnaSredstva.ServisGrid = ServisGrid;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+/// <reference path="../Servis/ServisGrid.ts" />
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var OsnovnoServisGrid = /** @class */ (function (_super) {
+            __extends(OsnovnoServisGrid, _super);
+            function OsnovnoServisGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OsnovnoServisGrid.prototype.getDialogType = function () { return OsnovnaSredstva.OsnovnoServisDialog; };
+            OsnovnoServisGrid.prototype.getColumns = function () {
+                return _super.prototype.getColumns.call(this).filter(function (x) { return x.field !== "OsnovnoNazivOpreme" /* OsnovnoNazivOpreme */; });
+            };
+            OsnovnoServisGrid.prototype.initEntityDialog = function (itemType, dialog) {
+                _super.prototype.initEntityDialog.call(this, itemType, dialog);
+                Serenity.SubDialogHelper.cascade(dialog, this.element.closest('.ui-dialog'));
+            };
+            OsnovnoServisGrid.prototype.addButtonClick = function () {
+                this.editItem({ OsnovnoId: this.osnovnoId });
+            };
+            OsnovnoServisGrid.prototype.getInitialTitle = function () {
+                return null;
+            };
+            OsnovnoServisGrid.prototype.getGridCanLoad = function () {
+                return _super.prototype.getGridCanLoad.call(this) && !!this.osnovnoId;
+            };
+            Object.defineProperty(OsnovnoServisGrid.prototype, "osnovnoId", {
+                get: function () {
+                    return this._osnovnoId;
+                },
+                set: function (value) {
+                    if (this._osnovnoId !== value) {
+                        this._osnovnoId = value;
+                        this.setEquality('OsnovnoId', value);
+                        this.refresh();
+                    }
+                },
+                enumerable: true,
+                configurable: true
+            });
+            OsnovnoServisGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OsnovnoServisGrid);
+            return OsnovnoServisGrid;
+        }(OsnovnaSredstva.ServisGrid));
+        OsnovnaSredstva.OsnovnoServisGrid = OsnovnoServisGrid;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
         var OsnovnoSredstvoGrid = /** @class */ (function (_super) {
             __extends(OsnovnoSredstvoGrid, _super);
             //protected shippingStateFilter: Serenity.EnumEditor;
@@ -9681,8 +10432,15 @@ var Osnovna_Sredstva_Glavna;
                 columns.unshift({
                     field: 'Delete Row',
                     name: '',
-                    format: function (ctx) { return '<a class="inline-action delete-row" title="delete">' +
-                        '<i class="fa fa-trash-o text-red"></i></a>'; },
+                    format: function (ctx) {
+                        var curItem = ctx.item;
+                        var divId = "";
+                        if (curItem.Active != true)
+                            divId =
+                                '<a class="inline-action delete-row" title="Obriši sredstvo">' +
+                                    '<i class="fa fa-trash-o text-red"></i></a>';
+                        return divId;
+                    },
                     width: 24,
                     minWidth: 24,
                     maxWidth: 24
@@ -9703,12 +10461,68 @@ var Osnovna_Sredstva_Glavna;
                     maxWidth: 24
                 });
                 columns.splice(2, 0, {
-                    field: 'New Osnovno Sredstvo',
+                    field: 'Aktivacija sredstva',
                     name: '',
-                    format: function (ctx) { return '<a class="inline-action   glyphicon glyphicon-modal-window" title="New Osnovno Sredstvo"></a>'; },
+                    format: function (ctx) {
+                        var curItem = ctx.item;
+                        var divId = "";
+                        if (curItem.Active != true)
+                            divId = '<a class="inline-action   glyphicon glyphicon-modal-window" title="Aktivacija sredstva"></a>';
+                        return divId;
+                    },
                     width: 24,
                     minWidth: 24,
                     maxWidth: 24,
+                });
+                columns.splice(2, 0, {
+                    field: 'Upozorenje servisa',
+                    name: '',
+                    format: function (ctx) {
+                        var curItem = ctx.item;
+                        var dateItem = ctx.item;
+                        //Konverzija cjelokupnog datuma u text kako bi usporedio podatke s Datumom servisa
+                        var dan = new Date().getDate();
+                        var mjesec = (new Date().getUTCMonth() + 1);
+                        var izracun = "";
+                        var izracunDan = "";
+                        if (mjesec < 10) {
+                            izracun = "0" + mjesec.toString();
+                        }
+                        else {
+                            izracun = mjesec.toString();
+                        }
+                        if (dan < 10) {
+                            izracunDan = "0" + dan.toString();
+                        }
+                        else {
+                            izracunDan = dan.toString();
+                        }
+                        var godina = new Date().getFullYear();
+                        var datum = godina + "-" + izracun + "-" + izracunDan + "T00:00:00.000";
+                        var divId = "";
+                        // Konverzija datuma servisa iz stringa u datum 
+                        var godinaServisa = Number(curItem.DatumServisa.substring(0, 4));
+                        var mjesecServisa = Number(curItem.DatumServisa.substr(5, 2));
+                        var danServisa = Number(curItem.DatumServisa.substr(8, 2));
+                        var DatumServisa = new Date(godinaServisa, mjesecServisa, danServisa);
+                        var Datum = new Date(godina, mjesec, dan + 7);
+                        if (DatumServisa <= Datum)
+                            divId = '<a class="inline-action glyphicon glyphicon-wrench " style="color:red" title = "Obavi servis!" > </a>' + 'Datum idućeg servisa: ' + (danServisa + "-" + mjesecServisa + "-" + godinaServisa + " godine");
+                        return divId;
+                    },
+                    // format: ctx => '<a class="inline-action   glyphicon glyphicon-play" title="Aktivacija Sredstva"></a>',
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24,
+                });
+                columns.unshift({
+                    field: 'Approves',
+                    name: '',
+                    format: function (ctx) { return '<a class="inline-action approve-form" title="Approves">' +
+                        '<i class="fa fa-hand-o-up text-red"></i></a>'; },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
                 });
                 columns.splice(2, 0, {
                     field: 'Obračun amortizacije',
@@ -9738,21 +10552,6 @@ var Osnovna_Sredstva_Glavna;
                     minWidth: 24,
                     maxWidth: 24,
                 });
-                columns.splice(2, 0, {
-                    field: 'Aktivacija Sredstva',
-                    name: '',
-                    format: function (ctx) {
-                        var curItem = ctx.item;
-                        var divId = "";
-                        if (curItem.Active != true)
-                            divId = '<a class="inline-action   glyphicon glyphicon-play" title = "Aktivacija Sredstva" > </a>';
-                        return divId;
-                    },
-                    // format: ctx => '<a class="inline-action   glyphicon glyphicon-play" title="Aktivacija Sredstva"></a>',
-                    width: 24,
-                    minWidth: 24,
-                    maxWidth: 24,
-                });
                 return columns;
             };
             OsnovnoSredstvoGrid.prototype.onClick = function (e, row, cell) {
@@ -9772,6 +10571,17 @@ var Osnovna_Sredstva_Glavna;
                             OsnovnaSredstva.OsnovnoSredstvoService.Delete({
                                 EntityId: item.OsnovnoId,
                             }, function (response) {
+                                Q.confirm("Da li ste sigurni da želite obrisati sredstvo?", function () {
+                                    Q.notifySuccess("Osnovno sredstvo:" + " " + item.NazivOpreme + " obrisano");
+                                }, {
+                                    onNo: function () {
+                                        Q.notifyInfo("No?");
+                                    },
+                                    onCancel: function () {
+                                        Q.notifyError("Brisanje sredstva poništeno!");
+                                    },
+                                    dialogClass: 's-MessageDialog s-WarningDialog'
+                                });
                                 _this.refresh();
                             });
                         });
@@ -9786,12 +10596,33 @@ var Osnovna_Sredstva_Glavna;
                             OsnovnoId: item.OsnovnoId
                         });
                     }
+                    else if (target.hasClass('approve-form')) {
+                        new OsnovnaSredstva.OsnovnoSredstvoSecondDialog().loadByIdAndOpenDialog(item.OsnovnoId);
+                    }
                     else if (target.hasClass('glyphicon glyphicon-play')) {
-                        var dlg = new OsnovnaSredstva.AktivacijaSredstvaDialog;
-                        this.initDialog(dlg);
-                        dlg.loadEntityAndOpenDialog({
-                            OsnovnoId: item.OsnovnoId
+                        var servicecall = OsnovnaSredstva.OsnovnoSredstvoService.PokreniAktivaciju({
+                            OsnovnoId: item.OsnovnoId,
+                            osnovnoId: item.OsnovnoId
+                        }, function (response) {
+                            // Q.notifySuccess("Aktivacija Sredstva izvršena");
+                            Q.confirm("Da li ste sigurni da želite aktivirati sredstvo?", function () {
+                                Q.notifySuccess("Osnovno sredstvo:" + " " + item.OsnovnoId + " aktivirano");
+                            }, {
+                                onNo: function () {
+                                    Q.notifyInfo("No?");
+                                },
+                                onCancel: function () {
+                                    Q.notifyError("Aktivacija poništena!");
+                                },
+                                dialogClass: 's-MessageDialog s-WarningDialog'
+                            });
+                            _this.refresh();
                         });
+                        //var dlg = new AktivacijaSredstvaDialog;
+                        //this.initDialog(dlg);
+                        //dlg.loadEntityAndOpenDialog(<AktivacijaSredstvaRow>{
+                        //    OsnovnoId: item.OsnovnoId
+                        //});
                     }
                     else if (target.hasClass('glyphicon glyphicon-cog')) {
                         var dlga = new OsnovnaSredstva.ObracunDialog;
@@ -9804,24 +10635,24 @@ var Osnovna_Sredstva_Glavna;
                             RazdobljeOd: item.DatumAmortizacije
                         });
                     }
-                    else if (target.hasClass('glyphicon glyphicon-duplicate')) {
-                        //    Q.serviceCall(new ServiceCallOptions
-                        //    {
-                        //            URL = Q.ResolveUrl("~/Accounting/LedgersBalance/ExecuteProc"),
-                        //            Request = new ProcParam{ Param1="Param1" },
-                        //        OnSuccess = response => {
-                        //            var result = ((ProcResponse)response);
-                        //    Q.alert(result.ExecutionResult);
-                        //}
-                        //  onclick = "location.href='<%: Url.Action("Action", "Controller") %>'" />
-                        //var dlga = new ObracunDialog;
-                        //this.initDialog(dlga);
-                        //    var id = null
-                        window.location.href = 'http://desktop-jbaab7c/ReportServer/Pages/ReportViewer.aspx?%2fKarticaSredstvaGlavna&rs:Command=Render&OsnovnoId=' + item.OsnovnoId;
-                        //  //
-                        //       =”javascript: void(window.open(‘http://myserver/mypath/myasppage.html&#8217;, ‘_blank’, ‘width=300,height=300,top=300,left=500,toolbar=1,menubar=1,location=1,status=1,scrollbars=1,resizable=1′))”
-                        // window.location.href ='javascript: void (window.open(‘http://desktop-jbaab7c/Reports/Pages/Report.aspx?ItemPath=%2fKarticaSredstva;, ‘_blank’, ‘width=300,height=300,top=300,left=500,toolbar=1,menubar=1,location=1,status=1,scrollbars=1,resizable=1′))'
-                    }
+                    //else if (target.hasClass('glyphicon glyphicon-duplicate')) {
+                    //    //    Q.serviceCall(new ServiceCallOptions
+                    //    //    {
+                    //    //            URL = Q.ResolveUrl("~/Accounting/LedgersBalance/ExecuteProc"),
+                    //    //            Request = new ProcParam{ Param1="Param1" },
+                    //    //        OnSuccess = response => {
+                    //    //            var result = ((ProcResponse)response);
+                    //    //    Q.alert(result.ExecutionResult);
+                    //    //}
+                    //    //  onclick = "location.href='<%: Url.Action("Action", "Controller") %>'" />
+                    //    //var dlga = new ObracunDialog;
+                    //    //this.initDialog(dlga);
+                    //    //    var id = null
+                    //    window.location.href = 'http://desktop-jbaab7c/ReportServer/Pages/ReportViewer.aspx?%2fKarticaSredstvaGlavna&rs:Command=Render&OsnovnoId=' + item.OsnovnoId;
+                    //    //  //
+                    //    //       =”javascript: void(window.open(‘http://myserver/mypath/myasppage.html&#8217;, ‘_blank’, ‘width=300,height=300,top=300,left=500,toolbar=1,menubar=1,location=1,status=1,scrollbars=1,resizable=1′))”
+                    //    // window.location.href ='javascript: void (window.open(‘http://desktop-jbaab7c/Reports/Pages/Report.aspx?ItemPath=%2fKarticaSredstva;, ‘_blank’, ‘width=300,height=300,top=300,left=500,toolbar=1,menubar=1,location=1,status=1,scrollbars=1,resizable=1′))'
+                    //}
                     //}
                 }
             };
@@ -9873,6 +10704,34 @@ var Osnovna_Sredstva_Glavna;
             return OsnovnoSredstvoGrid;
         }(Serenity.EntityGrid));
         OsnovnaSredstva.OsnovnoSredstvoGrid = OsnovnoSredstvoGrid;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var OsnovnoSredstvoSecondDialog = /** @class */ (function (_super) {
+            __extends(OsnovnoSredstvoSecondDialog, _super);
+            function OsnovnoSredstvoSecondDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new OsnovnaSredstva.OsnovnoSredstvoSecondForm(_this.idPrefix);
+                return _this;
+            }
+            OsnovnoSredstvoSecondDialog.prototype.getFormKey = function () { return OsnovnaSredstva.OsnovnoSredstvoSecondForm.formKey; };
+            OsnovnoSredstvoSecondDialog.prototype.getIdProperty = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.idProperty; };
+            OsnovnoSredstvoSecondDialog.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.localTextPrefix; };
+            OsnovnoSredstvoSecondDialog.prototype.getNameProperty = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.nameProperty; };
+            OsnovnoSredstvoSecondDialog.prototype.getService = function () { return OsnovnaSredstva.OsnovnoSredstvoService.baseUrl; };
+            OsnovnoSredstvoSecondDialog.prototype.getDeletePermission = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.deletePermission; };
+            OsnovnoSredstvoSecondDialog.prototype.getInsertPermission = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.insertPermission; };
+            OsnovnoSredstvoSecondDialog.prototype.getUpdatePermission = function () { return OsnovnaSredstva.OsnovnoSredstvoRow.updatePermission; };
+            OsnovnoSredstvoSecondDialog = __decorate([
+                Serenity.Decorators.panel(),
+                Serenity.Decorators.registerClass()
+            ], OsnovnoSredstvoSecondDialog);
+            return OsnovnoSredstvoSecondDialog;
+        }(Serenity.EntityDialog));
+        OsnovnaSredstva.OsnovnoSredstvoSecondDialog = OsnovnoSredstvoSecondDialog;
     })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 var Osnovna_Sredstva_Glavna;
@@ -9945,7 +10804,8 @@ var Osnovna_Sredstva_Glavna;
             SektoriDialog.prototype.getInsertPermission = function () { return OsnovnaSredstva.SektoriRow.insertPermission; };
             SektoriDialog.prototype.getUpdatePermission = function () { return OsnovnaSredstva.SektoriRow.updatePermission; };
             SektoriDialog = __decorate([
-                Serenity.Decorators.registerClass()
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.panel()
             ], SektoriDialog);
             return SektoriDialog;
         }(Serenity.EntityDialog));
@@ -10198,6 +11058,56 @@ var Osnovna_Sredstva_Glavna;
             return UlazniRacunGrid;
         }(Serenity.EntityGrid));
         OsnovnaSredstva.UlazniRacunGrid = UlazniRacunGrid;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var VrstaTroskaDialog = /** @class */ (function (_super) {
+            __extends(VrstaTroskaDialog, _super);
+            function VrstaTroskaDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new OsnovnaSredstva.VrstaTroskaForm(_this.idPrefix);
+                return _this;
+            }
+            VrstaTroskaDialog.prototype.getFormKey = function () { return OsnovnaSredstva.VrstaTroskaForm.formKey; };
+            VrstaTroskaDialog.prototype.getIdProperty = function () { return OsnovnaSredstva.VrstaTroskaRow.idProperty; };
+            VrstaTroskaDialog.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.VrstaTroskaRow.localTextPrefix; };
+            VrstaTroskaDialog.prototype.getNameProperty = function () { return OsnovnaSredstva.VrstaTroskaRow.nameProperty; };
+            VrstaTroskaDialog.prototype.getService = function () { return OsnovnaSredstva.VrstaTroskaService.baseUrl; };
+            VrstaTroskaDialog.prototype.getDeletePermission = function () { return OsnovnaSredstva.VrstaTroskaRow.deletePermission; };
+            VrstaTroskaDialog.prototype.getInsertPermission = function () { return OsnovnaSredstva.VrstaTroskaRow.insertPermission; };
+            VrstaTroskaDialog.prototype.getUpdatePermission = function () { return OsnovnaSredstva.VrstaTroskaRow.updatePermission; };
+            VrstaTroskaDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], VrstaTroskaDialog);
+            return VrstaTroskaDialog;
+        }(Serenity.EntityDialog));
+        OsnovnaSredstva.VrstaTroskaDialog = VrstaTroskaDialog;
+    })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
+})(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
+var Osnovna_Sredstva_Glavna;
+(function (Osnovna_Sredstva_Glavna) {
+    var OsnovnaSredstva;
+    (function (OsnovnaSredstva) {
+        var VrstaTroskaGrid = /** @class */ (function (_super) {
+            __extends(VrstaTroskaGrid, _super);
+            function VrstaTroskaGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            VrstaTroskaGrid.prototype.getColumnsKey = function () { return 'OsnovnaSredstva.VrstaTroska'; };
+            VrstaTroskaGrid.prototype.getDialogType = function () { return OsnovnaSredstva.VrstaTroskaDialog; };
+            VrstaTroskaGrid.prototype.getIdProperty = function () { return OsnovnaSredstva.VrstaTroskaRow.idProperty; };
+            VrstaTroskaGrid.prototype.getInsertPermission = function () { return OsnovnaSredstva.VrstaTroskaRow.insertPermission; };
+            VrstaTroskaGrid.prototype.getLocalTextPrefix = function () { return OsnovnaSredstva.VrstaTroskaRow.localTextPrefix; };
+            VrstaTroskaGrid.prototype.getService = function () { return OsnovnaSredstva.VrstaTroskaService.baseUrl; };
+            VrstaTroskaGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], VrstaTroskaGrid);
+            return VrstaTroskaGrid;
+        }(Serenity.EntityGrid));
+        OsnovnaSredstva.VrstaTroskaGrid = VrstaTroskaGrid;
     })(OsnovnaSredstva = Osnovna_Sredstva_Glavna.OsnovnaSredstva || (Osnovna_Sredstva_Glavna.OsnovnaSredstva = {}));
 })(Osnovna_Sredstva_Glavna || (Osnovna_Sredstva_Glavna = {}));
 //# sourceMappingURL=Osnovna_Sredstva_Glavna.Web.js.map

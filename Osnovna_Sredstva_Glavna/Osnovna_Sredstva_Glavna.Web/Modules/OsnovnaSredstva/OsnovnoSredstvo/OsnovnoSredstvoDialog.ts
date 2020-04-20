@@ -12,16 +12,58 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
         protected getInsertPermission() { return OsnovnoSredstvoRow.insertPermission; }
         protected getUpdatePermission() { return OsnovnoSredstvoRow.updatePermission; }
 
-       
+
         protected form = new OsnovnoSredstvoForm(this.idPrefix);
-        private obracunGrid: ObracunGrid;
+        //private obracunGrid: ObracunGrid;
+        //private loadedState: string;
+        private servisGrid: OsnovnoServisGrid;
         private loadedState: string;
-           constructor() {
+
+
+        protected getToolbarButtons(): Serenity.ToolButton[] {
+            let btns = super.getToolbarButtons();
+
+            var btnSave = Q.first(btns, x => x.cssClass == "save-and-close-button");
+            var btnApply = Q.first(btns, x => x.cssClass == "apply-changes-button");
+
+            var oldSaveClick = btnSave.onClick;
+            var oldApplyClick = btnApply.onClick;
+
+            btnSave.onClick = e => { this.confirmBeforeSave(oldSaveClick, e); };
+            btnApply.onClick = e => { this.confirmBeforeSave(oldApplyClick, e); };
+
+            return btns;
+        }
+
+        private confirmBeforeSave(oldEvt, e) {
+            Q.confirm("Potvrdite unos novog Osnovnog sredstva", () => {
+                oldEvt(e);
+            });
+        }
+
+
+
+        constructor() {
             super();
 
-               //this.obracunGrid = new ObracunGrid(this.byId('ObracunGrid'));
-               //this.obracunGrid.openDialogsAsPanel = false;
-               //DialogUtils.pendingChangesConfirmation(this.element, () => this.getSaveState() != this.loadedState);
+
+            this.servisGrid = new OsnovnoServisGrid(this.byId('ServisGrid'));
+
+            this.servisGrid.openDialogsAsPanel = false;
+
+            // force order dialog to open in Dialog mode instead of Panel mode
+            // which is set as default on OrderDialog with @panelAttribute
+            //this.obracunGrid = new ObracunGrid(this.byId('ObracunGrid'));
+            //this.obracunGrid.openDialogsAsPanel = false;
+            //DialogUtils.pendingChangesConfirmation(this.element, () => this.getSaveState() != this.loadedState);
+
+
+            DialogUtils.pendingChangesConfirmation(this.element, () => this.getSaveState() != this.loadedState);
+        
+
+
+        
+   
 
 
             this.form.SerijskiBroj.element.on('keyup', (e) => {
@@ -31,6 +73,33 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
             });
         }
 
+        getSaveState() {
+            try {
+                return $.toJSON(this.getSaveEntity());
+            }
+            catch (e) {
+                return null;
+            }
+        }
+
+        loadResponse(data) {
+            super.loadResponse(data);
+            this.loadedState = this.getSaveState();
+        }
+
+        loadEntity(entity: OsnovnoSredstvoRow) {
+            super.loadEntity(entity);
+
+            Serenity.TabsExtensions.setDisabled(this.tabs, 'Servis', this.isNewOrDeleted());
+
+            this.servisGrid.osnovnoId = entity.OsnovnoId;
+        }
+
+        onSaveSuccess(response) {
+            super.onSaveSuccess(response);
+
+            Q.reloadLookup('Osnovnasredstva.OsnovnoSredstvo');
+        }
 
         //getSaveState() {
         //    try {
@@ -69,6 +138,9 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
                 this.getNextNumber();
         }
 
+         
+
+
         private getNextNumber() {
             
             var val = Q.trimToNull(this.form.SerijskiBroj.value);
@@ -105,6 +177,7 @@ namespace Osnovna_Sredstva_Glavna.OsnovnaSredstva {
       
         //    Q.outerHtml(OsnovnoSredstvoRow.Fields.Active("http://desktop-jbaab7c/Reports/Pages/Report.aspx?ItemPath=%2fKarticaSredstva"));
         //}
+
 
 
         //protected updateInterface(): void {
